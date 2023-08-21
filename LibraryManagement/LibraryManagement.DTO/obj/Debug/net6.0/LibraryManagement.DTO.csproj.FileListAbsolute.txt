@@ -1,0 +1,14 @@
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.DTO\bin\Debug\net6.0\LibraryManagement.DTO.deps.json
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.DTO\bin\Debug\net6.0\LibraryManagement.DTO.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.DTO\bin\Debug\net6.0\LibraryManagement.DTO.pdb
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.DTO\obj\Debug\net6.0\LibraryManagement.DTO.GeneratedMSBuildEditorConfig.editorconfig
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.DTO\obj\Debug\net6.0\LibraryManagement.DTO.AssemblyInfoInputs.cache
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.DTO\obj\Debug\net6.0\LibraryManagement.DTO.AssemblyInfo.cs
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.DTO\obj\Debug\net6.0\LibraryManagement.DTO.csproj.CoreCompileInputs.cache
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.DTO\obj\Debug\net6.0\LibraryManagement.DTO.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.DTO\obj\Debug\net6.0\refint\LibraryManagement.DTO.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.DTO\obj\Debug\net6.0\LibraryManagement.DTO.pdb
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.DTO\obj\Debug\net6.0\ref\LibraryManagement.DTO.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.DTO\obj\Debug\net6.0\LibraryManagement.DTO.csproj.AssemblyReference.cache
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.DTO\bin\Debug\net6.0\LibraryManagement.DTO.runtimeconfig.json
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.DTO\obj\Debug\net6.0\LibraryManagement.DTO.genruntimeconfig.cache

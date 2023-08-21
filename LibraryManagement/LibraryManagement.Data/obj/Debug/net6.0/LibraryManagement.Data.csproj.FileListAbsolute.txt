@@ -1,0 +1,14 @@
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.Data\bin\Debug\net6.0\LibraryManagement.Data.deps.json
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.Data\bin\Debug\net6.0\LibraryManagement.Data.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.Data\bin\Debug\net6.0\LibraryManagement.Data.pdb
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\LibraryManagement.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\LibraryManagement.Data.AssemblyInfoInputs.cache
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\LibraryManagement.Data.AssemblyInfo.cs
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\LibraryManagement.Data.csproj.CoreCompileInputs.cache
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\LibraryManagement.Data.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\refint\LibraryManagement.Data.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\LibraryManagement.Data.pdb
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\ref\LibraryManagement.Data.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\LibraryManagement.Data.csproj.AssemblyReference.cache
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.Data\bin\Debug\net6.0\LibraryManagement.Data.runtimeconfig.json
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\LibraryManagement.Data.genruntimeconfig.cache
