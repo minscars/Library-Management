@@ -1,31 +1,50 @@
+import { useEffect, useState } from "react";
 import { MdCancel, MdModeEditOutline } from "react-icons/md";
 import Card from "components/card";
 import { Link } from "react-router-dom";
+import bookApi from "../../../api/bookAPI"
 
 const Index = () => {
-  var data = [
-    {
-      "id": 1,
-      "name": "Đắc nhân tâm",
-      "publisher": "NXB Hoa Hồng",
-      "category": "Sách tâm lý",
-      "progress": 50,
-    },
-    {
-      "id": 2,
-      "name": "Dế Mèn phiêu lưu ký",
-      "publisher": "NXB Kim Đồng",
-      "category": "Truyện dài",
-      "progress": 80,
-    },
-    {
-      "id": 3,
-      "name": "Tôi thấy hoa vàng trên cỏ xanh",
-      "publisher": "NXB Sự Thật",
-      "category": "Truyện dài",
-      "progress": 20,
-    },
-  ]
+  const [booksList, setBooks] = useState([]);
+  
+  
+
+  useEffect(()=>{
+    const getall = async ()=>{
+      const data = await bookApi.GetAll();
+      setBooks(data);
+    }
+    getall();
+  },[])
+  
+  // useEffect(async () => {
+  //   const data = await bookApi.GetAll();
+  //   setBooks(data);
+  //   console.log(data)
+  // }, []);
+  //var data = [
+  //  {
+  //    "id": 1,
+  //    "name": "Đắc nhân tâm",
+  //    "publisher": "NXB Hoa Hồng",
+  //    "category": "Sách tâm lý",
+  //    "progress": 50,
+  //  },
+  //  {
+  //    "id": 2,
+  //    "name": "Dế Mèn phiêu lưu ký",
+  //    "publisher": "NXB Kim Đồng",
+  //    "category": "Truyện dài",
+  //    "progress": 80,
+  //  },
+  //  {
+  //    "id": 3,
+  //    "name": "Tôi thấy hoa vàng trên cỏ xanh",
+  //    "publisher": "NXB Sự Thật",
+  //    "category": "Truyện dài",
+  //    "progress": 20,
+  //  },
+  //]
 
   return (
     <div>
@@ -47,16 +66,10 @@ const Index = () => {
                         <p className="text-xs tracking-wide text-gray-600">#</p>
                       </th>
                       <th className="border-b border-gray-200 pr-28 pb-[10px] text-start dark:!border-navy-700">
-                        <p className="text-xs tracking-wide text-gray-600">TITLE</p>
+                        <p className="text-xs tracking-wide text-gray-600">NAME</p>
                       </th>
                       <th className="border-b border-gray-200 pr-28 pb-[10px] text-start dark:!border-navy-700">
-                        <p className="text-xs tracking-wide text-gray-600">PUBLISHER</p>
-                      </th>
-                      <th className="border-b border-gray-200 pr-28 pb-[10px] text-start dark:!border-navy-700">
-                        <p className="text-xs tracking-wide text-gray-600">CATEGORY NAME</p>
-                      </th>
-                      <th className="border-b border-gray-200 pr-28 pb-[10px] text-start dark:!border-navy-700">
-                        <p className="text-xs tracking-wide text-gray-600">BORROW</p>
+                        <p className="text-xs tracking-wide text-gray-600">DESCRIPTION</p>
                       </th>
                       <th colSpan="3" className="border-b border-gray-200 pr-28 pb-[10px] text-start dark:!border-navy-700">
                         <p className="text-xs tracking-wide text-gray-600">ACTION</p>
@@ -64,23 +77,16 @@ const Index = () => {
                   </tr>
               </thead>
               <tbody>
-                {data.map((row, key) => {
-                  return (
-                    <tr>
+                {booksList?.map((row, key) => (
+                    <tr key={row.id}>
                       <td className="pt-[14px] pb-[18px] sm:text-[14px]">
-                        <p className="text-sm font-bold text-navy-700 dark:text-white">{key+1}</p>
+                        <p className="text-sm font-bold text-navy-700 dark:text-white">{key}</p>
                       </td>
                       <td className="pt-[14px] pb-[18px] sm:text-[14px]">
                         <p className="text-sm font-bold text-navy-700 dark:text-white">{row.name}</p>
                       </td>
                       <td className="pt-[14px] pb-[18px] sm:text-[14px]">
-                        <p className="text-sm font-bold text-navy-700 dark:text-white">{row.publisher}</p>
-                      </td>
-                      <td className="pt-[14px] pb-[18px] sm:text-[14px]">
-                        <p className="text-sm font-bold text-navy-700 dark:text-white">{row.category}</p>
-                      </td>
-                      <td className="pt-[14px] pb-[18px] sm:text-[14px]">
-                        <p className="text-sm font-bold text-navy-700 dark:text-white">{row.progress}</p>
+                        <p className="text-sm font-bold text-navy-700 dark:text-white">{row.discription}</p>
                       </td>
                       <td className="pt-[14px] pb-[18px] sm:text-[14px]">
                         <Link to="/admin/categories">
@@ -94,8 +100,7 @@ const Index = () => {
                         <MdCancel className="text-red-500" /> 
                       </td>
                     </tr>
-                  );
-                })}
+                ))}
               </tbody>
             </table>
           </div>
