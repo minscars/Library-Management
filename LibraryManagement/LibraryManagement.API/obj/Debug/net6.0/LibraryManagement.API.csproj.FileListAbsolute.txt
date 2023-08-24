@@ -92,3 +92,11 @@ D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\
 D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\AutoMapper.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\LibraryManagement.Application.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\LibraryManagement.Data.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\LibraryManagement.DTO.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\LibraryManagement.Application.pdb
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\LibraryManagement.Data.pdb
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\LibraryManagement.DTO.pdb
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
