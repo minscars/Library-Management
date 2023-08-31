@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace LibraryManagement.Data.Models
 {
-    public class Book
+    public class BorrowBill
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public int UserId { get; set; }
+        public DateTime? BorrowTime { get; set; }
+        public DateTime? DueTime { get; set; }
+        public User User { get; set; }
         public bool IsDeleted { get; set; }
-        public DateTime? CreatedTime { get; set; }
-        public DateTime? UpdatedTime { get; set; }
         public virtual List<BorrowBillDetail> BorrowBillDetail { get; set; }
-
     }
 }

@@ -13,6 +13,10 @@ namespace LibraryManagement.Data.EF
     public class LibraryManagementDbContext : DbContext
     {
         public DbSet<Book> Books { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<BorrowBill> BorrowBills { get; set; }
+        public DbSet<BorrowBillDetail> BorrowBillDetails { get; set; }
         public LibraryManagementDbContext(DbContextOptions<LibraryManagementDbContext> options) : base(options)
         {
 
