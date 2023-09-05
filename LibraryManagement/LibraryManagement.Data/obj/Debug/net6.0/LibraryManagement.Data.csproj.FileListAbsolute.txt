@@ -12,3 +12,17 @@ D:\Sources\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug
 D:\Sources\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\LibraryManagement.Data.csproj.AssemblyReference.cache
 D:\Sources\Library-Management\LibraryManagement\LibraryManagement.Data\bin\Debug\net6.0\LibraryManagement.Data.runtimeconfig.json
 D:\Sources\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\LibraryManagement.Data.genruntimeconfig.cache
+E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.Data\bin\Debug\net6.0\LibraryManagement.Data.deps.json
+E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.Data\bin\Debug\net6.0\LibraryManagement.Data.runtimeconfig.json
+E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.Data\bin\Debug\net6.0\LibraryManagement.Data.dll
+E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.Data\bin\Debug\net6.0\LibraryManagement.Data.pdb
+E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\LibraryManagement.Data.csproj.AssemblyReference.cache
+E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\LibraryManagement.Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\LibraryManagement.Data.AssemblyInfoInputs.cache
+E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\LibraryManagement.Data.AssemblyInfo.cs
+E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\LibraryManagement.Data.csproj.CoreCompileInputs.cache
+E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\LibraryManagement.Data.dll
+E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\refint\LibraryManagement.Data.dll
+E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\LibraryManagement.Data.pdb
+E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\LibraryManagement.Data.genruntimeconfig.cache
+E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.Data\obj\Debug\net6.0\ref\LibraryManagement.Data.dll

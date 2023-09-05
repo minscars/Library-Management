@@ -7487,19 +7487,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
+    "C:\\Users\\MinhKha\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj",
+      "projectUniqueName": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj",
       "projectName": "LibraryManagement.DTO",
-      "projectPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj",
-      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\obj\\",
+      "projectPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj",
+      "packagesPath": "C:\\Users\\MinhKha\\.nuget\\packages\\",
+      "outputPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MinhKha\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7513,8 +7513,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj": {
-              "projectPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj"
+            "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj": {
+              "projectPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj"
             }
           }
         }

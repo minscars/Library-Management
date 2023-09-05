@@ -15,7 +15,7 @@ namespace LibraryManagement.Data.Configurations
         {
             builder.Property(x => x.Id).IsRequired();
             builder.Property(x => x.UserId).IsRequired();
-            builder.Property(x => x.IsDeleted).IsRequired(false);
+            builder.Property(x => x.IsDeleted).HasDefaultValue(false);
         }
     }
 }

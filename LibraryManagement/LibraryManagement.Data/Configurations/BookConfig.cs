@@ -15,8 +15,11 @@ namespace LibraryManagement.Data.Configurations
         {
             builder.Property(x => x.Id).IsRequired();
             builder.Property(x => x.Name).IsRequired();
+            builder.Property(x => x.CategoryId).IsRequired();
             builder.Property(x => x.Description).IsRequired();
             builder.Property(x => x.IsDeleted).HasDefaultValue(false);
+            builder.Property(x => x.CreatedTime).HasDefaultValue(DateTime.Now);
+            builder.Property(x => x.UpdatedTime).HasDefaultValue(DateTime.Now);
         }
     }
 }

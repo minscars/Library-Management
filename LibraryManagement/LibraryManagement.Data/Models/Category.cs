@@ -10,7 +10,6 @@ namespace LibraryManagement.Data.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Image { get; set; }
         public DateTime? CreatedTime { get; set; }
         public DateTime? UpdatedTime { get; set; }
         public bool IsDeleted { get; set; }

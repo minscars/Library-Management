@@ -23,9 +23,20 @@ namespace LibraryManagement.Data.EF
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new BookConfig());
+            modelBuilder.ApplyConfiguration(new BookConfig())
+                        .ApplyConfiguration(new UserConfig())
+                        .ApplyConfiguration(new CategoryConfig())
+                        .ApplyConfiguration(new BorrowBillConfig())
+                        .ApplyConfiguration(new BorrowBillDetailConfig());
+
 
             modelBuilder.FillDataBook();
+            modelBuilder.FillDataCategory();
+            modelBuilder.FillDataBorrowBill();
+            modelBuilder.FillDataBorrowBillDetail();
+            modelBuilder.FillDataUser();
+
+
         }
     }
 }

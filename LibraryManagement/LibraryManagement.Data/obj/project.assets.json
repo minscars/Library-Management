@@ -7462,19 +7462,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
+    "C:\\Users\\MinhKha\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj",
+      "projectUniqueName": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj",
       "projectName": "LibraryManagement.Data",
-      "projectPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj",
-      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\obj\\",
+      "projectPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj",
+      "packagesPath": "C:\\Users\\MinhKha\\.nuget\\packages\\",
+      "outputPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MinhKha\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

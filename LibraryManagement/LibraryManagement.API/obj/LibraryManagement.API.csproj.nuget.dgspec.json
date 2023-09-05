@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\LibraryManagement.API.csproj": {}
+    "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.API\\LibraryManagement.API.csproj": {}
   },
   "projects": {
-    "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\LibraryManagement.API.csproj": {
+    "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.API\\LibraryManagement.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\LibraryManagement.API.csproj",
+        "projectUniqueName": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.API\\LibraryManagement.API.csproj",
         "projectName": "LibraryManagement.API",
-        "projectPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\LibraryManagement.API.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\obj\\",
+        "projectPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.API\\LibraryManagement.API.csproj",
+        "packagesPath": "C:\\Users\\MinhKha\\.nuget\\packages\\",
+        "outputPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MinhKha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Application\\LibraryManagement.Application.csproj": {
-                "projectPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Application\\LibraryManagement.Application.csproj"
+              "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Application\\LibraryManagement.Application.csproj": {
+                "projectPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Application\\LibraryManagement.Application.csproj"
               },
-              "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj": {
-                "projectPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj"
+              "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj": {
+                "projectPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj"
               }
             }
           }
@@ -115,17 +115,17 @@
         }
       }
     },
-    "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Application\\LibraryManagement.Application.csproj": {
+    "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Application\\LibraryManagement.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Application\\LibraryManagement.Application.csproj",
+        "projectUniqueName": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Application\\LibraryManagement.Application.csproj",
         "projectName": "LibraryManagement.Application",
-        "projectPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Application\\LibraryManagement.Application.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Application\\obj\\",
+        "projectPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Application\\LibraryManagement.Application.csproj",
+        "packagesPath": "C:\\Users\\MinhKha\\.nuget\\packages\\",
+        "outputPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MinhKha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -139,11 +139,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj": {
-                "projectPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj"
+              "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj": {
+                "projectPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj"
               },
-              "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj": {
-                "projectPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj"
+              "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj": {
+                "projectPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj"
               }
             }
           }
@@ -223,17 +223,17 @@
         }
       }
     },
-    "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj": {
+    "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj",
+        "projectUniqueName": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj",
         "projectName": "LibraryManagement.Data",
-        "projectPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\obj\\",
+        "projectPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj",
+        "packagesPath": "C:\\Users\\MinhKha\\.nuget\\packages\\",
+        "outputPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MinhKha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -328,17 +328,17 @@
         }
       }
     },
-    "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj": {
+    "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj",
+        "projectUniqueName": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj",
         "projectName": "LibraryManagement.DTO",
-        "projectPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\obj\\",
+        "projectPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj",
+        "packagesPath": "C:\\Users\\MinhKha\\.nuget\\packages\\",
+        "outputPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MinhKha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -352,8 +352,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj": {
-                "projectPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj"
+              "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj": {
+                "projectPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj"
               }
             }
           }

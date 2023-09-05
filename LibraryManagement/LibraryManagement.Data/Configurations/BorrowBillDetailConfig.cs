@@ -13,8 +13,10 @@ namespace LibraryManagement.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<BorrowBillDetail> builder)
         {
-            builder.HasKey(b => new { b.BookId, b.BillId});
+            builder.Property(x => x.BorrowBillId).IsRequired();
+            builder.Property(x => x.BookId).IsRequired();
             builder.Property(x => x.Amount).IsRequired().HasDefaultValue(1);
+            builder.HasKey(b => new { b.BorrowBillId, b.BookId });
         }
     }
 }
