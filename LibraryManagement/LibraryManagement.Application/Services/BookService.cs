@@ -25,6 +25,7 @@ namespace LibraryManagement.Application.Services
         public async Task<ApiResult<List<BookDTO>>> GetAllAsync()
         {
             var bookList = await _context.Books
+                .Include(b =>b.Category)
                 .Where(b =>b.IsDeleted==false)
                 .Select(b => _mapper.Map<BookDTO>(b)).ToListAsync();
             if (bookList.Count < 1)

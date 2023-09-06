@@ -16,6 +16,7 @@ namespace LibraryManagement.Data.Models
         public DateTime? CreatedTime { get; set; }
         public DateTime? UpdatedTime { get; set; }
         public virtual List<BorrowBillDetail> BorrowBillDetail { get; set; }
+        public virtual Category Category { get; set; }
 
     }
 }
