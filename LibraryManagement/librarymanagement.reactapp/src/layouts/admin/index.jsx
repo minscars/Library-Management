@@ -1,9 +1,9 @@
 import React from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Navbar from "components/navbar";
-import Sidebar from "components/sidebar";
+import Sidebar from "components/sidebar/admin-sidebar";
 import Footer from "components/footer/Footer";
-import SidebarRoutes from "sidebar-routes.js";
+import SidebarRoutes from "components/sidebar/admin-sidebar-routes";
 import routes from "app-routes.js";
 
 export default function Admin(props) {

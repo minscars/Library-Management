@@ -15,6 +15,10 @@ import AdminDashBoard from "views/admin/default";
 // Auth Imports
 import SignIn from "views/auth/SignIn";
 
+//User Imports
+import UserHome from "views/user/home";
+import UserRequest from "views/user/request";
+
 const routes = [
   { layout: "/admin", path: "home", component: <AdminHome />},
   { layout: "/admin", path: "categories", component: <AdminCategories />},
@@ -26,6 +30,9 @@ const routes = [
   { layout: "/admin", path: "dashboard", component: <AdminDashBoard />},
 
   { layout: "/auth", path: "sign-in", component: <SignIn />},
+
+  { layout: "/user", path: "home", component: <UserHome />},
+  { layout: "/user", path: "request", component: <UserRequest />},
 ];
 
 export default routes;

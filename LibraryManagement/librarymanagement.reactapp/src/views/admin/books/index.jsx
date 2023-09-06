@@ -7,9 +7,7 @@ import bookApi from "../../../api/bookAPI"
 const Index = () => {
   const [booksList, setBooks] = useState([]);
   
-  
-
-  useEffect(()=>{
+    useEffect(()=>{
     const getall = async ()=>{
       const data = await bookApi.GetAll();
       setBooks(data);
@@ -17,35 +15,6 @@ const Index = () => {
     getall();
   },[])
   
-  // useEffect(async () => {
-  //   const data = await bookApi.GetAll();
-  //   setBooks(data);
-  //   console.log(data)
-  // }, []);
-  //var data = [
-  //  {
-  //    "id": 1,
-  //    "name": "Đắc nhân tâm",
-  //    "publisher": "NXB Hoa Hồng",
-  //    "category": "Sách tâm lý",
-  //    "progress": 50,
-  //  },
-  //  {
-  //    "id": 2,
-  //    "name": "Dế Mèn phiêu lưu ký",
-  //    "publisher": "NXB Kim Đồng",
-  //    "category": "Truyện dài",
-  //    "progress": 80,
-  //  },
-  //  {
-  //    "id": 3,
-  //    "name": "Tôi thấy hoa vàng trên cỏ xanh",
-  //    "publisher": "NXB Sự Thật",
-  //    "category": "Truyện dài",
-  //    "progress": 20,
-  //  },
-  //]
-
   return (
     <div>
       <div className="mt-5 gap-5 xl:grid-cols-2">
@@ -80,7 +49,7 @@ const Index = () => {
                 {booksList?.map((row, key) => (
                     <tr key={row.id}>
                       <td className="pt-[14px] pb-[18px] sm:text-[14px]">
-                        <p className="text-sm font-bold text-navy-700 dark:text-white">{key}</p>
+                        <p className="text-sm font-bold text-navy-700 dark:text-white">{row.id}</p>
                       </td>
                       <td className="pt-[14px] pb-[18px] sm:text-[14px]">
                         <p className="text-sm font-bold text-navy-700 dark:text-white">{row.name}</p>

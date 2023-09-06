@@ -1,8 +1,8 @@
 import Footer from "components/footer/FooterAuthDefault";
-import authImg from "assets/img/auth/auth.png";
+import authImg from "assets/img/auth/auth.jpg";
 import { Link, Routes, Route, Navigate } from "react-router-dom";
-import routes from "sidebar-routes.js";
 import FixedPlugin from "components/fixedPlugin/FixedPlugin";
+import routes from "app-routes.js";
 
 export default function Auth() {
   const getRoutes = (routes) => {
@@ -16,7 +16,7 @@ export default function Auth() {
       }
     });
   };
-  document.documentElement.dir = "ltr";
+
   return (
     <div>
       <div className="relative float-right h-full min-h-screen w-full !bg-white dark:!bg-navy-900">

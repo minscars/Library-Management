@@ -1,12 +1,12 @@
 import React from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Navbar from "components/navbar";
-import Sidebar from "components/sidebar";
+import Sidebar from "components/sidebar/user-sidebar";
 import Footer from "components/footer/Footer";
-import SidebarRoutes from "sidebar-routes.js";
+import SidebarRoutes from "components/sidebar/user-sidebar-routes";
 import routes from "app-routes.js";
 
-export default function Admin(props) {
+export default function User(props) {
   const { ...rest } = props;
   const location = useLocation();
   const [open, setOpen] = React.useState(true);
@@ -76,7 +76,7 @@ export default function Admin(props) {
             <div className="pt-5s mx-auto mb-auto h-full min-h-[84vh] p-2 md:pr-2">
               <Routes>
                 {getRoutes(routes)}
-                <Route path="/" element={<Navigate to="/admin/home" replace />}/>
+                <Route path="/" element={<Navigate to="/user/home" replace />}/>
               </Routes>
             </div>
 
