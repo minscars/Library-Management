@@ -37,6 +37,8 @@ builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
 //DI
 builder.Services.AddTransient<IBookService, BookService>();
+builder.Services.AddTransient<ICategoryService, CategoryService>();
+builder.Services.AddTransient<IFileSerivce, FileService>();
 builder.Services.AddMvc()
                 .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 

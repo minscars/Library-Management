@@ -11,5 +11,8 @@ namespace LibraryManagement.Application.Interfaces
     public interface IBookService
     {
         public Task<ApiResult<List<BookDTO>>> GetAllAsync ();
+        public Task<ApiResult<BookDTO>> GetByIdAsync (int id);
+        public Task<ApiResult<List<BookDTO>>> GetByCategoryIdAsync(int categoryId);
+        public Task<ApiResult<bool>> CreateAsync(CreateBookDTO request);
     }
 }
