@@ -38,7 +38,7 @@ const Index = () => {
                         <p className="text-xs tracking-wide text-gray-600">NAME</p>
                       </th>
                       <th className="border-b border-gray-200 pr-28 pb-[10px] text-start dark:!border-navy-700">
-                        <p className="text-xs tracking-wide text-gray-600">DESCRIPTION</p>
+                        <p className="text-xs tracking-wide text-gray-600">CATEGORY</p>
                       </th>
                       <th colSpan="3" className="border-b border-gray-200 pr-28 pb-[10px] text-start dark:!border-navy-700">
                         <p className="text-xs tracking-wide text-gray-600">ACTION</p>
@@ -48,25 +48,23 @@ const Index = () => {
               <tbody>
                 {booksList?.map((row, key) => (
                     <tr key={row.id}>
-                      <td className="pt-[14px] pb-[18px] sm:text-[14px]">
-                        <p className="text-sm font-bold text-navy-700 dark:text-white">{row.id}</p>
+                      <td className="items-center flex justify-between pt-[14px] pb-[18px] sm:text-[15px]">
+                        <p className="ml-4 text-sm font-bold text-navy-700 dark:text-white">{row.id}</p>
+                        <img src={row.image} alt="" className="mr-6 flex h-16 w-16 items-center justify-center rounded-xl"/>
                       </td>
-                      <td className="pt-[14px] pb-[18px] sm:text-[14px]">
+                      <td className="items-center pt-[14px] pb-[18px] sm:text-[15px]">
                         <p className="text-sm font-bold text-navy-700 dark:text-white">{row.name}</p>
                       </td>
-                      <td className="pt-[14px] pb-[18px] sm:text-[14px]">
-                        <p className="text-sm font-bold text-navy-700 dark:text-white">{row.discription}</p>
+                      <td className="pt-[14px] pb-[18px] sm:text-[15px]">
+                        <p className="text-sm font-bold text-navy-700 dark:text-white">{row.categoryName}</p>
                       </td>
-                      <td className="pt-[14px] pb-[18px] sm:text-[14px]">
-                        <Link to="/admin/categories">
-                          <MdModeEditOutline />
-                        </Link>
-                      </td>
-                      <td className="pt-[14px] pb-[18px] sm:text-[14px]">
-                        <MdCancel className="text-red-500" /> 
-                      </td>
-                      <td className="pt-[14px] pb-[18px] sm:text-[14px]">
-                        <MdCancel className="text-red-500" /> 
+                      <td className="flex items-center gap-2 pt-[14px] pb-[18px] sm:text-[14px]">
+                          <Link to="/admin/categories">
+                            <MdModeEditOutline className="rounded-full text-xl"/>
+                          </Link>
+                          <Link>
+                            <MdCancel className="text-red-500 rounded-full text-xl" /> 
+                          </Link>
                       </td>
                     </tr>
                 ))}

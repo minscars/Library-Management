@@ -1,21 +1,18 @@
 import { MdCancel, MdModeEditOutline } from "react-icons/md";
 import Card from "components/card";
+import { useEffect, useState } from "react";
+import cateApi from "../../../api/categoryAPI"
 
 const Index = () => {
-  var data = [
-    {
-      "id": 1,
-      "name": "Sách tâm lý",
-    },
-    {
-      "id": 2,
-      "name": "Sách khoa học",
-    },
-    {
-      "id": 3,
-      "name": "Truyện tranh",
-    },
-  ]
+  const [catesList, setCates] = useState([]);
+  
+  useEffect(()=>{
+    const getall = async ()=>{
+      const data = await cateApi.GetAll();
+      setCates(data);
+  }
+    getall();
+  },[])
 
   return (
     <div>
@@ -43,7 +40,7 @@ const Index = () => {
                   </tr>
               </thead>
               <tbody>
-                {data.map((row, key) => {
+                {catesList.map((row, key) => {
                   return (
                     <tr>
                       <td className="pt-[14px] pb-[18px] sm:text-[14px]">
@@ -54,9 +51,6 @@ const Index = () => {
                       </td>
                       <td className="pt-[14px] pb-[18px] sm:text-[14px]">
                         <MdModeEditOutline /> 
-                      </td>
-                      <td className="pt-[14px] pb-[18px] sm:text-[14px]">
-                        <MdCancel className="text-red-500" /> 
                       </td>
                       <td className="pt-[14px] pb-[18px] sm:text-[14px]">
                         <MdCancel className="text-red-500" /> 
