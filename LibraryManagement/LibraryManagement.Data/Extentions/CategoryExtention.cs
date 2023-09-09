@@ -16,7 +16,7 @@ namespace LibraryManagement.Data.Extentions
             new Category()
             {
                 Id = 1,
-                Name = "Truyện trinh thám"
+                Name = "Tiểu thuyết"
             },
 
             new Category()
