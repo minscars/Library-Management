@@ -202,3 +202,6 @@ E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.API\obj\Debug
 E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.API\obj\Debug\net6.0\LibraryManagement.API.pdb
 E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.API\obj\Debug\net6.0\LibraryManagement.API.genruntimeconfig.cache
 E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.API\obj\Debug\net6.0\ref\LibraryManagement.API.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\LibraryManagement.API.staticwebassets.runtime.json
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\Utilities.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\Utilities.pdb

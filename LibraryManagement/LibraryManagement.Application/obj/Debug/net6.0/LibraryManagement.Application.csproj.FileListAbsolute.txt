@@ -36,3 +36,5 @@ E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.Application\o
 E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.Application\obj\Debug\net6.0\LibraryManagement.Application.pdb
 E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.Application\obj\Debug\net6.0\LibraryManagement.Application.genruntimeconfig.cache
 E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.Application\obj\Debug\net6.0\ref\LibraryManagement.Application.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.Application\bin\Debug\net6.0\Utilities.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.Application\bin\Debug\net6.0\Utilities.pdb

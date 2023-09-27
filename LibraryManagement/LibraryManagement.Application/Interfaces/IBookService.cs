@@ -14,5 +14,7 @@ namespace LibraryManagement.Application.Interfaces
         public Task<ApiResult<BookDTO>> GetByIdAsync (int id);
         public Task<ApiResult<List<BookDTO>>> GetByCategoryIdAsync(int categoryId);
         public Task<ApiResult<bool>> CreateAsync(CreateBookDTO request);
+        public Task<ApiResult<bool>> EditAsync(EditBookDTO request);
+        public Task<ApiResult<bool>> DeleteAsync(int Id);
     }
 }

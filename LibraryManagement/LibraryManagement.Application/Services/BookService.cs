@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Utilities.Constants;
+
 
 namespace LibraryManagement.Application.Services
 {
@@ -119,5 +119,64 @@ namespace LibraryManagement.Application.Services
             };
         }
 
+        public async Task<ApiResult<bool>> DeleteAsync(int Id)
+        {
+            var book = await _context.Books.Where(b => b.IsDeleted == false && b.Id == Id).FirstOrDefaultAsync();
+            if (book == null)
+            {
+                return new ApiResult<bool>(false)
+                {
+                    Message = $"Couldn't find the book with id: {Id}",
+                    StatusCode = 404
+                };
+            }
+            book.IsDeleted = true;
+            await _context.SaveChangesAsync();
+            return new ApiResult<bool>(true)
+            {
+                Message = $"Delete the book with Id = {Id} successfully!",
+                StatusCode = 200
+            };
+        }
+
+        public async Task<ApiResult<bool>> EditAsync(EditBookDTO request)
+        {
+            if (request == null)
+            {
+                return new ApiResult<bool>(false)
+                {
+                    Message = "Something went wrong!",
+                    StatusCode = 400
+                };
+            }
+
+            var book = await _context.Books.Where(b => b.IsDeleted == false && b.Id == request.Id).FirstOrDefaultAsync();
+            if(request.Image == "") 
+            {
+
+            }
+            if (book == null)
+            {
+                return new ApiResult<bool>(false)
+                {
+                    Message = $"Couldn't find the book with id: {request.Id}",
+                    StatusCode = 404
+                };
+            }
+            book.Name = request.Name;
+            book.CategoryId = request.CategoryId;
+            if (request.Image != "")
+            {
+                book.Image = request.Image;
+            }
+
+            book.UpdatedTime = DateTime.Now;
+            await _context.SaveChangesAsync();
+            return new ApiResult<bool>(true)
+            {
+                Message = "Edit book successfully!",
+                StatusCode = 200
+            };
+        }
     }
 }

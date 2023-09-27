@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj": {}
+    "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj": {}
   },
   "projects": {
-    "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj": {
+    "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj",
+        "projectUniqueName": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj",
         "projectName": "LibraryManagement.Data",
-        "projectPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj",
-        "packagesPath": "C:\\Users\\MinhKha\\.nuget\\packages\\",
-        "outputPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\obj\\",
+        "projectPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\MinhKha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,23 +44,31 @@
               "target": "Package",
               "version": "[12.0.1, )"
             },
+            "Microsoft.AspNetCore.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Hosting.Server.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.1.1, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.10, )"
+              "version": "[7.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.10, )"
+              "version": "[7.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
-              "version": "[7.0.10, )"
+              "version": "[7.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Relational.Design": {
               "target": "Package",
@@ -68,13 +76,13 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.10, )"
+              "version": "[7.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.10, )"
+              "version": "[7.0.11, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
@@ -109,17 +117,17 @@
         }
       }
     },
-    "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj": {
+    "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj",
+        "projectUniqueName": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj",
         "projectName": "LibraryManagement.DTO",
-        "projectPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj",
-        "packagesPath": "C:\\Users\\MinhKha\\.nuget\\packages\\",
-        "outputPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\obj\\",
+        "projectPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\LibraryManagement.DTO.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.DTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\MinhKha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -133,8 +141,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj": {
-                "projectPath": "E:\\Kha\\Code\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj"
+              "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj": {
+                "projectPath": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.Data\\LibraryManagement.Data.csproj"
               }
             }
           }
@@ -153,6 +161,18 @@
               "target": "Package",
               "version": "[12.0.1, )"
             },
+            "Microsoft.AspNetCore.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Hosting.Server.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.1.1, )"
@@ -161,11 +181,11 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.10, )"
+              "version": "[7.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
-              "version": "[7.0.10, )"
+              "version": "[7.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Relational.Design": {
               "target": "Package",
@@ -173,13 +193,13 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.10, )"
+              "version": "[7.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.10, )"
+              "version": "[7.0.11, )"
             },
             "Microsoft.Extensions.Configuration.FileExtensions": {
               "target": "Package",
