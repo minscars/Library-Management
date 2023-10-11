@@ -151,10 +151,6 @@ namespace LibraryManagement.Application.Services
             }
 
             var book = await _context.Books.Where(b => b.IsDeleted == false && b.Id == request.Id).FirstOrDefaultAsync();
-            if(request.Image == "") 
-            {
-
-            }
             if (book == null)
             {
                 return new ApiResult<bool>(false)
@@ -163,13 +159,18 @@ namespace LibraryManagement.Application.Services
                     StatusCode = 404
                 };
             }
+            if(request.Image == null) 
+            {
+                book.Image = book.Image;
+            }
+            else
+            {
+                var imageName = await _fileSerivce.UploadFileAsync(request.Image, SystemConstant.IMG_BOOKS_FOLDER);
+                book.Image = imageName;
+
+            }
             book.Name = request.Name;
             book.CategoryId = request.CategoryId;
-            if (request.Image != "")
-            {
-                book.Image = request.Image;
-            }
-
             book.UpdatedTime = DateTime.Now;
             await _context.SaveChangesAsync();
             return new ApiResult<bool>(true)

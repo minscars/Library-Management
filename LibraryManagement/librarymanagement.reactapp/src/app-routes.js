@@ -6,6 +6,8 @@ import AdminCategories from "views/admin/categories";
 
 import AdminBooks from "views/admin/books";
 import AdminBookCreate from "views/admin/books/create";
+import AdminBookEdit from "views/admin/books/edit";
+import AdminBookDelete from "views/admin/books/delete";
 
 import AdminBorrowAndReturn from "views/admin/borrowreturn";
 import AdminProfile from "views/admin/profile";
@@ -24,6 +26,8 @@ const routes = [
   { layout: "/admin", path: "categories", component: <AdminCategories />},
   { layout: "/admin", path: "books", component: <AdminBooks />},
   { layout: "/admin", path: "books/create", component: <AdminBookCreate />},
+  { layout: "/admin", path: "books/edit/:id", component: <AdminBookEdit />},
+  { layout: "/admin", path: "books/delete/:id", component: <AdminBookDelete />},
   { layout: "/admin", path: "borrow-and-return", component: <AdminBorrowAndReturn />},
   { layout: "/admin", path: "data-tables", component: <AdminDataTables />},
   { layout: "/admin", path: "profile", component: <AdminProfile />},

@@ -71,6 +71,18 @@ namespace LibraryManagement.API.Controllers
             return Ok(result.Message);
         }
 
+        [HttpPut()]
+        [AllowAnonymous]
+        public async Task<IActionResult> Edit([FromForm] EditBookDTO request)
+        {
+            var result = await _bookService.EditAsync(request);
+            if (result.StatusCode == 400)
+            {
+                return BadRequest(result.Message);
+            }
+            return Ok(result.Message);
+        }
+
         [HttpDelete("{Id}")]
         [AllowAnonymous]
         public async Task<IActionResult> Delete([FromRoute] int Id)

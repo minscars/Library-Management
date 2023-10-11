@@ -3,7 +3,7 @@
 import { HiX } from "react-icons/hi";
 import Links from "./components/Links";
 
-import SidebarCard from "components/sidebar/components/SidebarCard";
+import Logo from "assets/img/logo/LibraryManagementLogo.png";
 import routes from "./user-sidebar-routes";
 
 const UserSidebar = ({ open, onClose }) => {
@@ -21,8 +21,8 @@ const UserSidebar = ({ open, onClose }) => {
       </span>
 
       <div className={`mx-[56px] mt-[50px] flex items-center`}>
-        <div className="mt-1 ml-1 h-2.5 font-poppins text-[26px] font-bold uppercase text-customcolor-500 dark:text-white">
-          Horizon <span class="font-medium">FREE</span>
+      <div className="mt-1 mb-5 h-2.5 text-[26px] font-bold dark:text-white">
+          <img className="h-[70px] w-[166px]" src={Logo} alt="" />
         </div>
       </div>
       <div class="mt-[58px] mb-7 h-px bg-gray-300 dark:bg-white/30" />
@@ -34,7 +34,7 @@ const UserSidebar = ({ open, onClose }) => {
 
       {/* Free Horizon Card */}
       <div className="flex justify-center">
-        <SidebarCard />
+        {/* <SidebarCard /> */}
       </div>
 
       {/* Nav item end */}

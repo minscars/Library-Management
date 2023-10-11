@@ -4,6 +4,7 @@ import cateApi from "../../../api/categoryAPI"
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form"
 import bookApi from "../../../api/bookAPI"
+import Alert from "components/alert";
 import {useNavigate} from "react-router-dom";
 
 export function Create() {
@@ -33,6 +34,7 @@ export function Create() {
     formData.append("Image", imageUploadFile);
     console.log(formData)
     await bookApi.Create(formData);
+    Alert.showSuccessAlert('Add your book sucessfully!')
     navigate('/admin/books');
   }
   return (
@@ -46,15 +48,24 @@ export function Create() {
           <div className="flex justify-center w-full h-full mt-8 overflow-x-scroll xl:overflow-hidden">
             <form onSubmit={handleSubmit(addBook)} enctype="multipart/form-data" className="mb-2 w-80 max-w-screen-lg sm:w-96" method="post">
               <div className="mb-4 flex flex-col gap-6">
-                <input
-                  className={`mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none`}
-                 {...register("name")} extra="" label="Book name" placeholder=""  id="" type="text"/>
-                <input
-                  className={`mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none`}
-                 {...register("image")} onChange = {onFileChange} extra="" label="Image" id="" placeholder="" type="file"/>
+
                 <div>
-                  <label for="countries" class="mb-5 text-m text-navy-700 dark:text-white">Category</label>
-                  <select {...register("categoryid")}  id="countries" class="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none">
+                  <label for="name" class="text-m text-navy-700 dark:text-white">Name</label>
+                  <input
+                    className={`mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none`}
+                  {...register("name")} extra=""  label="Book name" placeholder=""  id="name" type="text"/>
+                </div>
+
+                <div>
+                  <label for="image" class="text-m text-navy-700 dark:text-white">Image</label>
+                  <input
+                    className={`mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none`}
+                  {...register("image")} onChange = {onFileChange} extra="" label="Image" id="image" placeholder="" type="file"/>
+                </div>
+
+                <div>
+                  <label for="categories" class="mb-5 text-m text-navy-700 dark:text-white">Category</label>
+                  <select {...register("categoryid")}  id="categories" class="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none">
                     <option selected>Choose a category</option>
                     {catesList.map((row, key) => {
                       return(
