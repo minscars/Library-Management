@@ -2,6 +2,8 @@ import bookApi from "../../../api/bookAPI"
 import Swal from 'sweetalert2';
 import {useNavigate, useParams} from "react-router-dom";
 import Index from './index';
+import Alert from "components/alert";
+
 export function Delete(){
     const {id} = useParams();
     const navigate = useNavigate();
@@ -19,13 +21,10 @@ export function Delete(){
         confirmButtonText: 'Yes, delete it!'
       }).then((result) => {
         if (result.isConfirmed) {
-            deleteBook();
-          Swal.fire(
-            'Deleted!',
-            'Your book has been deleted.',
-            'success'
-          )
+          deleteBook();
+          Alert.showSuccessAlert('Your book has been deleted sucessfully!')
         }
+        navigate('/admin/books');
     })
     return <Index/>
 }

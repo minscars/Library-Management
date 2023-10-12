@@ -13,7 +13,6 @@ import TopCreatorTable from "./components/TableTopCreators";
 import NftCard from "components/card/NftCard";
 import { useEffect, useState } from "react";
 import bookApi from "../../../api/bookAPI"
-import cateApi from "../../../api/categoryAPI"
 
 const Marketplace = () => {
   const [booksList, setBooks] = useState([]);
@@ -26,17 +25,6 @@ const Marketplace = () => {
     getall();
   },[])
 
-  const [catesList, setCates] = useState([]);
-  
-  useEffect(()=>{
-    const getall = async ()=>{
-      const data = await cateApi.GetAll();
-      setCates(data);
-  }
-    getall();
-  },[])
-
-
   return (
     <div className="mt-3 grid h-full grid-cols-1 gap-5 xl:grid-cols-2 2xl:grid-cols-3">
       <div className="col-span-1 h-fit w-full xl:col-span-1 2xl:col-span-2">
@@ -48,32 +36,22 @@ const Marketplace = () => {
           <h4 className="ml-1 text-2xl font-bold text-navy-700 dark:text-white">
             
           </h4>
-          <ul className="mt-4 flex items-center justify-between md:mt-0 md:justify-center md:!gap-5 2xl:!gap-12">
-          {catesList?.map((row, key) => (
-            <li>
-              <a
-                className="text-base font-medium text-brand-500 hover:text-brand-500 dark:text-white"
-                href=" "
-              >
-                {row.name}
-              </a>
-            </li>
-          ))}
-          </ul>
         </div>
 
         {/* NFTs trending card */}
         <div className="z-20 grid grid-cols-1 gap-5 md:grid-cols-3">
-        {booksList?.map((row, key) => (
-          <NftCard
-            bidders={[avatar1, avatar2, avatar3]}
-            title={row.name}
-            author="Esthera Jackson"
-            price="0.91"
-            image={row.image}
-          />
-        ))};
+
+          {booksList?.map((row, key) => (
+            <NftCard
+              bidders={[avatar1, avatar2, avatar3]}
+              title={row.name}
+              author="Esthera Jackson"
+              price="0.91"
+              image={row.image}
+            />
+          ))};
         </div>
+
 
         {/* Recenlty Added setion */}
         <div className="mb-5 mt-5 flex items-center justify-between px-[26px]">

@@ -13,5 +13,6 @@ namespace LibraryManagement.DTO.Book
         public string? Image { get; set; }
         public bool IsDeleted { get; set; }
         public string? CategoryName { get; set; }
+        public int ? CategoryId { get; set; }
     }
 }

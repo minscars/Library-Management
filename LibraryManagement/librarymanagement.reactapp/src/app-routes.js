@@ -3,6 +3,7 @@ import React from "react";
 // Admin Imports
 import AdminHome from "views/admin/home";
 import AdminCategories from "views/admin/categories";
+import AdminCategoriesCreate from "views/admin/categories/create";
 
 import AdminBooks from "views/admin/books";
 import AdminBookCreate from "views/admin/books/create";
@@ -24,6 +25,7 @@ import UserRequest from "views/user/request";
 const routes = [
   { layout: "/admin", path: "home", component: <AdminHome />},
   { layout: "/admin", path: "categories", component: <AdminCategories />},
+  { layout: "/admin", path: "categories/create", component: <AdminCategoriesCreate />},
   { layout: "/admin", path: "books", component: <AdminBooks />},
   { layout: "/admin", path: "books/create", component: <AdminBookCreate />},
   { layout: "/admin", path: "books/edit/:id", component: <AdminBookEdit />},
