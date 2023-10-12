@@ -1,21 +1,21 @@
 import Swal from 'sweetalert2';
 
 const Alert = {
-  showSuccessAlert: (message) => {
+  showSuccessAlert: (message, action) => {
     Swal.fire({
         title: 'Successfully!',
         text: message,
         icon: 'success',
         confirmButtonText: 'OK'
-    })
+    }).then(action)
   },
-  showErrorAlert: (message) => {
+  showErrorAlert: (message, action) => {
     Swal.fire({
         title: 'Error!',
         text: message,
         icon: 'error',
         confirmButtonText: 'OK'
-    })
+    }).then(action)
   },
   showConformAlerrt: () =>{
     Swal.fire({

@@ -13,15 +13,7 @@ namespace LibraryManagement.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.Property(x => x.Id).IsRequired();
-            builder.Property(x => x.Name).IsRequired().HasMaxLength(30);
-            builder.Property(x => x.Phone).IsRequired().HasMaxLength(10);
-            builder.Property(x => x.Email).IsRequired();
-            builder.Property(x => x.Address).IsRequired();
-            builder.Property(x => x.Avatar).HasDefaultValue("default.png");
-            builder.Property(x => x.Password).IsRequired();
-            builder.Property(x => x.RegisteredDate).HasDefaultValue(DateTime.Now);
-            builder.Property(x => x.UpdatedDate).HasDefaultValue(DateTime.Now);
+            
         }
     }
 }

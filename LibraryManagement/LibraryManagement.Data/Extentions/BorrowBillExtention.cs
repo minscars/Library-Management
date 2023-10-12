@@ -12,13 +12,7 @@ namespace LibraryManagement.Data.Extentions
     {
         public static void FillDataBorrowBill(this ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<BorrowBill>().HasData(
-            new BorrowBill()
-            {
-                Id = 1,
-                UserId = 1,
-            }
-            );
+           
         }
     }
 }

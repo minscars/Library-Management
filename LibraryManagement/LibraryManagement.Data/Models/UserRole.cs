@@ -2,7 +2,7 @@
 
 namespace LibraryManagement.Data.Models
 {
-    public class User : IdentityUser<Guid>
+    public class UserRole : IdentityRole<Guid>
     {
     }
 }
