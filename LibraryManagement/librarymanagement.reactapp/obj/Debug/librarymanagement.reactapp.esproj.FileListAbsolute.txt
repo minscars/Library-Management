@@ -1,2 +1,0 @@
-D:\Sources\Library-Management\LibraryManagement\LibraryManagement.reactapp\obj\Debug\librarymanagement.reactapp.esproj.CoreCompileInputs.cache
-E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.reactapp\obj\Debug\librarymanagement.reactapp.esproj.CoreCompileInputs.cache
