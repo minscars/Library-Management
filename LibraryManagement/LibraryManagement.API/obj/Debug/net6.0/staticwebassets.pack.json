@@ -5,12 +5,20 @@
       "PackagePath": "staticwebassets\\images\\Books\\06910dc3-8217-4b50-97bd-faa5c4579403.jpg"
     },
     {
+      "Id": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\wwwroot\\images\\Books\\06aba220-3cbd-48a4-875b-e7ca11faddf1.jpg",
+      "PackagePath": "staticwebassets\\images\\Books\\06aba220-3cbd-48a4-875b-e7ca11faddf1.jpg"
+    },
+    {
       "Id": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\wwwroot\\images\\Books\\2ace0d5f-690b-4556-8fb3-996b0610cc69.png",
       "PackagePath": "staticwebassets\\images\\Books\\2ace0d5f-690b-4556-8fb3-996b0610cc69.png"
     },
     {
       "Id": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\wwwroot\\images\\Books\\2c3b0816-3957-4a37-a591-bc1dc5c332f7.png",
       "PackagePath": "staticwebassets\\images\\Books\\2c3b0816-3957-4a37-a591-bc1dc5c332f7.png"
+    },
+    {
+      "Id": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\wwwroot\\images\\Books\\2cbb37c0-8329-4070-af65-6f6ffffb32e6.jpg",
+      "PackagePath": "staticwebassets\\images\\Books\\2cbb37c0-8329-4070-af65-6f6ffffb32e6.jpg"
     },
     {
       "Id": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\wwwroot\\images\\Books\\45a456cf-a5ca-4eba-963d-ff635ff2029a.png",
@@ -37,6 +45,18 @@
       "PackagePath": "staticwebassets\\images\\Books\\7b896573-2228-4493-a2b0-6b67c206833f.jpg"
     },
     {
+      "Id": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\wwwroot\\images\\Books\\83f242d9-2361-409d-8076-39f0773e085b.jpg",
+      "PackagePath": "staticwebassets\\images\\Books\\83f242d9-2361-409d-8076-39f0773e085b.jpg"
+    },
+    {
+      "Id": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\wwwroot\\images\\Books\\8d812a37-a1ed-485a-9d91-c8635026ee74.jpg",
+      "PackagePath": "staticwebassets\\images\\Books\\8d812a37-a1ed-485a-9d91-c8635026ee74.jpg"
+    },
+    {
+      "Id": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\wwwroot\\images\\Books\\901681fe-c2bd-4fd3-bc01-779ffb4ad00b.jpg",
+      "PackagePath": "staticwebassets\\images\\Books\\901681fe-c2bd-4fd3-bc01-779ffb4ad00b.jpg"
+    },
+    {
       "Id": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\wwwroot\\images\\Books\\9b556f6c-2b31-45ba-8852-bbf54d13d7fa.webp",
       "PackagePath": "staticwebassets\\images\\Books\\9b556f6c-2b31-45ba-8852-bbf54d13d7fa.webp"
     },
@@ -53,18 +73,6 @@
       "PackagePath": "staticwebassets\\images\\Books\\Ngắm tuổi trẻ quay cuồng trong tỉnh lặng.jpg"
     },
     {
-      "Id": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\wwwroot\\images\\Books\\Quán ăn nơi góc hẻm.jpg",
-      "PackagePath": "staticwebassets\\images\\Books\\Quán ăn nơi góc hẻm.jpg"
-    },
-    {
-      "Id": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\wwwroot\\images\\Books\\Rồi một ngày cuộc sống hóa hư vô.jpg",
-      "PackagePath": "staticwebassets\\images\\Books\\Rồi một ngày cuộc sống hóa hư vô.jpg"
-    },
-    {
-      "Id": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\wwwroot\\images\\Books\\Tìm mình trong thế giới hậu tuổi thơ.jpg",
-      "PackagePath": "staticwebassets\\images\\Books\\Tìm mình trong thế giới hậu tuổi thơ.jpg"
-    },
-    {
       "Id": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\wwwroot\\images\\Books\\a4ebeff6-dfc5-45fb-ac07-75835e744d2d.jpg",
       "PackagePath": "staticwebassets\\images\\Books\\a4ebeff6-dfc5-45fb-ac07-75835e744d2d.jpg"
     },
@@ -77,12 +85,12 @@
       "PackagePath": "staticwebassets\\images\\Books\\f1789363-587c-4b00-8b83-5b4d37402d92.jpg"
     },
     {
-      "Id": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\wwwroot\\images\\Books\\f659e74d-9022-4b39-a60b-77b453ef01ea.png",
-      "PackagePath": "staticwebassets\\images\\Books\\f659e74d-9022-4b39-a60b-77b453ef01ea.png"
+      "Id": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\wwwroot\\images\\Books\\f2ec4c7c-0584-442a-8158-0e9db1438327.jpg",
+      "PackagePath": "staticwebassets\\images\\Books\\f2ec4c7c-0584-442a-8158-0e9db1438327.jpg"
     },
     {
-      "Id": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\wwwroot\\images\\Books\\Điều kỳ diệu của tiệm tạp hóa Namiya.jpg",
-      "PackagePath": "staticwebassets\\images\\Books\\Điều kỳ diệu của tiệm tạp hóa Namiya.jpg"
+      "Id": "D:\\Sources\\Library-Management\\LibraryManagement\\LibraryManagement.API\\wwwroot\\images\\Books\\f659e74d-9022-4b39-a60b-77b453ef01ea.png",
+      "PackagePath": "staticwebassets\\images\\Books\\f659e74d-9022-4b39-a60b-77b453ef01ea.png"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.LibraryManagement.API.Microsoft.AspNetCore.StaticWebAssets.props",

@@ -205,3 +205,8 @@ E:\Kha\Code\Library-Management\LibraryManagement\LibraryManagement.API\obj\Debug
 D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\LibraryManagement.API.staticwebassets.runtime.json
 D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\Utilities.dll
 D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\Utilities.pdb
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\Sources\Library-Management\LibraryManagement\LibraryManagement.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

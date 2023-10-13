@@ -76,7 +76,7 @@ namespace LibraryManagement.Application.Services
             {
                 Message = "Login successfully.",
                 StatusCode = 200
-            }; ;
+            }; 
         }                               
 
         private string CreateToken(IEnumerable<Claim> claims)

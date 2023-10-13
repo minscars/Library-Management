@@ -50,5 +50,16 @@ namespace LibraryManagement.Application.Services
                 return e.Message;
             }
         }
+
+        public async Task RemoveFileAsync(string path)
+        {
+            if (File.Exists(path))
+            {
+                await Task.Run(() =>
+                {
+                    File.Delete(path);
+                });
+            }
+        }
     }
 }

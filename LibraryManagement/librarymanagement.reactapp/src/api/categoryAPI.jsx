@@ -9,6 +9,9 @@ const categoryAPI ={
     },
     Delete: (id) => {
         return API.delete(`/Categories/${id}`);
+    },
+    Edit: (request) => {
+        return API.put("/Categories", request);
     }
 }
 

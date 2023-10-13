@@ -4,6 +4,7 @@ using LibraryManagement.Data.EF;
 using LibraryManagement.Data.Models;
 using LibraryManagement.DTO.Book;
 using LibraryManagement.DTO.Contants;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -17,13 +18,15 @@ namespace LibraryManagement.Application.Services
     public class BookService :IBookService
     {
         private readonly LibraryManagementDbContext _context;
-        private readonly IFileSerivce _fileSerivce;
+        private readonly IFileSerivce _fileServivce;
         private readonly IMapper _mapper;
-        public BookService(LibraryManagementDbContext context, IMapper mapper, IFileSerivce fileSerivce)
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        public BookService(LibraryManagementDbContext context, IMapper mapper, IFileSerivce fileSerivce, IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
             _mapper = mapper;
-            _fileSerivce = fileSerivce;
+            _fileServivce = fileSerivce;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         public async Task<ApiResult<List<BookDTO>>> GetAllAsync()
@@ -100,7 +103,7 @@ namespace LibraryManagement.Application.Services
                 };
             }
 
-            var imageName = await _fileSerivce.UploadFileAsync(request.Image, SystemConstant.IMG_BOOKS_FOLDER);
+            var imageName = await _fileServivce.UploadFileAsync(request.Image, SystemConstant.IMG_BOOKS_FOLDER);
 
             var book = new Book()
             {
@@ -159,19 +162,23 @@ namespace LibraryManagement.Application.Services
                     StatusCode = 404
                 };
             }
+
             if(request.Image == null) 
             {
                 book.Image = book.Image;
             }
             else
             {
-                var imageName = await _fileSerivce.UploadFileAsync(request.Image, SystemConstant.IMG_BOOKS_FOLDER);
+                string path = Path.Combine(_webHostEnvironment.WebRootPath, SystemConstant.IMG_BOOKS_FOLDER, book.Image);
+                await _fileServivce.RemoveFileAsync(path);
+                var imageName = await _fileServivce.UploadFileAsync(request.Image, SystemConstant.IMG_BOOKS_FOLDER);
                 book.Image = imageName;
-
             }
+
             book.Name = request.Name;
             book.CategoryId = request.CategoryId;
             book.UpdatedTime = DateTime.Now;
+
             await _context.SaveChangesAsync();
             return new ApiResult<bool>(true)
             {

@@ -80,7 +80,7 @@ namespace LibraryManagement.API.Controllers
             {
                 return BadRequest(result.Message);
             }
-            return Ok(result.Message);
+            return Ok(result); 
         }
 
         [HttpDelete("{Id}")]

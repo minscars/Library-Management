@@ -12,6 +12,9 @@ const bookAPI ={
     },
     Delete: (id) => {
         return API.delete(`/Books/${id}`);
+    },
+    Edit: (request) => {
+        return APIFile.put("/Books", request);
     }
 
 }

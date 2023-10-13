@@ -10,8 +10,8 @@ namespace LibraryManagement.DTO.Book
     public class EditBookDTO
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public IFormFile Image { get; set; }
+        public string? Name { get; set; }
+        public IFormFile? Image { get; set; }
         public int CategoryId { get; set; }
     }
 }

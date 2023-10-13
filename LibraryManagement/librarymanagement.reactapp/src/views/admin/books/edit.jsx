@@ -4,6 +4,7 @@ import cateApi from "../../../api/categoryAPI"
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form"
 import bookApi from "../../../api/bookAPI"
+
 import Alert from "components/alert";
 import {useNavigate, useParams} from "react-router-dom";
 
@@ -22,7 +23,7 @@ export function Update() {
       const data = await bookApi.GetById(id);
       setBook(data);
     }
-    getbyid()
+    getbyid();
     getall();
   },[])
 
@@ -34,16 +35,28 @@ export function Update() {
       setImageUploadFile(event.target.files[0]);
   };
 
-  const addBook = async (content) => {
+  const editBook = async (content) => {
+    content.Id = id;
     const formData = new FormData();
-    //content.image = imageUploadFile
+    formData.append("Id", content.Id);
     formData.append("Name", content.name);
     formData.append("CategoryId", content.categoryid);
     formData.append("Image", imageUploadFile);
+    alert()
     console.log(formData)
-    await bookApi.Create(formData);
-    Alert.showSuccessAlert('Add your book sucessfully!')
-    navigate('/admin/books');
+
+    var result = await bookApi.Edit(formData);
+
+    if(result.statusCode === 200){
+      Alert.showSuccessAlert(result.message, navigate('/admin/books'))
+    }
+    else{
+      Alert.showErrorAlert(result.message);
+    }
+                
+
+    // Alert.showSuccessAlert('Edit your book sucessfully!')
+    //navigate('/admin/books');
   }
   return (
       <div className="mt-5 gap-5 xl:grid-cols-2">
@@ -54,14 +67,14 @@ export function Update() {
             </div>
           </div>
           <div className="flex justify-center w-full h-full mt-8 overflow-x-scroll xl:overflow-hidden">
-            <form onSubmit={handleSubmit(addBook)} enctype="multipart/form-data" className="mb-2 w-80 max-w-screen-lg sm:w-96" method="post">
+            <form onSubmit={handleSubmit(editBook)} enctype="multipart/form-data" className="mb-2 w-80 max-w-screen-lg sm:w-96" method="post">
               <div className="mb-4 flex flex-col gap-6">
 
                 <div>
                   <label for="name" class="text-m text-navy-700 dark:text-white">Name</label>
                   <input
                     className={`mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none`}
-                  {...register("name")} autoFocus required defaultValue={book.name} extra=""  label="Book name" placeholder=""  id="name" type="text"/>
+                  {...register("name")} autoFocus defaultValue={book.name} extra=""  label="Book name" placeholder=""  id="name" type="text"/>
                 </div>
 
                 <div>
@@ -75,7 +88,7 @@ export function Update() {
                 <div>
                   <label for="categories" class="mb-5 text-m text-navy-700 dark:text-white">Category</label>
                   <select {...register("categoryid")}  id="categories" class="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none">
-                    <option selected>{book.categoryName}</option>
+                    <option>Choose a category</option>
                     {catesList.map((row, key) => {
                       return(
                         <option value={row.id}>{row.name}</option>
