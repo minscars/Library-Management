@@ -27,7 +27,6 @@ export function Update() {
     getall();
   },[])
 
-
   const { register, handleSubmit } = useForm();
 
   const [imageUploadFile, setImageUploadFile] = useState(null);
@@ -42,22 +41,21 @@ export function Update() {
     formData.append("Name", content.name);
     formData.append("CategoryId", content.categoryid);
     formData.append("Image", imageUploadFile);
-    alert()
-    console.log(formData)
-
-    var result = await bookApi.Edit(formData);
-
-    if(result.statusCode === 200){
-      Alert.showSuccessAlert(result.message, navigate('/admin/books'))
+    await bookApi.Edit(formData).then((response) => {
+          if(response.statusCode === 200){
+      Alert.showSuccessAlert(response.message, navigate('/admin/books'))
     }
     else{
-      Alert.showErrorAlert(result.message);
+      Alert.showErrorAlert(response.message);
     }
+    })
+
                 
 
     // Alert.showSuccessAlert('Edit your book sucessfully!')
     //navigate('/admin/books');
   }
+  
   return (
       <div className="mt-5 gap-5 xl:grid-cols-2">
         <Card extra={"w-full h-full px-6 pb-6 sm:overflow-x-auto"}>
@@ -87,7 +85,7 @@ export function Update() {
 
                 <div>
                   <label for="categories" class="mb-5 text-m text-navy-700 dark:text-white">Category</label>
-                  <select {...register("categoryid")}  id="categories" class="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none">
+                  <select required {...register("categoryid")}  id="categories" class="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none">
                     <option>Choose a category</option>
                     {catesList.map((row, key) => {
                       return(

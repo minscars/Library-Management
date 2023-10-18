@@ -186,5 +186,37 @@ namespace LibraryManagement.Application.Services
                 StatusCode = 200
             };
         }
+
+        public async Task<ApiResult<List<BookDTO>>> FindByKeyAsync(string key)
+        {
+            if (key==null)
+            {
+                return new ApiResult<List<BookDTO>>(null)
+                {
+                    Message = "Something went wrong!",
+                    StatusCode = 400
+                };
+            }
+            var bookList = await _context.Books
+                .Include(b => b.Category)
+                .Where(b => b.Name.Contains(key) && b.IsDeleted == false)
+                .Select(b => _mapper.Map<BookDTO>(b)).ToListAsync();
+
+            //if (bookList.Count < 1)
+            //{
+            //    return new ApiResult<List<BookDTO>>(null)
+            //    {
+            //        Message = "Something went wrong!",
+            //        StatusCode = 400
+            //    };
+            //}
+            return new ApiResult<List<BookDTO>>(bookList)
+            {
+                Message = "",
+                StatusCode = 200
+            };
+
+        }
+
     }
 }

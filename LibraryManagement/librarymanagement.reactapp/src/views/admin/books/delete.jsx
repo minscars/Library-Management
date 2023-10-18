@@ -9,7 +9,7 @@ export function Delete(){
     const navigate = useNavigate();
     const deleteBook = async () => {
         await bookApi.Delete(id);
-        navigate('/admin/books');
+        //navigate('/admin/books');
     }
     Swal.fire({
         title: 'Are you sure?',

@@ -29,16 +29,24 @@ namespace LibraryManagement.API.Controllers
             return BadRequest(result.Message);
         }
 
+        [HttpGet("{Id}")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetById([FromRoute] int Id)
+        {
+            var result = await _categoryService.GetByIdAsync(Id);
+            if (result.StatusCode == 200)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        }
+
         [HttpPost()]
         [AllowAnonymous]
         public async Task<IActionResult> Create([FromForm] CreateCategoryDTO request)
         {
             var result = await _categoryService.CreateAsync(request);
-            if (result.StatusCode == 400)
-            {
-                return BadRequest(result.Message);
-            }
-            return Ok(result.Message);
+            return Ok(result);
         }
 
         [HttpPut()]
@@ -46,11 +54,7 @@ namespace LibraryManagement.API.Controllers
         public async Task<IActionResult> Edit([FromForm] EditCategoryDTO request)
         {
             var result = await _categoryService.EditAsync(request);
-            if (result.StatusCode == 400)
-            {
-                return BadRequest(result.Message);
-            }
-            return Ok(result.Message);
+            return Ok(result);
         }
 
         [HttpDelete("{Id}")]
@@ -58,11 +62,7 @@ namespace LibraryManagement.API.Controllers
         public async Task<IActionResult> Delete([FromRoute] int Id)
         {
             var result = await _categoryService.DeleteAsync(Id);
-            if (result.StatusCode == 400)
-            {
-                return BadRequest(result.Message);
-            }
-            return Ok(result.Message);
+            return Ok(result);
         }
     }
 }

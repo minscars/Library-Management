@@ -44,6 +44,27 @@ namespace LibraryManagement.Application.Services
                 StatusCode = 200
             };
         }
+
+        public async Task<ApiResult<CategoryDTO>> GetByIdAsync(int id)
+        {
+            var cate = await _context.Categories
+                .Where(b => b.IsDeleted == false && b.Id == id)
+                .Select(b => _mapper.Map<CategoryDTO>(b)).FirstOrDefaultAsync();
+            if (cate == null)
+            {
+                return new ApiResult<CategoryDTO>(null)
+                {
+                    Message = $"Couldn't find the room with id: {id}",
+                    StatusCode = 400
+                };
+            }
+            return new ApiResult<CategoryDTO>(_mapper.Map<CategoryDTO>(cate))
+            {
+                Message = "",
+                StatusCode = 200
+            };
+        }
+
         public async Task<ApiResult<bool>> CreateAsync(CreateCategoryDTO request)
         {
             if (request == null)

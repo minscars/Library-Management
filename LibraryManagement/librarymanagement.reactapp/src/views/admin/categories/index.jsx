@@ -54,10 +54,10 @@ const Index = () => {
                         <p className="text-sm font-bold text-navy-700 dark:text-white">{row.name}</p>
                       </td>
                       <td className="flex items-center gap-2 pt-[14px] pb-[18px] sm:text-[14px]">
-                          <Link>
+                          <Link to={`./edit/${row.id}`}>
                             <MdModeEditOutline className="rounded-full text-xl"/>
                           </Link>
-                          <Link >
+                          <Link to={`./delete/${row.id}`}>
                             <MdCancel className="text-red-500 rounded-full text-xl" /> 
                           </Link>
                       </td> 

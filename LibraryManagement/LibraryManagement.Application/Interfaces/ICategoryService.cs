@@ -12,6 +12,7 @@ namespace LibraryManagement.Application.Interfaces
     public interface ICategoryService
     {
         public Task<ApiResult<List<CategoryDTO>>> GetAllAsync();
+        public Task<ApiResult<CategoryDTO>> GetByIdAsync(int id);
         public Task<ApiResult<bool>> CreateAsync(CreateCategoryDTO request);
         public Task<ApiResult<bool>> EditAsync(EditCategoryDTO request);
         public Task<ApiResult<bool>> DeleteAsync(int Id);

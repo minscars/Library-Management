@@ -15,7 +15,7 @@ namespace LibraryManagement.Application.Mapping
         public MappingProfile()
         {
             // Book Mapping
-            CreateMap<Book, BookDTO>()
+            CreateMap<Book, BookDTO>()  
                 .ForMember(dto => dto.CategoryName, opt => opt.MapFrom(b => b.Category.Name));
             CreateMap<CreateBookDTO, Book>();
 

@@ -95,6 +95,17 @@ namespace LibraryManagement.API.Controllers
             return Ok(result.Message);
         }
 
-
+        [HttpGet("Search/{Key}")]
+        [AllowAnonymous]
+        public async Task<IActionResult> FindByKey([FromRoute] string Key)
+        {
+            var result = await _bookService.FindByKeyAsync(Key);
+            if (result.StatusCode == 200)
+            {
+                result.Data.ForEach(s => s.Image = setImageName(s.Image));
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        }
     }
 }

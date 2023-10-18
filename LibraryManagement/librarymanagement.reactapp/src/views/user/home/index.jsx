@@ -1,11 +1,6 @@
 import Banner from "./components/Banner";
-import NFt4 from "assets/img/nfts/book3.jpg";
-import NFt5 from "assets/img/nfts/book2.jpg";
-import NFt6 from "assets/img/nfts/book3.jpg";
-import avatar1 from "assets/img/avatars/avatar1.png";
-import avatar2 from "assets/img/avatars/avatar2.png";
-import avatar3 from "assets/img/avatars/avatar3.png";
-
+import { Link } from "react-router-dom";
+import BookCard from "components/card/BookCard";
 import tableDataTopCreators from "views/admin/home/variables/tableDataTopCreators.json";
 import { tableColumnsTopCreators } from "views/admin/home/variables/tableColumnsTopCreators";
 import HistoryCard from "./components/HistoryCard";
@@ -42,47 +37,16 @@ const Marketplace = () => {
         <div className="z-20 grid grid-cols-1 gap-5 md:grid-cols-3">
 
           {booksList?.map((row, key) => (
-            <NftCard
-              bidders={[avatar1, avatar2, avatar3]}
+            <Link to={`/user/books/detail/${row.id}`}>
+            <BookCard
               title={row.name}
               author="Esthera Jackson"
-              price="0.91"
+              cate={row.categoryName}
               image={row.image}
+              link={"/user/home"}
             />
+          </Link>
           ))};
-        </div>
-
-
-        {/* Recenlty Added setion */}
-        <div className="mb-5 mt-5 flex items-center justify-between px-[26px]">
-          <h4 className="text-2xl font-bold text-navy-700 dark:text-white">
-            Recently Added
-          </h4>
-        </div>
-
-        {/* Recently Add NFTs */}
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-          <NftCard
-            bidders={[avatar1, avatar2, avatar3]}
-            title="Abstract Colors"
-            author="Esthera Jackson"
-            price="0.91"
-            image={NFt4}
-          />
-          <NftCard
-            bidders={[avatar1, avatar2, avatar3]}
-            title="ETH AI Brain"
-            author="Nick Wilson"
-            price="0.7"
-            image={NFt5}
-          />
-          <NftCard
-            bidders={[avatar1, avatar2, avatar3]}
-            title="Mesh Gradients"
-            author="Will Smith"
-            price="2.91"
-            image={NFt6}
-          />
         </div>
       </div>
 
