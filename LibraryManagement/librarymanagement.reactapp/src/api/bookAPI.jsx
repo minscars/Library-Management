@@ -10,6 +10,9 @@ const bookAPI ={
     GetByCateId: (cateId) => {
         return API.get(`Books/Category/${cateId}`)
     },
+    Search: (key) =>{
+        return API.get(`Books/Search/${key}`)
+    },
     Create: (request) => {
         return APIFile.post("/Books", request);
     },

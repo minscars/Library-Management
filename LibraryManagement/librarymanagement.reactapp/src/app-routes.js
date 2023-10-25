@@ -26,6 +26,7 @@ import UserRequest from "views/user/request";
 import UserBooks from "views/user/books";
 import UserBooksByCate from "views/user/books/bookbycate";
 import UserBooksDetail from "views/user/books/detail";
+import UserBooksSearch from "views/user/books/booksearch";  
 
 
 const routes = [
@@ -53,6 +54,8 @@ const routes = [
   { layout: "/user", path: "books", component: <UserBooks />},
   { layout: "/user", path: "books/bookbycate/:id", component: <UserBooksByCate />},
   { layout: "/user", path: "books/detail/:id", component: <UserBooksDetail />},
+  { layout: "/user", path: "books/booksearch/:key", component: <UserBooksSearch />},
+  { layout: "/user", path: "books/booksearch", component: <UserBooksSearch />},
 ];
 
 export default routes;

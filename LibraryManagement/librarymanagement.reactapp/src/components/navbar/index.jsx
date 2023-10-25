@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Dropdown from "components/dropdown";
 import { FiAlignJustify } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import navbarimage from "assets/img/layout/Navbar.png";
 import { BsArrowBarUp } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
@@ -13,8 +13,20 @@ import {
 import avatar from "assets/img/avatars/avatar4.png";
 
 const Navbar = (props) => {
+  const navigate = useNavigate();
   const { onOpenSidenav, brandText } = props;
   const [darkmode, setDarkmode] = React.useState(false);
+  const [searchText, setSearchText] = React.useState('');
+  
+  const handleSearch = (e) => {
+    setSearchText(e);
+  }
+
+  useEffect(()=>{
+    if(searchText !==''){
+      navigate("/user/books/booksearch?key=" + searchText);
+    }
+  },[searchText])
 
   return (
     <nav className="sticky top-4 z-40 flex flex-row flex-wrap items-center justify-between rounded-xl bg-white/10 p-2 backdrop-blur-xl dark:bg-[#0b14374d]">
@@ -52,12 +64,13 @@ const Navbar = (props) => {
           <p className="pl-3 pr-2 text-xl">
             <FiSearch className="h-4 w-4 text-gray-400 dark:text-white" />
           </p>
-          <input
-            type="text"
-            placeholder="Search..."
-            class="block h-full w-full rounded-full bg-lightPrimary text-sm font-medium text-navy-700 outline-none placeholder:!text-gray-400 dark:bg-navy-900 dark:text-white dark:placeholder:!text-white sm:w-fit"
-          />
-        </div>
+            <input
+              onChange={(e) => handleSearch(e.target.value)}
+              type="text"
+              placeholder="Search..."
+              class="block h-full w-full rounded-full bg-lightPrimary text-sm font-medium text-navy-700 outline-none placeholder:!text-gray-400 dark:bg-navy-900 dark:text-white dark:placeholder:!text-white sm:w-fit"
+            />
+          </div>
         <span
           className="flex cursor-pointer text-xl text-gray-600 dark:text-white xl:hidden"
           onClick={onOpenSidenav}

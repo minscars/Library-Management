@@ -5,7 +5,6 @@ import tableDataTopCreators from "views/admin/home/variables/tableDataTopCreator
 import { tableColumnsTopCreators } from "views/admin/home/variables/tableColumnsTopCreators";
 import HistoryCard from "./components/HistoryCard";
 import TopCreatorTable from "./components/TableTopCreators";
-import NftCard from "components/card/NftCard";
 import { useEffect, useState } from "react";
 import bookApi from "../../../api/bookAPI"
 

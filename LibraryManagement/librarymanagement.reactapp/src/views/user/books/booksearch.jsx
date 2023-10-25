@@ -1,15 +1,17 @@
 import BookCard from "components/card/BookCard";
-import {useParams} from "react-router-dom";
+import {Navigate, useParams, useSearchParams} from "react-router-dom";
 import { useEffect, useState } from "react";
 import bookApi from "../../../api/bookAPI"
 import cateApi from "../../../api/categoryAPI"
 import { Link } from "react-router-dom";
 
-const Marketplace = () => {
+const Search = () => {
   const {id} = useParams();
-  //const {id} = useState(useParams());
   const [booksList, setBooks] = useState([]);
+  //const [booksSearch, setBooksSearch] = useState([])
   const [catesList, setCate] = useState([]);
+  const [searchParams] = useSearchParams();
+
   useEffect(()=>{
     const getbyidcate = async ()=>{
       const data = await bookApi.GetByCateId(id);
@@ -22,6 +24,15 @@ const Marketplace = () => {
     getallCate()
     getbyidcate();
   },[id])
+  
+  useEffect(()=>{
+    const search = async () => {
+        const data = await bookApi.Search(searchParams.get('key'));
+        setBooks(data)
+    }
+    search();
+  })
+  
   
   return (
     //<div className="mt-3 grid h-full grid-cols-1 gap-5 xl:grid-cols-2 2xl:grid-cols-3">
@@ -60,4 +71,4 @@ const Marketplace = () => {
   );
 };
 
-export default Marketplace;
+export default Search;
