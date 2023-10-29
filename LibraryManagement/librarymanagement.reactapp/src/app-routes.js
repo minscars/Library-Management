@@ -21,6 +21,7 @@ import SignIn from "views/auth/SignIn";
 //User Imports
 import UserHome from "views/user/home";
 import UserRequest from "views/user/request";
+import UserOpenRequest from "views/user/request/open";
 
 const routes = [
   { layout: "/admin", path: "home", component: <AdminHome />},
@@ -39,6 +40,7 @@ const routes = [
 
   { layout: "/user", path: "home", component: <UserHome />},
   { layout: "/user", path: "request", component: <UserRequest />},
+  { layout: "/user", path: "request/open", component: <UserOpenRequest />},
 ];
 
 export default routes;
