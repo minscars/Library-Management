@@ -11,6 +11,7 @@ import AdminBooks from "views/admin/books";
 import AdminBookCreate from "views/admin/books/create";
 import AdminBookEdit from "views/admin/books/edit";
 import AdminBookDelete from "views/admin/books/delete";
+import AdminBookDetail from "views/admin/books/detail";
 
 import AdminBorrowAndReturn from "views/admin/borrowreturn";
 import AdminProfile from "views/admin/profile";
@@ -27,7 +28,7 @@ import UserBooks from "views/user/books";
 import UserBooksByCate from "views/user/books/bookbycate";
 import UserBooksDetail from "views/user/books/detail";
 import UserBooksSearch from "views/user/books/booksearch";  
-
+import UserOpenRequest from "views/user/request/open";
 
 const routes = [
   { layout: "/admin", path: "home", component: <AdminHome />},
@@ -41,6 +42,7 @@ const routes = [
   { layout: "/admin", path: "books/create", component: <AdminBookCreate />},
   { layout: "/admin", path: "books/edit/:id", component: <AdminBookEdit />},
   { layout: "/admin", path: "books/delete/:id", component: <AdminBookDelete />},
+  { layout: "/admin", path: "books/detail/:id", component: <AdminBookDetail />},
 
   { layout: "/admin", path: "borrow-and-return", component: <AdminBorrowAndReturn />},
   { layout: "/admin", path: "data-tables", component: <AdminDataTables />},
@@ -56,6 +58,7 @@ const routes = [
   { layout: "/user", path: "books/detail/:id", component: <UserBooksDetail />},
   { layout: "/user", path: "books/booksearch/:key", component: <UserBooksSearch />},
   { layout: "/user", path: "books/booksearch", component: <UserBooksSearch />},
+  { layout: "/user", path: "request/open", component: <UserOpenRequest />},
 ];
 
 export default routes;

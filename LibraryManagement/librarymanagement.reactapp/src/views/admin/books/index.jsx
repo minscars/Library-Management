@@ -30,17 +30,24 @@ const Index = () => {
           <div class="mt-8 overflow-x-scroll xl:overflow-hidden">
             <table className="w-full">
               <thead>
+              
                   <tr>
                       <th className="border-b border-gray-200 pr-28 pb-[10px] text-start dark:!border-navy-700">
-                        <p className="text-xs tracking-wide text-gray-600">#</p>
+                        <p className="text-xs items-center tracking-wide text-gray-600">#</p>
                       </th>
                       <th className="border-b border-gray-200 pr-28 pb-[10px] text-start dark:!border-navy-700">
-                        <p className="text-xs tracking-wide text-gray-600">NAME</p>
+                        <p className="text-xs ml-10 tracking-wide text-gray-600">NAME</p>
                       </th>
                       <th className="border-b border-gray-200 pr-28 pb-[10px] text-start dark:!border-navy-700">
                         <p className="text-xs tracking-wide text-gray-600">CATEGORY</p>
                       </th>
-                      <th colSpan="3" className="border-b border-gray-200 pr-28 pb-[10px] text-start dark:!border-navy-700">
+                      <th className="border-b border-gray-200 pr-28 pb-[10px] text-start dark:!border-navy-700">
+                        <p className="text-xs tracking-wide text-gray-600">ON HAND</p>
+                      </th>
+                      <th className="border-b border-gray-200 pr-28 pb-[10px] text-start dark:!border-navy-700">
+                        <p className="text-xs tracking-wide text-gray-600">BORROWED</p>
+                      </th>
+                      <th colSpa="3" className="border-b border-gray-200 pr-28 pb-[10px] text-start dark:!border-navy-700">
                         <p className="text-xs tracking-wide text-gray-600">ACTION</p>
                       </th>
                   </tr>
@@ -48,15 +55,31 @@ const Index = () => {
               <tbody>
                 {booksList?.map((row, key) => (
                     <tr key={row.id}>
-                      <td className="items-center flex justify-between pt-[14px] pb-[18px] sm:text-[15px]">
-                        <p className="ml-4 text-sm font-bold text-navy-700 dark:text-white">{row.id}</p>
-                        <img src={row.image} alt="" className="mr-6 flex h-16 w-16 items-center justify-center rounded-xl"/>
+                      <td className="mr-10 items-center flex justify-between pt-[14px] pb-[18px] sm:text-[15px]">
+                        
+                          <p className="ml-4 mr-10 text-sm font-bold text-navy-700 dark:text-white">{row.id}</p>
+                          <img src={row.image} alt="" className=" flex h-16 w-16 items-center justify-center rounded-xl"/>
+                        
                       </td>
-                      <td className="items-center pt-[14px] pb-[18px] sm:text-[15px]">
-                        <p className="text-sm font-bold text-navy-700 dark:text-white">{row.name}</p>
+                      <td className="ml-10 items-center pt-[14px] pb-[18px] sm:text-[15px]">
+                        <div className="w-[200px] mr-20 ml-10">
+                        <Link to={`/admin/books/detail/${row.id}`}>
+                          <p className="text-sm font-bold text-navy-700 dark:text-white">{row.name}</p>
+                        </Link>
+                        </div>
                       </td>
                       <td className="pt-[14px] pb-[18px] sm:text-[15px]">
-                        <p className="text-sm font-bold text-navy-700 dark:text-white">{row.categoryName}</p>
+                        <div className="w-[80px]">
+                          <p className="text-sm font-bold text-navy-700 dark:text-white">{row.categoryName}</p>
+                        </div>
+                      </td>
+                      <td className="pt-[14px] pb-[18px] sm:text-[15px]">
+                        <div className="w-[40px]">
+                          <p className="text-sm font-bold text-navy-700 dark:text-white">{row.quantity_On_Hand}</p>
+                        </div>
+                      </td>
+                      <td className="pt-[14px] pb-[18px] sm:text-[15px]">
+                        <p className="text-sm font-bold text-navy-700 dark:text-white">{row.quantity_Borrowed}</p>
                       </td>
                       <td className="flex items-center gap-2 pt-[14px] pb-[18px] sm:text-[14px]">
                           <Link to={`./edit/${row.id}`}>
