@@ -9,10 +9,11 @@ namespace LibraryManagement.Data.Models
     public class BorrowBill
     {
         public int Id { get; set; }
-        public string UserId { get; set; }
+        public Guid UserId { get; set; }
         public DateTime? BorrowTime { get; set; }
         public DateTime? DueTime { get; set; }
         public User User { get; set; }
+        public int Status { get; set; }
         public bool IsDeleted { get; set; }
         public virtual List<BorrowBillDetail> BorrowBillDetail { get; set; }
     }

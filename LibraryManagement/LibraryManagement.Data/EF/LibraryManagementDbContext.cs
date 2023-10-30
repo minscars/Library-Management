@@ -14,6 +14,7 @@ namespace LibraryManagement.Data.EF
         public DbSet<BorrowBill> BorrowBills { get; set; }
         public DbSet<BorrowBillDetail> BorrowBillDetails { get; set; }
         public DbSet<User> AppUsers { set; get; }
+        public DbSet<Request> Requests { set; get; }
         public DbSet<UserRole> UserRoles { set; get; }
         public LibraryManagementDbContext(DbContextOptions<LibraryManagementDbContext> options) : base(options)
         {
@@ -26,13 +27,15 @@ namespace LibraryManagement.Data.EF
                         .ApplyConfiguration(new UserConfig())
                         .ApplyConfiguration(new CategoryConfig())
                         .ApplyConfiguration(new BorrowBillConfig())
-                        .ApplyConfiguration(new BorrowBillDetailConfig());
-
+                        .ApplyConfiguration(new BorrowBillDetailConfig())
+                        .ApplyConfiguration(new RequestConfig());
 
             modelBuilder.FillDataBook();
             modelBuilder.FillDataCategory();
             modelBuilder.FillDataBorrowBill();
             modelBuilder.FillDataBorrowBillDetail();
+            modelBuilder.FillDataRequest();
+            modelBuilder.FillDataUser();
             //modelBuilder.FillDataUser();
 
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())

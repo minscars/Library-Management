@@ -15,6 +15,10 @@ namespace LibraryManagement.Data.Configurations
         {
             builder.Property(x => x.Id).IsRequired();
             builder.Property(x => x.Name).IsRequired();
+            builder.Property(x => x.Quantity_Import).HasDefaultValue(100);
+            builder.Property(x => x.Quantity_Export).HasDefaultValue(0);
+            builder.Property(x => x.Quantity_On_Hand).HasDefaultValue(100);
+            builder.Property(x => x.Quantity_Borrowed).HasDefaultValue(0);
             builder.Property(x => x.CategoryId).IsRequired();
             builder.Property(x => x.IsDeleted).HasDefaultValue(false);
             builder.Property(x => x.CreatedTime).HasDefaultValue(DateTime.Now);

@@ -13,22 +13,32 @@ namespace LibraryManagement.Data.Extentions
         public static void FillDataCategory(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>().HasData(
-            new Category()
-            {
-                Id = 1,
-                Name = "Tiểu thuyết"
-            },
+                new Category()
+                {
+                    Id = 1,
+                    Name = "Tiểu thuyết"
+                },
 
-            new Category()
-            {
-                Id = 2,
-                Name = "Sách tâm lý"
-            },
-            new Category()
-            {
-                Id = 3,
-                Name = "Truyện tranh"
-            }
+                new Category()
+                {
+                    Id = 2,
+                    Name = "Sách tâm lý"
+                },
+                new Category()
+                {
+                    Id = 3,
+                    Name = "Sách khoa học"
+                },
+                new Category()
+                {
+                    Id = 4,
+                    Name = "Từ điển"
+                },
+                new Category()
+                {
+                    Id = 5,
+                    Name = "Sách văn học"
+                }
             );
         }
     }
