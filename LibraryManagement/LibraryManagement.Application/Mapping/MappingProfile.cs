@@ -2,6 +2,7 @@
 using LibraryManagement.Data.Models;
 using LibraryManagement.DTO.Book;
 using LibraryManagement.DTO.Category;
+using LibraryManagement.DTO.Request;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,11 @@ namespace LibraryManagement.Application.Mapping
 
             //Category Mapping
             CreateMap<Category, CategoryDTO>().ReverseMap();
+
+            //Request Mapping
+            CreateMap<Request, RequestDTO>()
+                .ForMember(dto => dto.BookName, opt => opt.MapFrom(b => b.Book.Name))
+                .ForMember(dto => dto.BookImage, opt => opt.MapFrom(b => b.Book.Image));
         }
     }
 }
