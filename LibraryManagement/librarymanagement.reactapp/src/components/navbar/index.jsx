@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Dropdown from "components/dropdown";
 import { FiAlignJustify } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
@@ -10,23 +10,33 @@ import {
   IoMdNotificationsOutline,
   IoMdInformationCircleOutline,
 } from "react-icons/io";
-import avatar from "assets/img/avatars/avatar4.png";
+import userAPI from "api/userApi";
+import jwt from "jwt-decode";
 
 const Navbar = (props) => {
   const navigate = useNavigate();
   const { onOpenSidenav, brandText } = props;
   const [darkmode, setDarkmode] = React.useState(false);
-  const [searchText, setSearchText] = React.useState('');
-  
-  const handleSearch = (e) => {
-    setSearchText(e);
-  }
+  const [searchText, setSearchText] = React.useState("");
+  const [user, setUser] = useState(null);
+  const userLogin = jwt(window.localStorage.getItem("token"));
 
-  useEffect(()=>{
-    if(searchText !==''){
-      navigate("/user/books/booksearch?key=" + searchText);
+  useEffect(() => {
+    const getUser = async () => {
+      const user = await userAPI.GetUserById(userLogin.id);
+      setUser(user);
+    };
+    getUser();
+  }, []);
+
+  async function handleSearch(e) {
+    e.preventDefault();
+    if (searchText != "") {
+      window.location.pathname.includes("admin")
+        ? navigate("/admin/books/booksearch?key=" + searchText)
+        : navigate("/user/books/booksearch?key=" + searchText);
     }
-  },[searchText])
+  }
 
   return (
     <nav className="sticky top-4 z-40 flex flex-row flex-wrap items-center justify-between rounded-xl bg-white/10 p-2 backdrop-blur-xl dark:bg-[#0b14374d]">
@@ -64,13 +74,16 @@ const Navbar = (props) => {
           <p className="pl-3 pr-2 text-xl">
             <FiSearch className="h-4 w-4 text-gray-400 dark:text-white" />
           </p>
+          <form onSubmit={(e) => handleSearch(e)}>
             <input
-              onChange={(e) => handleSearch(e.target.value)}
+              onChange={(e) => setSearchText(e.target.value)}
               type="text"
               placeholder="Search..."
               class="block h-full w-full rounded-full bg-lightPrimary text-sm font-medium text-navy-700 outline-none placeholder:!text-gray-400 dark:bg-navy-900 dark:text-white dark:placeholder:!text-white sm:w-fit"
+              value={searchText}
             />
-          </div>
+          </form>
+        </div>
         <span
           className="flex cursor-pointer text-xl text-gray-600 dark:text-white xl:hidden"
           onClick={onOpenSidenav}
@@ -193,7 +206,7 @@ const Navbar = (props) => {
           button={
             <img
               className="h-10 w-10 rounded-full"
-              src={avatar}
+              src={user?.avatar}
               alt="Elon Musk"
             />
           }
@@ -202,7 +215,7 @@ const Navbar = (props) => {
               <div className="p-4">
                 <div className="flex items-center gap-2">
                   <p className="text-sm font-bold text-navy-700 dark:text-white">
-                    👋 Hey, Adela
+                    👋 Hey, {user?.name}
                   </p>{" "}
                 </div>
               </div>

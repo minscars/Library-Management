@@ -79,7 +79,7 @@ namespace LibraryManagement.Application.Services
             var category = new Category()
             {
                 Name = request.Name,
-                CreatedTime = DateTime.Now
+                CreatedDate = DateTime.Now
             };
             await _context.Categories.AddAsync(category);
             await _context.SaveChangesAsync();
@@ -113,7 +113,7 @@ namespace LibraryManagement.Application.Services
                 };
             }
             category.Name = request.Name;
-            category.UpdatedTime = DateTime.Now;
+            category.UpdatedDate = DateTime.Now;
             await _context.SaveChangesAsync();
             return new ApiResult<bool>(true)
             {

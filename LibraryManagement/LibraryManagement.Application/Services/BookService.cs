@@ -34,6 +34,7 @@ namespace LibraryManagement.Application.Services
             var bookList = await _context.Books
                 .Include(b =>b.Category)
                 .Where(b =>b.IsDeleted==false)
+                .OrderByDescending(b => b.CreatedTime)
                 .Select(b => _mapper.Map<BookDTO>(b)).ToListAsync();
             if (bookList.Count < 1)
             {
@@ -209,6 +210,28 @@ namespace LibraryManagement.Application.Services
                 StatusCode = 200
             };
 
+        }
+
+        public async Task<ApiResult<List<BookDTO>>> GetTopFiveAsync()
+        {
+            var topFiveBook = await _context.Books
+                .Include(b => b.Category)
+                .Where(b => b.IsDeleted == false)
+                .OrderByDescending(b => b.Quantity_Borrowed).Take(5).Select(b => _mapper.Map<BookDTO>(b)).ToListAsync();
+
+            if (topFiveBook.Count < 1)
+            {
+                return new ApiResult<List<BookDTO>>(null)
+                {
+                    Message = "Something went wrong!",
+                    StatusCode = 400
+                };
+            }
+            return new ApiResult<List<BookDTO>>(topFiveBook)
+            {
+                Message = "",
+                StatusCode = 200
+            };
         }
 
     }

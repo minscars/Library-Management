@@ -10,8 +10,13 @@ namespace LibraryManagement.Data.Models
     {
         public int Id { get; set; }
         public Guid UserId { get; set; }
-        public DateTime? BorrowTime { get; set; }
-        public DateTime? DueTime { get; set; }
+        public DateTime? CreateDate { get; set; }
+        public DateTime? RejectedDate { get; set; }
+        public DateTime? ApprovalDate { get; set; }
+        public DateTime? BorrowDate { get; set; }
+        public DateTime? ReceivedDate { get; set; }
+        public DateTime? DueDate { get; set; }
+        public DateTime? ReturnedDate { get; set; }
         public User User { get; set; }
         public int Status { get; set; }
         public bool IsDeleted { get; set; }

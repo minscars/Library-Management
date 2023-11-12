@@ -12,6 +12,9 @@ import AdminBookCreate from "views/admin/books/create";
 import AdminBookEdit from "views/admin/books/edit";
 import AdminBookDelete from "views/admin/books/delete";
 import AdminBookDetail from "views/admin/books/detail";
+import AdminBooksSearch from "views/admin/books/booksearch";  
+import AdminHistory from "views/admin/history";  
+import AdminHistoryDetail from "views/admin/history/detail";  
 
 import AdminBorrowAndReturn from "views/admin/borrowreturn";
 import AdminProfile from "views/admin/profile";
@@ -29,6 +32,8 @@ import UserBooksByCate from "views/user/books/bookbycate";
 import UserBooksDetail from "views/user/books/detail";
 import UserBooksSearch from "views/user/books/booksearch";  
 import UserOpenRequest from "views/user/request/open";
+import UserHistory from "views/user/history/index";
+import UserHistoryDetail from "views/user/history/detail";
 
 const routes = [
   { layout: "/admin", path: "home", component: <AdminHome />},
@@ -43,11 +48,15 @@ const routes = [
   { layout: "/admin", path: "books/edit/:id", component: <AdminBookEdit />},
   { layout: "/admin", path: "books/delete/:id", component: <AdminBookDelete />},
   { layout: "/admin", path: "books/detail/:id", component: <AdminBookDetail />},
+  { layout: "/admin", path: "books/booksearch/:key", component: <AdminBooksSearch />},
+  { layout: "/admin", path: "books/booksearch", component: <AdminBooksSearch />},
 
   { layout: "/admin", path: "borrow-and-return", component: <AdminBorrowAndReturn />},
   { layout: "/admin", path: "data-tables", component: <AdminDataTables />},
   { layout: "/admin", path: "profile", component: <AdminProfile />},
   { layout: "/admin", path: "dashboard", component: <AdminDashBoard />},
+  { layout: "/admin", path: "history", component: <AdminHistory />},
+  { layout: "/admin", path: "history/detail/:id", component: <AdminHistoryDetail />},
 
   { layout: "/auth", path: "sign-in", component: <SignIn />},
 
@@ -59,6 +68,8 @@ const routes = [
   { layout: "/user", path: "books/booksearch/:key", component: <UserBooksSearch />},
   { layout: "/user", path: "books/booksearch", component: <UserBooksSearch />},
   { layout: "/user", path: "request/open", component: <UserOpenRequest />},
+  { layout: "/user", path: "history", component: <UserHistory />},
+  { layout: "/user", path: "history/detail/:id", component: <UserHistoryDetail />},
 ];
 
 export default routes;

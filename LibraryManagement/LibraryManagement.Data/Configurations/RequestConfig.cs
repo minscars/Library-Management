@@ -13,7 +13,7 @@ namespace LibraryManagement.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Request> builder)
         {
-            builder.HasKey(r => new { r.BookId, r.UserId });
+            builder.HasKey(r => new { r.BookId, r.UserId,r.CreatedDate});
             builder.Property(x => x.UserId).IsRequired();
             builder.Property(x => x.BookId).IsRequired();
             builder.Property(x => x.Quantity).HasDefaultValue(1);

@@ -107,5 +107,18 @@ namespace LibraryManagement.API.Controllers
             }
             return BadRequest(result.Message);
         }
+
+        [HttpGet("TopFive")]
+        [AllowAnonymous]
+        public async Task<IActionResult> TopFiveBook()
+        {
+            var result = await _bookService.GetTopFiveAsync();
+            if (result.StatusCode == 200)
+            {
+                result.Data.ForEach(s => s.Image = setImageName(s.Image));
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        }
     }
 }

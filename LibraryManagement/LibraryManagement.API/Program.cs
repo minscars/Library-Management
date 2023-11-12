@@ -66,6 +66,8 @@ builder.Services.AddTransient<IBookService, BookService>();
 builder.Services.AddTransient<ICategoryService, CategoryService>();
 builder.Services.AddTransient<IFileSerivce, FileService>();
 builder.Services.AddTransient<IRequestService, RequestService>();
+builder.Services.AddTransient<IBorrowBillService, BorrowBillService>();
+
 builder.Services.AddMvc()
                 .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 

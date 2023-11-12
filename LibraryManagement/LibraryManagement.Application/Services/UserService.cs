@@ -1,8 +1,11 @@
 ﻿using LibraryManagement.Application.Interfaces;
+using LibraryManagement.Data.EF;
 using LibraryManagement.Data.Models;
+using LibraryManagement.DTO.Book;
 using LibraryManagement.DTO.Contants;
 using LibraryManagement.DTO.User;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -16,15 +19,19 @@ namespace LibraryManagement.Application.Services
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IConfiguration _configuration;
+        private readonly LibraryManagementDbContext _context;
         public UserService(
             UserManager<User> userManager,
             SignInManager<User> signInManager,
-            IConfiguration configuration
+            IConfiguration configuration,
+            LibraryManagementDbContext context
+
         )
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _configuration = configuration;
+            _context = context;
         }
 
         public async Task<IdentityResult> RegisterAsync(RegisterRequest request)
@@ -90,6 +97,32 @@ namespace LibraryManagement.Application.Services
             );
             var jwt = new JwtSecurityTokenHandler().WriteToken(token);
             return jwt;
+        }
+
+        public async Task<ApiResult<User>> GetUserByIdAsync(Guid id)
+        {
+            var user = await _context.Users
+                .Where(u => u.Id == id)
+                .Select(u => new User()
+                {
+                    Id = u.Id,
+                    Name = u.Name,
+                    Avatar = u.Avatar,
+                }).FirstOrDefaultAsync();
+            if (user == null)
+            {
+                return new ApiResult<User>(null)
+                {
+                    Message = "Something went wrong",
+                    StatusCode = 400
+                };
+            }
+
+            return new ApiResult<User>(user)
+            {
+                Message = "",
+                StatusCode = 200
+            };
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using LibraryManagement.Data.Models;
 using LibraryManagement.DTO.Book;
+using LibraryManagement.DTO.BorrowBill;
 using LibraryManagement.DTO.Category;
 using LibraryManagement.DTO.Request;
 using System;
@@ -26,7 +27,12 @@ namespace LibraryManagement.Application.Mapping
             //Request Mapping
             CreateMap<Request, RequestDTO>()
                 .ForMember(dto => dto.BookName, opt => opt.MapFrom(b => b.Book.Name))
-                .ForMember(dto => dto.BookImage, opt => opt.MapFrom(b => b.Book.Image));
+                .ForMember(dto => dto.BookImage, opt => opt.MapFrom(b => b.Book.Image))
+                .ForMember(dto => dto.CateName, opt => opt.MapFrom(b => b.Book.Category.Name));
+
+            //BorrowBill Mapping
+            CreateMap<BorrowBill, BorrowBillDTO>().ReverseMap();
+                
         }
     }
 }

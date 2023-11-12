@@ -13,6 +13,7 @@ namespace LibraryManagement.Data.Models
         public int Quantity { get; set; }
         public bool IsSelected { get; set; }
         public bool IsDeleted { get; set; }
+        public DateTime CreatedDate { get; set; }
         public User User { get; set; }
         public Book Book { get; set; }
     }

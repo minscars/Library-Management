@@ -17,5 +17,6 @@ namespace LibraryManagement.Application.Interfaces
         public Task<ApiResult<bool>> EditAsync(EditBookDTO request);
         public Task<ApiResult<bool>> DeleteAsync(int Id);
         public Task<ApiResult<List<BookDTO>>> FindByKeyAsync(string key);
+        public Task<ApiResult<List<BookDTO>>> GetTopFiveAsync();
     }
 }

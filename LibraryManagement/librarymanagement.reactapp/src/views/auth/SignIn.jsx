@@ -10,7 +10,7 @@ import Alert from "components/alert";
 export default function SignIn() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  const [userlogin, setUsser] = useState()
   async function login(e) {
     e.preventDefault();
     const request = { username, password };

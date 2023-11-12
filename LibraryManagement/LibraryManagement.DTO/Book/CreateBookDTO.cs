@@ -10,6 +10,7 @@ namespace LibraryManagement.DTO.Book
     public class CreateBookDTO
     {
         public string? Name { get; set; }
+        public string Desctription { get; set; }
         public IFormFile? Image {  get; set; }
         public int CategoryId { get; set; }
     }

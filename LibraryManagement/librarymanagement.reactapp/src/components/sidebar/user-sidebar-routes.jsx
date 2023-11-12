@@ -1,15 +1,18 @@
 import React from "react";
 
-// Admin Imports
+// User Imports
 import Home from "views/user/home";
 import Request from "views/user/request";
 import Books from "views/user/books";
-
+import History from "views/user/history";
+import SignIn from "views/auth/SignIn";
 // Icon Imports
 import {
   MdHome,
   MdPerson,
   MdOutlineMenuBook,
+  MdHistory,
+  MdLock,
 } from "react-icons/md";
 
 const routes = [
@@ -21,6 +24,13 @@ const routes = [
     component: <Home />,
   },
   {
+    name: "Books",
+    layout: "/user",
+    path: "books",
+    icon: <MdOutlineMenuBook className="h-6 w-6" />,
+    component: <Books />,
+  },
+  {
     name: "Request",
     layout: "/user",
     path: "request",
@@ -28,11 +38,18 @@ const routes = [
     component: <Request />,
   },
   {
-    name: "Books",
+    name: "History",
     layout: "/user",
-    path: "books",
-    icon: <MdOutlineMenuBook className="h-6 w-6" />,
-    component: <Books />,
+    path: "history",
+    icon: <MdHistory className="h-6 w-6" />,
+    component: <History />,
+  },
+  {
+    name: "Sign In",
+    layout: "/auth",
+    path: "sign-in",
+    icon: <MdLock className="h-6 w-6" />,
+    component: <SignIn />,
   },
 ];
 
