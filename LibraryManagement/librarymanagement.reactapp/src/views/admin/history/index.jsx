@@ -19,11 +19,11 @@ const History = () => {
 
   return (
     <div>
-      <div className="mt-5 gap-5 xl:grid-cols-2">
+      <div className="mt-[79px] gap-5 xl:grid-cols-2">
         <Card extra={"w-full h-full px-6 pb-6 sm:overflow-x-auto"}>
           <div class="relative flex items-center justify-between pt-4">
             <div class="text-xl font-bold text-navy-700 dark:text-white">
-              Your request
+              Requests List
             </div>
           </div>
           <div class="mt-8 overflow-x-scroll xl:overflow-hidden">

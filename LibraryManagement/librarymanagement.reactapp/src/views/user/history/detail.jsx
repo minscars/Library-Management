@@ -23,6 +23,13 @@ function Detail() {
             <h4 className="text-lg font-bold text-navy-700 dark:text-white">
               Borrow Bill #{borrowBilList.id}
             </h4>
+            <p className="mr-20 font-bold text-navy-700 dark:text-white">
+              Status:{" "}
+              <span className="font-bold text-blue-700">
+                {" "}
+                {borrowBilList.status}
+              </span>
+            </p>
           </div>
           {borrowBilList.borrowedBooks?.map((row, key) => (
             <div className="mt-3 flex w-full items-center justify-between rounded-2xl bg-white p-3 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
@@ -45,53 +52,6 @@ function Detail() {
               </div>
             </div>
           ))}
-          <div>
-            <div className="ml-4 mt-4 flex items-center justify-between">
-              <p className="font-bold text-navy-700 dark:text-white">
-                Create date:{" "}
-                {moment(borrowBilList.createDate).format("DD/MM/YYYY HH:mm A")}
-              </p>
-              <p className="mr-20 font-bold text-navy-700 dark:text-white">
-                Status: {borrowBilList.status}
-              </p>
-            </div>
-            <div className="ml-4 mt-4">
-              <p className="font-bold text-navy-700 dark:text-white">
-                Rejected date:{" "}
-                {moment(borrowBilList.rejectedDate).format(
-                  "DD/MM/YYYY HH:mm A"
-                )}
-              </p>
-            </div>
-            <div className="ml-4 mt-4">
-              <p className="font-bold text-navy-700 dark:text-white">
-                Approval date:{" "}
-                {moment(borrowBilList.approvalDate).format(
-                  "DD/MM/YYYY HH:mm A"
-                )}
-              </p>
-            </div>
-            <div className="ml-4 mt-4">
-              <p className="font-bold text-navy-700 dark:text-white">
-                Borrow date:{" "}
-                {moment(borrowBilList.borrowDate).format("DD/MM/YYYY HH:mm A")}
-              </p>
-            </div>
-            <div className="ml-4 mt-4">
-              <p className="font-bold text-navy-700 dark:text-white">
-                Received date:{" "}
-                {moment(borrowBilList.receivedDate).format(
-                  "DD/MM/YYYY HH:mm A"
-                )}
-              </p>
-            </div>
-            <div className="ml-4 mt-4">
-              <p className="font-bold text-navy-700 dark:text-white">
-                Due date:{" "}
-                {moment(borrowBilList.dueDate).format("DD/MM/YYYY HH:mm A")}
-              </p>
-            </div>
-          </div>
         </Card>
       </div>
       <div className="col-span-1 w-full rounded-xl 2xl:col-span-1">
@@ -121,6 +81,42 @@ function Detail() {
           {/* Post followers */}
           <div className="mr-4 flex items-end justify-center text-red-600 dark:text-white"></div>
         </Card>
+        <div>
+          <div className="ml-4 mt-4 flex items-center justify-between">
+            <p className="font-bold text-navy-700 dark:text-white">
+              Create date:{" "}
+              <span className="font-bold text-blue-700">
+                {moment(borrowBilList.createDate).format("DD/MM/YYYY HH:mm A")}
+              </span>
+            </p>
+          </div>
+          <div className="ml-4 mt-4">
+            <p className="font-bold text-navy-700 dark:text-white">
+              Borrow date:{" "}
+              <span className="font-bold text-blue-700">
+                {moment(borrowBilList.borrowDate).format("DD/MM/YYYY HH:mm A")}
+              </span>
+            </p>
+          </div>
+          <div className="ml-4 mt-4">
+            <p className="font-bold text-navy-700 dark:text-white">
+              Received date:{" "}
+              <span className="font-bold text-blue-700">
+                {moment(borrowBilList.receivedDate).format(
+                  "DD/MM/YYYY HH:mm A"
+                )}
+              </span>
+            </p>
+          </div>
+          <div className="ml-4 mt-4">
+            <p className="font-bold text-navy-700 dark:text-white">
+              Due date:{" "}
+              <span className="font-bold text-blue-700">
+                {moment(borrowBilList.dueDate).format("DD/MM/YYYY HH:mm A")}
+              </span>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

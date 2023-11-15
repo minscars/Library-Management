@@ -72,7 +72,10 @@ const Marketplace = () => {
                       {row.name}
                     </p>
                     <p className="mt-2 text-sm text-gray-600">
-                      Borrowed: {row.quantity_Borrowed}
+                      Borrowed:{" "}
+                      <span className="ml-1 font-medium text-brand-500 hover:text-brand-500 dark:text-white">
+                        {row.quantity_Borrowed}
+                      </span>
                     </p>
                   </div>
                 </div>

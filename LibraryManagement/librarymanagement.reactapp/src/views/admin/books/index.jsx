@@ -18,14 +18,14 @@ const Index = () => {
     <div>
       <div className="mt-5 gap-5 xl:grid-cols-2">
         <Link to="/admin/books/create">
-          <button class="linear rounded-[20px] bg-lightPrimary px-4 py-2 text-base font-medium text-brand-500 transition duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20">
+          <button class="linear float-right mb-4 rounded-[20px] bg-cyan-700 px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-cyan-800 active:bg-cyan-700 dark:bg-brand-400 dark:hover:bg-brand-300 dark:active:opacity-90">
             Add new book
           </button>
         </Link>
         <Card extra={"w-full h-full px-6 pb-6 sm:overflow-x-auto"}>
           <div class="relative flex items-center justify-between pt-4">
             <div class="text-xl font-bold text-navy-700 dark:text-white">
-              Books List
+              <p className="text-customcolor-500"></p>Books List
             </div>
           </div>
           <div class="mt-8 overflow-x-scroll xl:overflow-hidden">
@@ -33,7 +33,7 @@ const Index = () => {
               <thead>
                 <tr>
                   <th className="border-b border-gray-200 pb-[10px] pr-28 text-start dark:!border-navy-700">
-                    <p className="items-center text-xs tracking-wide text-gray-600">
+                    <p className="ml-12 items-center text-xs tracking-wide text-gray-600">
                       #
                     </p>
                   </th>
@@ -61,7 +61,7 @@ const Index = () => {
                     colSpa="3"
                     className="border-b border-gray-200 pb-[10px] pr-28 text-start dark:!border-navy-700"
                   >
-                    <p className="text-xs tracking-wide text-gray-600">
+                    <p className="ml-2 text-xs tracking-wide text-gray-600">
                       ACTION
                     </p>
                   </th>
@@ -70,18 +70,18 @@ const Index = () => {
               <tbody>
                 {booksList?.map((row, key) => (
                   <tr>
-                    <td className=" flex items-center justify-between pb-[18px] pt-[14px] sm:text-[15px]">
-                      <p className="ml-4 mr-10 text-sm font-bold text-navy-700 dark:text-white">
+                    <td className="flex items-center justify-center pb-[18px] pt-[14px] sm:text-[15px]">
+                      <p className="mr-10 text-sm font-bold text-navy-700 dark:text-white">
                         {key + 1}
                       </p>
                       <img
                         src={row.image}
                         alt=""
-                        className=" flex h-16 w-16 items-center justify-center rounded-xl"
+                        className=" h-16 w-16 rounded-xl"
                       />
                     </td>
                     <td className="ml-10 items-center pb-[18px] pt-[14px] sm:text-[15px]">
-                      <div className="ml-10 mr-20 w-[200px]">
+                      <div className="ml-10 mr-[18px] w-[200px]">
                         <Link to={`/admin/books/detail/${row.id}`}>
                           <p className="text-sm font-bold text-navy-700 dark:text-white">
                             {row.name}
@@ -104,7 +104,7 @@ const Index = () => {
                       </div>
                     </td>
                     <td className="pb-[18px] pt-[14px] sm:text-[15px]">
-                      <p className="text-sm font-bold text-navy-700 dark:text-white">
+                      <p className="ml-8 text-sm font-bold text-navy-700 dark:text-white">
                         {row.quantity_Borrowed}
                       </p>
                     </td>
@@ -113,7 +113,7 @@ const Index = () => {
                         <MdModeEditOutline className="rounded-full text-xl" />
                       </Link>
                       <Link to={`./delete/${row.id}`}>
-                        <MdCancel className="rounded-full text-xl text-red-500" />
+                        <MdCancel className="ml-4 rounded-full text-xl text-red-500" />
                       </Link>
                     </td>
                   </tr>

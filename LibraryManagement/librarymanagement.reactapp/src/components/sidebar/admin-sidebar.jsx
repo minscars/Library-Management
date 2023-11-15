@@ -13,18 +13,18 @@ const AdminSidebar = ({ open, onClose }) => {
       }`}
     >
       <span
-        className="absolute top-4 right-4 block cursor-pointer xl:hidden"
+        className="absolute right-4 top-4 block cursor-pointer xl:hidden"
         onClick={onClose}
       >
         <HiX />
       </span>
 
-      <div className={`mx-[56px] mt-[50px] flex items-center`}>
-        <div className="mt-1 mb-5 h-2.5 text-[26px] font-bold dark:text-white">
-          <img className="h-[70px] w-[170px]" src={Logo} alt="" />
+      <div className={`mx-[56px] mb-[30px] ml-8 mt-[30px] flex items-center`}>
+        <div className="mb-5 mt-1 h-2.5 text-[26px] font-bold dark:text-white">
+          <img className="h-[70px] w-full" src={Logo} alt="" />
         </div>
       </div>
-      <div class="mt-[58px] mb-7 h-px bg-gray-300 dark:bg-white/30" />
+      <div class="mb-7 mt-[58px] h-px bg-gray-300 dark:bg-white/30" />
       {/* Nav item */}
 
       <ul className="mb-auto pt-1">
@@ -32,9 +32,7 @@ const AdminSidebar = ({ open, onClose }) => {
       </ul>
 
       {/* Free Horizon Card */}
-      <div className="flex justify-center">
-        {/* <SidebarCard /> */}
-      </div>
+      <div className="flex justify-center">{/* <SidebarCard /> */}</div>
 
       {/* Nav item end */}
     </div>

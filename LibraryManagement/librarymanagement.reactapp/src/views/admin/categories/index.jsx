@@ -19,14 +19,14 @@ const Index = () => {
     <div>
       <div className="mt-5 gap-5 xl:grid-cols-2">
         <Link to="/admin/categories/create">
-          <button class="linear rounded-[20px] bg-lightPrimary px-4 py-2 text-base font-medium text-brand-500 transition duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20">
+          <button class="linear float-right mb-4 rounded-[20px] bg-cyan-700 px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-cyan-800 active:bg-cyan-700 dark:bg-brand-400 dark:hover:bg-brand-300 dark:active:opacity-90">
             Add new category
           </button>
         </Link>
         <Card extra={"w-full h-full px-6 pb-6 sm:overflow-x-auto"}>
           <div class="relative flex items-center justify-between pt-4">
             <div class="text-xl font-bold text-navy-700 dark:text-white">
-              Book categories list
+              Categories List
             </div>
           </div>
 
@@ -91,7 +91,7 @@ const Index = () => {
                           <MdModeEditOutline className="rounded-full text-xl" />
                         </Link>
                         <Link to={`./delete/${row.id}`}>
-                          <MdCancel className="rounded-full text-xl text-red-500" />
+                          <MdCancel className="ml-4 rounded-full text-xl text-red-500" />
                         </Link>
                       </td>
                     </tr>
