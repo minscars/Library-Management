@@ -13,7 +13,7 @@ namespace LibraryManagement.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            
+            builder.Property(x => x.Avatar).HasDefaultValue("avatar-default.png");
         }
     }
 }

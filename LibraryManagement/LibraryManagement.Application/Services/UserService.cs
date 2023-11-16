@@ -40,7 +40,7 @@ namespace LibraryManagement.Application.Services
             //.....
 
             //Create new user
-            var user = new User {UserName = request.Email, Email = request.Email };
+            var user = new User {Name = request.Name, UserName = request.Email, Email = request.Email, PhoneNumber = request.PhoneNumber };
             var addUserResult = await _userManager.CreateAsync(user, request.Password);
 
             //Add role for new user

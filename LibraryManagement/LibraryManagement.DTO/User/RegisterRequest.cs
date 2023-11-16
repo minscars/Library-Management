@@ -4,6 +4,12 @@ namespace LibraryManagement.DTO.User
 {
     public class RegisterRequest
     {
+
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Tên")]
+        public string Name { get; set; } = null!;
+
         [Required]
         [EmailAddress]
         [Display(Name = "Địa chỉ Email")]
@@ -19,5 +25,10 @@ namespace LibraryManagement.DTO.User
         [Display(Name = "Nhập lại mật khẩu")]
         [Compare("Password", ErrorMessage = "Mật khẩu không giống nhau")]
         public string ConfirmPassword { get; set; } = null!;
+
+        [Required]
+        [DataType(DataType.PhoneNumber)]
+        [StringLength(10, ErrorMessage = "Số điện thoại có 10 số.")]
+        public string PhoneNumber { get; set; }
     }
 }

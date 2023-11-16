@@ -23,10 +23,10 @@ namespace AuthenDemo.Controllers
 
         [HttpPost("Register")]
         [AllowAnonymous]
-        public async Task<IActionResult> RegisterAsync(RegisterRequest request)
+        public async Task<IActionResult> RegisterAsync([FromBody] RegisterRequest request)
         {
             var result = await _userService.RegisterAsync(request);
-            return Ok(result.Succeeded);
+            return Ok(result);
         }
 
         [HttpPost("Login")]

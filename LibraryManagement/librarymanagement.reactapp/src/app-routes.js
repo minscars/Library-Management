@@ -23,7 +23,7 @@ import AdminDashBoard from "views/admin/default";
 
 // Auth Imports
 import SignIn from "views/auth/SignIn";
-
+import Register from "views/auth/Register";
 //User Imports
 import UserHome from "views/user/home";
 import UserRequest from "views/user/request";
@@ -59,6 +59,7 @@ const routes = [
   { layout: "/admin", path: "history/detail/:id", component: <AdminHistoryDetail />},
 
   { layout: "/auth", path: "sign-in", component: <SignIn />},
+  { layout: "/auth", path: "register", component: <Register />},
 
   { layout: "/user", path: "home", component: <UserHome />},
   { layout: "/user", path: "request", component: <UserRequest />},
