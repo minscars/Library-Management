@@ -14,5 +14,6 @@ namespace LibraryManagement.Application.Interfaces
         Task<ApiResult<List<BorrowBillDTO>>> GetAllBorrowBillByUserAsync(Guid IdUser);
         Task<ApiResult<BorrowBillDetailDTO>> GetBorrowBillByIdAsync(int Id);
         Task<ApiResult<List<BorrowBillDTO>>> GetAllBorrowBillAsync();
+        Task<ApiResult<bool>> UpdateStatusAsync(BorrowBillStatusDTO reuqest);
     }
 }

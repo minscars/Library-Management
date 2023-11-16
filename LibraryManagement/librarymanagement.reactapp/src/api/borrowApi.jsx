@@ -15,6 +15,9 @@ const borrowApi = {
   GetAllBorrowBill: () => {
     return API.get("/BorrowBills");
   },
+  UpdateStatus: (request) => {
+    return API.put("/BorrowBills/Status", request);
+  },
 };
 
 export default borrowApi;

@@ -21,6 +21,8 @@ namespace LibraryManagement.Data.Enums
             Borrowing = 3,
             [Display(Name = "Returned")]
             Returned = 4,
+            [Display(Name = "Rejected")]
+            Rejected = 5,
         }
         public static string GetDisplayName(Enum enumValue)
         {

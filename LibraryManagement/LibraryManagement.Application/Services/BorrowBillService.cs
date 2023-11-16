@@ -194,5 +194,51 @@ namespace LibraryManagement.Application.Services
                 StatusCode = 200
             };
         }
+
+        public async Task<ApiResult<bool>> UpdateStatusAsync(BorrowBillStatusDTO reuqest)
+        {
+            var check = await _context.BorrowBills
+                .Where(b => b.Id == reuqest.BorrowBillId && b.IsDeleted == false)
+                .FirstOrDefaultAsync();
+
+            if (check == null)
+            {
+                return new ApiResult<bool>(false)
+                {
+                    Message = "Something went wrong!",
+                    StatusCode = 400
+                };
+            }
+
+            switch (reuqest.Status)
+            {
+                case Status.Approve:
+                    check.Status = (int)Status.Approve; //approve
+                    check.ApprovalDate = DateTime.Now;
+                    break;
+                case Status.Borrowing:
+                    check.Status = (int)Status.Borrowing; //borrow
+                    check.ReceivedDate = DateTime.Now;
+                    check.BorrowDate = DateTime.Now;
+                    check.DueDate = DateTime.Now.AddDays(14);
+                    break;
+                case Status.Returned:
+                    check.Status = (int)Status.Returned; //return
+                    check.ReturnedDate = DateTime.Now;
+                    break;
+                case Status.Rejected:
+                    check.Status = (int)Status.Rejected;
+                    check.RejectedDate = DateTime.Now;
+                    break;
+            }
+
+            await _context.SaveChangesAsync();  
+
+            return new ApiResult<bool>(true)
+            {
+                Message = "",
+                StatusCode = 200
+            };
+        }
     }
 }

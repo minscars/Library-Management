@@ -1,4 +1,5 @@
 ﻿using LibraryManagement.Application.Interfaces;
+using LibraryManagement.DTO.BorrowBill;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -56,6 +57,14 @@ namespace LibraryManagement.API.Controllers
         {
             var result = await _borrowBillService.GetAllBorrowBillAsync();
             return Ok(result.Data);
+        }
+
+        [HttpPut("Status")]
+        [AllowAnonymous]
+        public async Task<IActionResult> UpdateStatusAsync([FromBody] BorrowBillStatusDTO request)
+        {
+            var result = await _borrowBillService.UpdateStatusAsync(request);
+            return Ok(result);
         }
     }
 }
