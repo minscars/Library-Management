@@ -60,30 +60,39 @@ function Detail() {
               </span>
             </h4>
             <div className="float-right">
-              <button
-                onClick={() => handleUpdateStatus(2)}
-                class="linear ml-2 rounded-[20px] bg-lightPrimary px-4 py-2 text-sm font-medium text-blue-500 transition duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20"
-              >
-                Approve
-              </button>
-              <button
-                onClick={() => handleUpdateStatus(5)}
-                class="linear ml-2 rounded-[20px] bg-lightPrimary px-4 py-2 text-sm font-medium text-orange-500 transition duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20"
-              >
-                Rejected
-              </button>
-              <button
-                onClick={() => handleUpdateStatus(3)}
-                class="linear ml-2 rounded-[20px] bg-lightPrimary px-4 py-2 text-sm font-medium text-brand-500 transition duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20"
-              >
-                Received
-              </button>
-              <button
-                onClick={() => handleUpdateStatus(4)}
-                class="linear ml-2 rounded-[20px] bg-lightPrimary px-4 py-2 text-sm font-medium text-lime-600 transition duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20"
-              >
-                Returned
-              </button>
+              {borrowBilList.status == "Pending" && (
+                <button
+                  onClick={() => handleUpdateStatus(2)}
+                  class="linear ml-2 rounded-[20px] bg-lightPrimary px-4 py-2 text-sm font-medium text-blue-500 transition duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20"
+                >
+                  Approve
+                </button>
+              )}
+              {borrowBilList.status == "Pending" && (
+                <button
+                  onClick={() => handleUpdateStatus(5)}
+                  class="linear ml-2 rounded-[20px] bg-lightPrimary px-4 py-2 text-sm font-medium text-orange-500 transition duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20"
+                >
+                  Rejected
+                </button>
+              )}
+              {borrowBilList.status == "Approve" && (
+                <button
+                  onClick={() => handleUpdateStatus(3)}
+                  class="linear ml-2 rounded-[20px] bg-lightPrimary px-4 py-2 text-sm font-medium text-brand-500 transition duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20"
+                >
+                  Received
+                </button>
+              )}
+              {(borrowBilList.status == "Received" ||
+                borrowBilList.status == "Borrowing") && (
+                <button
+                  onClick={() => handleUpdateStatus(4)}
+                  class="linear ml-2 rounded-[20px] bg-lightPrimary px-4 py-2 text-sm font-medium text-lime-600 transition duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20"
+                >
+                  Returned
+                </button>
+              )}
             </div>
           </div>
           <div className="float-right mt-2">
@@ -157,9 +166,11 @@ function Detail() {
             <p className="font-bold text-navy-700 dark:text-white">
               Rejected date:{" "}
               <span className="font-bold text-blue-700">
-                {moment(borrowBilList.rejectedDate).format(
-                  "DD/MM/YYYY HH:mm A"
-                )}
+                {borrowBilList.rejectedDate != null
+                  ? moment(borrowBilList.rejectedDate).format(
+                      "DD/MM/YYYY HH:mm A"
+                    )
+                  : "......"}
               </span>
             </p>
           </div>
@@ -167,9 +178,11 @@ function Detail() {
             <p className="font-bold text-navy-700 dark:text-white">
               Approval date:{" "}
               <span className="font-bold text-blue-700">
-                {moment(borrowBilList.approvalDate).format(
-                  "DD/MM/YYYY HH:mm A"
-                )}
+                {borrowBilList.approvalDate != null
+                  ? moment(borrowBilList.approvalDate).format(
+                      "DD/MM/YYYY HH:mm A"
+                    )
+                  : "......"}
               </span>
             </p>
           </div>
@@ -177,7 +190,11 @@ function Detail() {
             <p className="font-bold text-navy-700 dark:text-white">
               Borrow date:{" "}
               <span className="font-bold text-blue-700">
-                {moment(borrowBilList.borrowDate).format("DD/MM/YYYY HH:mm A")}
+                {borrowBilList.borrowDate != null
+                  ? moment(borrowBilList.borrowDate).format(
+                      "DD/MM/YYYY HH:mm A"
+                    )
+                  : "......"}
               </span>
             </p>
           </div>
@@ -185,9 +202,11 @@ function Detail() {
             <p className="font-bold text-navy-700 dark:text-white">
               Received date:{" "}
               <span className="font-bold text-blue-700">
-                {moment(borrowBilList.receivedDate).format(
-                  "DD/MM/YYYY HH:mm A"
-                )}
+                {borrowBilList.receivedDate != null
+                  ? moment(borrowBilList.receivedDate).format(
+                      "DD/MM/YYYY HH:mm A"
+                    )
+                  : "......"}
               </span>
             </p>
           </div>
@@ -195,7 +214,9 @@ function Detail() {
             <p className="font-bold text-navy-700 dark:text-white">
               Due date:{" "}
               <span className="font-bold text-blue-700">
-                {moment(borrowBilList.dueDate).format("DD/MM/YYYY HH:mm A")}
+                {borrowBilList.dueDate != null
+                  ? moment(borrowBilList.dueDate).format("DD/MM/YYYY HH:mm A")
+                  : "......"}
               </span>
             </p>
           </div>

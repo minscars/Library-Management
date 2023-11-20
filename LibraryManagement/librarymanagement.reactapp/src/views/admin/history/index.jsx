@@ -62,17 +62,23 @@ const History = () => {
                   <tr key={row.id}>
                     <td className="flex items-center pb-[18px] pt-[14px] sm:text-[15px]">
                       <p className="ml-4 text-sm font-bold text-navy-700 dark:text-white">
-                        <Link to={`./detail/${row.id}`}>{row.id}</Link>
+                        <Link to={`./detail/${row.id}`}>
+                          {"BILL-" + row.id}
+                        </Link>
                       </p>
                     </td>
                     <td className=" items-center pb-[18px] pt-[14px] sm:text-[15px]">
                       <div className=" w-[240px]">
-                        {moment(row.createDate).format("DD/MM/YYYY HH:mm A")}
+                        {row.createDate != null
+                          ? moment(row.createDate).format("DD/MM/YYYY HH:mm A")
+                          : "......"}
                       </div>
                     </td>
                     <td className="pb-[18px] pt-[14px] sm:text-[15px]">
                       <div className="w-[240px]">
-                        {moment(row.dueDate).format("DD/MM/YYYY HH:mm A")}
+                        {row.dueDate != null
+                          ? moment(row.dueDate).format("DD/MM/YYYY HH:mm A")
+                          : "......"}
                       </div>
                     </td>
                     <td className="pb-[18px] pt-[14px] sm:text-[15px]">

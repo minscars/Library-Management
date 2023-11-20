@@ -3,45 +3,46 @@ import { FcGoogle } from "react-icons/fc";
 import Checkbox from "components/checkbox";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import accountApi from "api/accountApi";
 import jwt from "jwt-decode";
 import Alert from "components/alert";
+import Swal from "sweetalert2";
 
 export default function SignIn() {
-  const [username, setUsername] = useState("");
+  const [email, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
+  const [phoneNumber, setPhone] = useState("");
+  const navigate = useNavigate();
 
   async function registerAccount(e) {
     e.preventDefault();
-    const request = { username, password, confirmPassword, phone, name };
+    const request = { email, password, confirmPassword, phoneNumber, name };
 
-    await accountApi
-      .RegisterAccount(request)
-      .then((response) => {
-        if (response.statusCode === 200) {
-          window.localStorage.setItem("token", response.data);
-          var token = window.localStorage.getItem("token");
-          const user = jwt(token);
-          if (user) {
-            Alert.showSuccessAlert(
-              response.message,
-              () =>
-                (window.location.href =
-                  user.roles === "User" ? "/user" : "/admin")
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You should recheck your information before register!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, I checked it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        await accountApi.RegisterAccount(request).then(async (res) => {
+          if (res.statusCode === 200) {
+            Alert.showSuccessAlert("Register account sucessfully!");
+            navigate("/auth/sign-in");
+          } else {
+            Alert.showErrorAlert(
+              "Oops, something went wrong! Please recheck your information."
             );
           }
-        } else {
-          Alert.showErrorAlert(response.message);
-        }
-      })
-      .catch(() => {
-        Alert.showErrorAlert(
-          "Oops, something went wrong! Please contact administrator."
-        );
-      });
+        });
+      }
+    });
   }
 
   return (
@@ -73,7 +74,7 @@ export default function SignIn() {
             placeholder="mail@simmmple.com"
             id="email"
             type="text"
-            value={username}
+            value={email}
             onChange={(e) => setUsername(e.target.value)}
           />
 
@@ -84,7 +85,7 @@ export default function SignIn() {
             placeholder="0123456789"
             id="phoneNumber"
             type="text"
-            value={phone}
+            value={phoneNumber}
             onChange={(e) => setPhone(e.target.value)}
           />
 
@@ -113,7 +114,7 @@ export default function SignIn() {
             type="submit"
             className="linear mt-2 w-full rounded-xl bg-brand-500 py-[12px] text-base font-medium text-white transition duration-200 hover:bg-brand-600 active:bg-brand-700 dark:bg-brand-400 dark:text-white dark:hover:bg-brand-300 dark:active:bg-brand-200"
           >
-            Sign In
+            Register
           </button>
           <div className="mt-4 flex items-center justify-center">
             <span className=" text-sm font-medium text-navy-700 dark:text-gray-600">

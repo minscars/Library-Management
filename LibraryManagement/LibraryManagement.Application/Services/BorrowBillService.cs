@@ -201,6 +201,7 @@ namespace LibraryManagement.Application.Services
                 .Where(b => b.Id == reuqest.BorrowBillId && b.IsDeleted == false)
                 .FirstOrDefaultAsync();
 
+
             if (check == null)
             {
                 return new ApiResult<bool>(false)
@@ -209,22 +210,50 @@ namespace LibraryManagement.Application.Services
                     StatusCode = 400
                 };
             }
+            var bookBorrowDetail = await _context.BorrowBillDetails
+                .Include(b => b.Book)
+                .Where(b => b.BorrowBillId == check.Id)
+                .Select(b => new BorrowBillDetail()
+                {
+                    BorrowBillId = b.BorrowBillId,
+                    BookId = b.BookId,
+                    Amount = b.Amount,
+                }).ToListAsync();
 
             switch (reuqest.Status)
             {
                 case Status.Approve:
                     check.Status = (int)Status.Approve; //approve
                     check.ApprovalDate = DateTime.Now;
+                    
                     break;
                 case Status.Borrowing:
                     check.Status = (int)Status.Borrowing; //borrow
                     check.ReceivedDate = DateTime.Now;
                     check.BorrowDate = DateTime.Now;
                     check.DueDate = DateTime.Now.AddDays(14);
+
+                    foreach (var item in bookBorrowDetail)
+                    {
+                        var bookindetail = await _context.Books
+                            .Where(b => b.Id == item.BookId)
+                            .FirstOrDefaultAsync();
+                        bookindetail.Quantity_Export = bookindetail.Quantity_Export + item.Amount;
+                        bookindetail.Quantity_On_Hand = bookindetail.Quantity_Import - bookindetail.Quantity_Export;
+                    }
                     break;
                 case Status.Returned:
                     check.Status = (int)Status.Returned; //return
                     check.ReturnedDate = DateTime.Now;
+
+                    foreach (var item in bookBorrowDetail)
+                    {
+                        var bookindetail = await _context.Books
+                            .Where(b => b.Id == item.BookId)
+                            .FirstOrDefaultAsync();
+                        bookindetail.Quantity_Borrowed += item.Amount;
+                        bookindetail.Quantity_On_Hand += item.Amount;
+                    }
                     break;
                 case Status.Rejected:
                     check.Status = (int)Status.Rejected;

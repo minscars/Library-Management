@@ -7,7 +7,7 @@ namespace LibraryManagement.Application.Interfaces
 {
     public interface IUserService
     {
-        Task<IdentityResult> RegisterAsync(RegisterRequest request);
+        Task<ApiResult<bool>> RegisterAsync(RegisterRequest request);
         Task<ApiResult<string>> LoginAsync(LoginRequest request);
         Task<ApiResult<User>> GetUserByIdAsync(Guid id);
     }

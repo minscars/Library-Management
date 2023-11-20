@@ -34,7 +34,7 @@ namespace LibraryManagement.Application.Services
             _context = context;
         }
 
-        public async Task<IdentityResult> RegisterAsync(RegisterRequest request)
+        public async Task<ApiResult<bool>> RegisterAsync(RegisterRequest request)
         {
             //Check request
             //.....
@@ -53,7 +53,11 @@ namespace LibraryManagement.Application.Services
             await _userManager.AddClaimAsync(user, new Claim(ClaimTypes.NameIdentifier, user.UserName));
             await _userManager.AddClaimAsync(user, new Claim(ClaimTypes.Email, user.Email));
             await _userManager.AddClaimAsync(user, new Claim(ClaimTypes.Role, string.Join(",", await _userManager.GetRolesAsync(user))));
-            return addUserResult;
+            return new ApiResult<bool>(addUserResult.Succeeded)
+            {
+                Message = "",
+                StatusCode = 200
+            };
         }
 
         public async Task<ApiResult<string>> LoginAsync(LoginRequest request)

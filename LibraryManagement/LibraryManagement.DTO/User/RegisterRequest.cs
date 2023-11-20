@@ -29,6 +29,6 @@ namespace LibraryManagement.DTO.User
         [Required]
         [DataType(DataType.PhoneNumber)]
         [StringLength(10, ErrorMessage = "Số điện thoại có 10 số.")]
-        public string PhoneNumber { get; set; }
+        public string? PhoneNumber { get; set; }
     }
 }
