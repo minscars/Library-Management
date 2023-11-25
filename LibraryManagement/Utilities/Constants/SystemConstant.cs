@@ -9,5 +9,9 @@ namespace LibraryManagement.DTO.Contants
     public class SystemConstant
     {
         public const string IMG_BOOKS_FOLDER = "images/Books/";
+        public const string APPROVE_MESSAGE = "Your request has been approved!"; 
+        public const string BORROW_MESSAGE = "We hope you will enjoy your time with our books!"; 
+        public const string RETURNED_MESSAGE = "Thank you for your believing!"; 
+        public const string REJECTED_MESSAGE = "Your request has been rejected!"; 
     }
 }

@@ -6,6 +6,7 @@ using LibraryManagement.Data.Models;
 using LibraryManagement.DTO.Book;
 using LibraryManagement.DTO.BorrowBill;
 using LibraryManagement.DTO.Contants;
+using LibraryManagement.DTO.Notification;
 using LibraryManagement.DTO.Request;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -21,10 +22,12 @@ namespace LibraryManagement.Application.Services
     {
         private readonly LibraryManagementDbContext _context;
         private readonly IMapper _mapper;
-        public BorrowBillService(LibraryManagementDbContext context, IMapper mapper)
+        private readonly INotificationService _notificationService;
+        public BorrowBillService(LibraryManagementDbContext context, IMapper mapper, INotificationService notificationService)
         {
             _context = context;
             _mapper = mapper;
+            _notificationService = notificationService;
         }
 
         public async Task<ApiResult<int>> Borrow(Guid IdUser)
@@ -198,6 +201,7 @@ namespace LibraryManagement.Application.Services
         public async Task<ApiResult<bool>> UpdateStatusAsync(BorrowBillStatusDTO reuqest)
         {
             var check = await _context.BorrowBills
+                .Include(b => b.User)
                 .Where(b => b.Id == reuqest.BorrowBillId && b.IsDeleted == false)
                 .FirstOrDefaultAsync();
 
@@ -226,13 +230,27 @@ namespace LibraryManagement.Application.Services
                     check.Status = (int)Status.Approve; //approve
                     check.ApprovalDate = DateTime.Now;
                     
+                    var requestAprrove = new CreateNotificationDTO()
+                    {
+                        IdBill = check.Id,
+                        Message = SystemConstant.APPROVE_MESSAGE,
+                        IdUser = check.UserId
+                    };
+                    await _notificationService.AddNewMessageAsync(requestAprrove);
                     break;
                 case Status.Borrowing:
                     check.Status = (int)Status.Borrowing; //borrow
                     check.ReceivedDate = DateTime.Now;
                     check.BorrowDate = DateTime.Now;
                     check.DueDate = DateTime.Now.AddDays(14);
-
+                    
+                    var requestBorrowing = new CreateNotificationDTO()
+                    {
+                        IdBill = check.Id,
+                        Message = SystemConstant.BORROW_MESSAGE,
+                        IdUser = check.UserId
+                    };
+                    await _notificationService.AddNewMessageAsync(requestBorrowing);
                     foreach (var item in bookBorrowDetail)
                     {
                         var bookindetail = await _context.Books
@@ -245,7 +263,14 @@ namespace LibraryManagement.Application.Services
                 case Status.Returned:
                     check.Status = (int)Status.Returned; //return
                     check.ReturnedDate = DateTime.Now;
-
+                    
+                    var requestReturned = new CreateNotificationDTO()
+                    {
+                        IdBill = check.Id,
+                        Message = SystemConstant.RETURNED_MESSAGE,
+                        IdUser = check.UserId
+                    };
+                    await _notificationService.AddNewMessageAsync(requestReturned);
                     foreach (var item in bookBorrowDetail)
                     {
                         var bookindetail = await _context.Books
@@ -258,6 +283,14 @@ namespace LibraryManagement.Application.Services
                 case Status.Rejected:
                     check.Status = (int)Status.Rejected;
                     check.RejectedDate = DateTime.Now;
+                    
+                    var requestRejected = new CreateNotificationDTO()
+                    {
+                        IdBill = check.Id,
+                        Message = SystemConstant.REJECTED_MESSAGE,
+                        IdUser = check.UserId
+                    };
+                    await _notificationService.AddNewMessageAsync(requestRejected);
                     break;
             }
 

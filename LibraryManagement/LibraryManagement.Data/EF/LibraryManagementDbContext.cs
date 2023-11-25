@@ -16,6 +16,7 @@ namespace LibraryManagement.Data.EF
         public DbSet<User> AppUsers { set; get; }
         public DbSet<Request> Requests { set; get; }
         public DbSet<UserRole> UserRoles { set; get; }
+        public DbSet<Notification> Notifications { set; get; }
         public LibraryManagementDbContext(DbContextOptions<LibraryManagementDbContext> options) : base(options)
         {
 
@@ -28,7 +29,8 @@ namespace LibraryManagement.Data.EF
                         .ApplyConfiguration(new CategoryConfig())
                         .ApplyConfiguration(new BorrowBillConfig())
                         .ApplyConfiguration(new BorrowBillDetailConfig())
-                        .ApplyConfiguration(new RequestConfig());
+                        .ApplyConfiguration(new RequestConfig())
+                        .ApplyConfiguration(new NotificationConfig());
 
             modelBuilder.FillDataBook();
             modelBuilder.FillDataCategory();

@@ -10,6 +10,7 @@ namespace LibraryManagement.Data.Models
     {
         public int Id { get; set; }
         public Guid UserId { get; set; }
+        public string? Comment { get; set; }
         public DateTime? CreateDate { get; set; }
         public DateTime? RejectedDate { get; set; }
         public DateTime? ApprovalDate { get; set; }
@@ -21,5 +22,6 @@ namespace LibraryManagement.Data.Models
         public int Status { get; set; }
         public bool IsDeleted { get; set; }
         public virtual List<BorrowBillDetail> BorrowBillDetail { get; set; }
+        public virtual List<Notification> Notifications { get; set; }   
     }
 }

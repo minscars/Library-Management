@@ -3,6 +3,7 @@ using LibraryManagement.Data.Models;
 using LibraryManagement.DTO.Book;
 using LibraryManagement.DTO.BorrowBill;
 using LibraryManagement.DTO.Category;
+using LibraryManagement.DTO.Notification;
 using LibraryManagement.DTO.Request;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,9 @@ namespace LibraryManagement.Application.Mapping
 
             //BorrowBill Mapping
             CreateMap<BorrowBill, BorrowBillDTO>().ReverseMap();
+
+            //Notification Mapping
+            CreateMap<Notification, NotificationDTO>().ReverseMap();
                 
         }
     }
