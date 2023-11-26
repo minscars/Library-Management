@@ -53,6 +53,9 @@ function Detail() {
             </div>
           ))}
         </Card>
+          <p className="mb-1 mt-3 font-medium text-blue-700 dark:text-white">
+            <b>*Note:</b> {borrowBilList.comment}
+          </p>
       </div>
       <div className="col-span-1 w-full rounded-xl 2xl:col-span-1">
         <Card extra={"w-full p-4"}>
@@ -86,7 +89,7 @@ function Detail() {
             <p className="font-bold text-navy-700 dark:text-white">
               Create date:{" "}
               <span className="font-bold text-blue-700">
-                {moment(borrowBilList.createDate).format("DD/MM/YYYY HH:mm A")}
+                {borrowBilList.createDate != null ? moment(borrowBilList.createDate).format("DD/MM/YYYY HH:mm A") : "..."}
               </span>
             </p>
           </div>
@@ -94,7 +97,7 @@ function Detail() {
             <p className="font-bold text-navy-700 dark:text-white">
               Borrow date:{" "}
               <span className="font-bold text-blue-700">
-                {moment(borrowBilList.borrowDate).format("DD/MM/YYYY HH:mm A")}
+                {borrowBilList.borrowDate != null ? moment(borrowBilList.borrowDate).format("DD/MM/YYYY HH:mm A") : "..."}
               </span>
             </p>
           </div>
@@ -102,9 +105,9 @@ function Detail() {
             <p className="font-bold text-navy-700 dark:text-white">
               Received date:{" "}
               <span className="font-bold text-blue-700">
-                {moment(borrowBilList.receivedDate).format(
+                {borrowBilList.receivedDate != null ? moment(borrowBilList.receivedDate).format(
                   "DD/MM/YYYY HH:mm A"
-                )}
+                ) : "..."}
               </span>
             </p>
           </div>
@@ -112,7 +115,7 @@ function Detail() {
             <p className="font-bold text-navy-700 dark:text-white">
               Due date:{" "}
               <span className="font-bold text-blue-700">
-                {moment(borrowBilList.dueDate).format("DD/MM/YYYY HH:mm A")}
+                {borrowBilList.dueDate != null ? moment(borrowBilList.dueDate).format("DD/MM/YYYY") : "..."}
               </span>
             </p>
           </div>

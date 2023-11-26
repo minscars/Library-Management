@@ -1,4 +1,5 @@
-﻿using LibraryManagement.DTO.BorrowBill;
+﻿using LibraryManagement.Data.Enums;
+using LibraryManagement.DTO.BorrowBill;
 using LibraryManagement.DTO.Contants;
 using System;
 using System.Collections.Generic;
@@ -15,5 +16,6 @@ namespace LibraryManagement.Application.Interfaces
         Task<ApiResult<BorrowBillDetailDTO>> GetBorrowBillByIdAsync(int Id);
         Task<ApiResult<List<BorrowBillDTO>>> GetAllBorrowBillAsync();
         Task<ApiResult<bool>> UpdateStatusAsync(BorrowBillStatusDTO reuqest);
+        Task<ApiResult<List<BorrowBillDTO>>> GetBorrowBillsByStatusAsync(StatusEnums.Status borrowBillStatus);
     }
 }

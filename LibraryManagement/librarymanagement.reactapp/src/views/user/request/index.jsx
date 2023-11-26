@@ -1,4 +1,4 @@
-import { MdBackspace, MdOutlineAddCircle } from "react-icons/md";
+import { MdBackspace, MdOutlineAddCircle, MdOutlineMenuBook } from "react-icons/md";
 import Card from "components/card";
 import bookApi from "../../../api/bookAPI";
 import requestApi from "../../../api/requestApi";
@@ -94,8 +94,9 @@ function Request() {
           </div>
 
           {requestList == null && (
-            <div className="flex items-center justify-center">
-              <p className="mt-2 text-xl text-gray-700">Reuqest is empty!</p>
+            <div className="flex flex-col items-center justify-center">
+              <p className="mt-48 text-xl text-gray-700">Your request is empty!</p>
+              <p className="mt-5 mb-48 font-medium text-gray-700">Please choose your favourite books to open new request</p>
             </div>
           )}
           {requestList?.map((row, key) => (

@@ -11,5 +11,6 @@ namespace LibraryManagement.DTO.BorrowBill
     {
         public int BorrowBillId { get; set; }
         public StatusEnums.Status Status { get; set; }
+        public string? Comment { get; set; }
     }
 }

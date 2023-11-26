@@ -1,7 +1,7 @@
 export const barChartDataDailyTraffic = [
   {
-    name: "Daily Traffic",
-    data: [20, 30, 40, 20, 45, 50, 30],
+    name: "",
+    data: [],
   },
 ];
 
@@ -26,7 +26,7 @@ export const barChartOptionsDailyTraffic = {
     theme: "dark",
   },
   xaxis: {
-    categories: ["00", "04", "08", "12", "14", "16", "18"],
+    categories: [],
     show: false,
     labels: {
       show: true,
@@ -103,8 +103,8 @@ export const barChartOptionsDailyTraffic = {
 };
 
 export const pieChartOptions = {
-  labels: ["Your files", "System", "Empty"],
-  colors: ["#4318FF", "#6AD2FF", "#EFF4FB"],
+  labels: [],
+  colors: [],
   chart: {
     width: "50px",
   },
@@ -133,7 +133,7 @@ export const pieChartOptions = {
     },
   },
   fill: {
-    colors: ["#4318FF", "#6AD2FF", "#EFF4FB"],
+    colors: [],
   },
   tooltip: {
     enabled: true,
@@ -146,7 +146,7 @@ export const pieChartOptions = {
   },
 };
 
-export const pieChartData = [63, 25, 12];
+export const pieChartData = [];
 
 export const barChartDataWeeklyRevenue = [
   {
@@ -258,13 +258,8 @@ export const barChartOptionsWeeklyRevenue = {
 
 export const lineChartDataTotalSpent = [
   {
-    name: "Revenue",
-    data: [50, 64, 48, 66, 49, 68],
-    color: "#4318FF",
-  },
-  {
-    name: "Profit",
-    data: [30, 40, 24, 46, 20, 46],
+    name: "",
+    data: [],
     color: "#6AD2FF",
   },
 ];
@@ -322,7 +317,7 @@ export const lineChartOptionsTotalSpent = {
     },
     type: "text",
     range: undefined,
-    categories: ["SEP", "OCT", "NOV", "DEC", "JAN", "FEB"],
+    categories: [],
   },
 
   yaxis: {

@@ -20,7 +20,7 @@ const Index = () => {
       <div className="mt-5 gap-5 xl:grid-cols-2">
         <Link to="/admin/categories/create">
           <button class="linear float-right mb-4 rounded-[20px] bg-cyan-700 px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-cyan-800 active:bg-cyan-700 dark:bg-brand-400 dark:hover:bg-brand-300 dark:active:opacity-90">
-            + Add new
+            + New category
           </button>
         </Link>
         <Card extra={"w-full h-full px-6 pb-6 sm:overflow-x-auto"}>
@@ -44,12 +44,12 @@ const Index = () => {
                   </th>
                   <th className="border-b border-gray-200 pb-[10px] pr-28 text-start dark:!border-navy-700">
                     <p className="text-xs tracking-wide text-gray-600">
-                      CRETAED DATE
+                      CREATED TIME
                     </p>
                   </th>
                   <th className="border-b border-gray-200 pb-[10px] pr-28 text-start dark:!border-navy-700">
                     <p className="text-xs tracking-wide text-gray-600">
-                      UPDATE DATE
+                      UPDATED TIME
                     </p>
                   </th>
                   <th
@@ -78,12 +78,12 @@ const Index = () => {
                       </td>
                       <td className="pb-[18px] pt-[14px] sm:text-[14px]">
                         <p className="text-sm font-bold text-navy-700 dark:text-white">
-                          {moment(row.createdTime).format("DD/MM/YYYY HH:mm A")}
+                          {row.createdDate != null ? moment(row.createdDate).format("DD/MM/YYYY HH:mm A") : "..."}
                         </p>
                       </td>
                       <td className="pb-[18px] pt-[14px] sm:text-[14px]">
                         <p className="text-sm font-bold text-navy-700 dark:text-white">
-                          {moment(row.updatedTime).format("DD/MM/YYYY HH:mm A")}
+                          {row.updatedDate != null ? moment(row.updatedDate).format("DD/MM/YYYY HH:mm A") : "..."}
                         </p>
                       </td>
                       <td className="flex items-center gap-2 pb-[18px] pt-[14px] sm:text-[14px]">

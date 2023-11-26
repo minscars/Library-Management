@@ -1,4 +1,5 @@
 ﻿using LibraryManagement.Application.Interfaces;
+using LibraryManagement.Data.Enums;
 using LibraryManagement.DTO.BorrowBill;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -65,6 +66,14 @@ namespace LibraryManagement.API.Controllers
         {
             var result = await _borrowBillService.UpdateStatusAsync(request);
             return Ok(result);
+        }
+
+        [HttpGet("Status/{borrowBillStatus}")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetBorrowBillsByStatusAsync([FromRoute] StatusEnums.Status borrowBillStatus)
+        {
+            var result = await _borrowBillService.GetBorrowBillsByStatusAsync(borrowBillStatus);
+            return Ok(result.Data);
         }
     }
 }
