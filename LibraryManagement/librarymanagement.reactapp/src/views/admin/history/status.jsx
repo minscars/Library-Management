@@ -1,28 +1,27 @@
 import borrowApi from "api/borrowApi";
 import Card from "components/card";
 import { useEffect, useState } from "react";
-import jwt from "jwt-decode";
 import moment from "moment";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+
 const History = () => {
-  var token = window.localStorage.getItem("token");
-  const userLogin = jwt(token);
+  const {id} = useParams();
   const [borrowList, setBorrow] = useState([]);
 
   useEffect(() => {
-    const getAllBorrow = async () => {
-      const data = await borrowApi.GetAllBorrowBill();
+    const GetBorrowBillsByStatus = async () => {
+      const data = await borrowApi.GetBorrowBillsByStatus(id);
       setBorrow(data);
     };
-    getAllBorrow();
-  }, []);
+    GetBorrowBillsByStatus();
+  }, [id]);
 
   return (
     <div>
       <div className="mb-4 mt-5 flex flex-col justify-between px-4 md:flex-row md:items-center">
         <ul className="mt-4 flex items-center justify-between md:mt-0 md:justify-center md:!gap-5 2xl:!gap-12">
             <li>
-              <Link
+                <Link
                 to="/admin/history"
                 className="text-base font-medium text-brand-500 hover:text-brand-500 dark:text-white"
                 >
@@ -119,7 +118,7 @@ const History = () => {
                   <tr key={row.id}>
                     <td className="flex items-center pb-[18px] pt-[14px] sm:text-[15px]">
                       <p className="ml-4 text-sm font-bold text-navy-700 dark:text-white">
-                        <Link to={`./detail/${row.id}`}>
+                        <Link to={`/admin/history/detail/${row.id}`}>
                           {"REQ-" + row.id}
                         </Link>
                       </p>

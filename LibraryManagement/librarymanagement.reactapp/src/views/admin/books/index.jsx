@@ -19,7 +19,7 @@ const Index = () => {
       <div className="mt-5 gap-5 xl:grid-cols-2">
         <Link to="/admin/books/create">
           <button class="linear float-right mb-4 rounded-[20px] bg-cyan-700 px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-cyan-800 active:bg-cyan-700 dark:bg-brand-400 dark:hover:bg-brand-300 dark:active:opacity-90">
-            + Add new
+            + New book
           </button>
         </Link>
         <Card extra={"w-full h-full px-6 pb-6 sm:overflow-x-auto"}>

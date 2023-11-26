@@ -24,6 +24,7 @@ function Detail() {
     //console.log(request);
     Swal.fire({
       title: "Are you sure?",
+      input : "text",
       text: "You should recheck the information before update status!",
       icon: "warning",
       showCancelButton: true,
@@ -33,6 +34,7 @@ function Detail() {
     }).then(async (result) => {
       if (result.isConfirmed) {
         //alert(request);
+        request.comment = result.value;
         await borrowApi.UpdateStatus(request).then(async (res) => {
           console.log(request);
 
@@ -54,9 +56,9 @@ function Detail() {
         <Card extra={"w-full p-4 h-full"}>
           <div className="flex h-fit w-full items-center justify-between rounded-t-2xl bg-white px-4 pb-[20px] pt-4 shadow-2xl shadow-gray-100 dark:!bg-navy-700 dark:shadow-none">
             <h4 className=" text-lg font-bold text-navy-700 dark:text-white">
-              Borrow Bill #
-              <span className="font-bold text-blue-700">
-                {borrowBilList.id}{" "}
+              Request ID:
+              <span className="font-bold text-blue-700 ml-2">
+                REQ-{borrowBilList.id}{" "}
               </span>
             </h4>
             <div className="float-right">
@@ -125,6 +127,9 @@ function Detail() {
             </div>
           ))}
         </Card>
+        <p className="mb-1 mt-3 font-medium text-blue-700 dark:text-white">
+            <b>*Note:</b> {borrowBilList.comment}
+          </p>
       </div>
       <div className="col-span-1 w-full rounded-xl 2xl:col-span-1">
         <Card extra={"w-full p-4"}>
@@ -158,7 +163,7 @@ function Detail() {
             <p className="font-bold text-navy-700 dark:text-white">
               Create date:{" "}
               <span className="font-bold text-blue-700">
-                {moment(borrowBilList.createDate).format("DD/MM/YYYY HH:mm A")}
+                {borrowBilList.createDate != null ? moment(borrowBilList.createDate).format("DD/MM/YYYY HH:mm A") : "..."}
               </span>
             </p>
           </div>
@@ -170,7 +175,7 @@ function Detail() {
                   ? moment(borrowBilList.rejectedDate).format(
                       "DD/MM/YYYY HH:mm A"
                     )
-                  : "......"}
+                  : "..."}
               </span>
             </p>
           </div>
@@ -182,7 +187,7 @@ function Detail() {
                   ? moment(borrowBilList.approvalDate).format(
                       "DD/MM/YYYY HH:mm A"
                     )
-                  : "......"}
+                  : "..."}
               </span>
             </p>
           </div>
@@ -194,7 +199,7 @@ function Detail() {
                   ? moment(borrowBilList.borrowDate).format(
                       "DD/MM/YYYY HH:mm A"
                     )
-                  : "......"}
+                  : "..."}
               </span>
             </p>
           </div>
@@ -206,7 +211,7 @@ function Detail() {
                   ? moment(borrowBilList.receivedDate).format(
                       "DD/MM/YYYY HH:mm A"
                     )
-                  : "......"}
+                  : "..."}
               </span>
             </p>
           </div>
@@ -215,8 +220,8 @@ function Detail() {
               Due date:{" "}
               <span className="font-bold text-blue-700">
                 {borrowBilList.dueDate != null
-                  ? moment(borrowBilList.dueDate).format("DD/MM/YYYY HH:mm A")
-                  : "......"}
+                  ? moment(borrowBilList.dueDate).format("DD/MM/YYYY")
+                  : "..."}
               </span>
             </p>
           </div>

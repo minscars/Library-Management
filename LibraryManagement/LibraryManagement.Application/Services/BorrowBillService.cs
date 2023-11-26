@@ -145,6 +145,7 @@ namespace LibraryManagement.Application.Services
                     BorrowedBooks = listBorrowedBooks,
                     ReceivedDate = b.ReceivedDate,
                     Status = StatusEnums.GetDisplayName((Status)b.Status),
+                    Comment = b.Comment,
                 }).FirstOrDefaultAsync();
 
             if (borrowBill == null)
@@ -198,11 +199,11 @@ namespace LibraryManagement.Application.Services
             };
         }
 
-        public async Task<ApiResult<bool>> UpdateStatusAsync(BorrowBillStatusDTO reuqest)
+        public async Task<ApiResult<bool>> UpdateStatusAsync(BorrowBillStatusDTO request)
         {
             var check = await _context.BorrowBills
                 .Include(b => b.User)
-                .Where(b => b.Id == reuqest.BorrowBillId && b.IsDeleted == false)
+                .Where(b => b.Id == request.BorrowBillId && b.IsDeleted == false)
                 .FirstOrDefaultAsync();
 
 
@@ -224,11 +225,12 @@ namespace LibraryManagement.Application.Services
                     Amount = b.Amount,
                 }).ToListAsync();
 
-            switch (reuqest.Status)
+            switch (request.Status)
             {
                 case Status.Approve:
                     check.Status = (int)Status.Approve; //approve
                     check.ApprovalDate = DateTime.Now;
+                    check.Comment = request.Comment;
                     
                     var requestAprrove = new CreateNotificationDTO()
                     {
@@ -243,7 +245,8 @@ namespace LibraryManagement.Application.Services
                     check.ReceivedDate = DateTime.Now;
                     check.BorrowDate = DateTime.Now;
                     check.DueDate = DateTime.Now.AddDays(14);
-                    
+                    check.Comment = request.Comment;
+
                     var requestBorrowing = new CreateNotificationDTO()
                     {
                         IdBill = check.Id,
@@ -263,7 +266,8 @@ namespace LibraryManagement.Application.Services
                 case Status.Returned:
                     check.Status = (int)Status.Returned; //return
                     check.ReturnedDate = DateTime.Now;
-                    
+                    check.Comment = request.Comment;
+
                     var requestReturned = new CreateNotificationDTO()
                     {
                         IdBill = check.Id,
@@ -283,7 +287,8 @@ namespace LibraryManagement.Application.Services
                 case Status.Rejected:
                     check.Status = (int)Status.Rejected;
                     check.RejectedDate = DateTime.Now;
-                    
+                    check.Comment = request.Comment;
+
                     var requestRejected = new CreateNotificationDTO()
                     {
                         IdBill = check.Id,
@@ -297,6 +302,42 @@ namespace LibraryManagement.Application.Services
             await _context.SaveChangesAsync();  
 
             return new ApiResult<bool>(true)
+            {
+                Message = "",
+                StatusCode = 200
+            };
+        }
+
+        public async Task<ApiResult<List<BorrowBillDTO>>> GetBorrowBillsByStatusAsync(StatusEnums.Status borrowBillStatus)
+        {
+            var checkExit = await _context.BorrowBills
+                .Include(b => b.User)
+                .Where(b => b.IsDeleted == false && b.Status == (int) borrowBillStatus)
+                .Select(b => new BorrowBillDTO()
+                {
+                    Id = b.Id,
+                    UserId = b.UserId,
+                    UserName = b.User.Name,
+                    Status = StatusEnums.GetDisplayName((Status)b.Status),
+                    CreateDate = b.CreateDate,
+                    RejectedDate = b.RejectedDate,
+                    ReceivedDate = b.ReceivedDate,
+                    BorrowDate = b.BorrowDate,
+                    DueDate = b.DueDate,
+                    ReturnedDate = b.ReturnedDate
+                })
+                .ToListAsync();
+
+            if (checkExit == null)
+            {
+                return new ApiResult<List<BorrowBillDTO>>(null)
+                {
+                    Message = "Something went wrong!",
+                    StatusCode = 400
+                };
+            }
+
+            return new ApiResult<List<BorrowBillDTO>>(checkExit)
             {
                 Message = "",
                 StatusCode = 200

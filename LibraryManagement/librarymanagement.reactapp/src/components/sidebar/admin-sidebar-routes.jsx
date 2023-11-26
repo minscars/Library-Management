@@ -9,6 +9,7 @@ import Profile from "views/admin/profile";
 import DataTables from "views/admin/tables";
 import DashBoard from "views/admin/default";
 import History from "views/admin/history";
+import Statistic from "views/admin/statistic";
 
 // Auth Imports
 import SignIn from "views/auth/SignIn";
@@ -74,19 +75,26 @@ const routes = [
   //   component: <DashBoard />,
   // },
   {
-    name: "History Management",
+    name: "Request Management",
     layout: "/admin",
     path: "history",
     icon: <MdHistory className="h-6 w-6" />,
     component: <History />,
   },
   {
-    name: "Sign In",
-    layout: "/auth",
-    path: "sign-in",
-    icon: <MdLock className="h-6 w-6" />,
-    component: <SignIn />,
+    name: "Statistic",
+    layout: "/admin",
+    path: "statistic",
+    icon: <MdBarChart className="h-7 w-7" />,
+    component: <Statistic />,
   },
+  // {
+  //   name: "Sign In",
+  //   layout: "/auth",
+  //   path: "sign-in",
+  //   icon: <MdLock className="h-6 w-6" />,
+  //   component: <SignIn />,
+  // },
 ];
 
 export default routes;

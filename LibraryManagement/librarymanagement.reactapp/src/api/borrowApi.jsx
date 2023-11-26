@@ -15,8 +15,13 @@ const borrowApi = {
   GetAllBorrowBill: () => {
     return API.get("/BorrowBills");
   },
+
   UpdateStatus: (request) => {
     return API.put("/BorrowBills/Status", request);
+  },
+
+  GetBorrowBillsByStatus: (statusId) => {
+    return API.get(`/BorrowBills/Status/${statusId}`);
   },
 };
 

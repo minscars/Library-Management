@@ -15,6 +15,8 @@ import AdminBookDetail from "views/admin/books/detail";
 import AdminBooksSearch from "views/admin/books/booksearch";  
 import AdminHistory from "views/admin/history";  
 import AdminHistoryDetail from "views/admin/history/detail";  
+import AdminHistoryStatus from "views/admin/history/status";
+import AdminStatistic from "views/admin/statistic";
 
 import AdminBorrowAndReturn from "views/admin/borrowreturn";
 import AdminProfile from "views/admin/profile";
@@ -57,6 +59,8 @@ const routes = [
   { layout: "/admin", path: "dashboard", component: <AdminDashBoard />},
   { layout: "/admin", path: "history", component: <AdminHistory />},
   { layout: "/admin", path: "history/detail/:id", component: <AdminHistoryDetail />},
+  { layout: "/admin", path: "history/status/:id", component: <AdminHistoryStatus />},
+  { layout: "/admin", path: "statistic", component: <AdminStatistic />},
 
   { layout: "/auth", path: "sign-in", component: <SignIn />},
   { layout: "/auth", path: "register", component: <Register />},

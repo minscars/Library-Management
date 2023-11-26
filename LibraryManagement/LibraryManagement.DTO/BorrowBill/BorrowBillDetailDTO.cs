@@ -24,5 +24,6 @@ namespace LibraryManagement.DTO.BorrowBill
         public List<BorrowedBookDTO> BorrowedBooks { get; set; }
         public string Status { get; set; }
         public bool IsDeleted { get; set; }
+        public string? Comment { get; set; }
     }
 }
