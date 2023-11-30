@@ -230,6 +230,7 @@ namespace LibraryManagement.Application.Services
                 case Status.Approve:
                     check.Status = (int)Status.Approve; //approve
                     check.ApprovalDate = DateTime.Now;
+                    check.DueDate = DateTime.Now.AddDays(2);
                     check.Comment = request.Comment;
                     
                     var requestAprrove = new CreateNotificationDTO()
