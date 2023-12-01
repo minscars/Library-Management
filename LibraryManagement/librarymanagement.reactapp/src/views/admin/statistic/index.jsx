@@ -1,5 +1,5 @@
 import { IoDocuments } from "react-icons/io5";
-import { MdBarChart} from "react-icons/md";
+import { MdBarChart } from "react-icons/md";
 import Widget from "components/widget/Widget";
 import statisticApi from "api/statisticApi";
 import { useEffect, useState } from "react";
@@ -11,11 +11,22 @@ import {
   barChartOptionsDailyTraffic,
   lineChartDataTotalSpent,
   lineChartOptionsTotalSpent,
-  pieChartOptions
+  pieChartOptions,
 } from "variables/charts";
 import Card from "components/card";
 
 const Dashboard = () => {
+  var defaulColors = [
+    "#ff2d55",
+    "#edb109",
+    "#9aed09",
+    "#09edda",
+    "#0914ed",
+    "#d809ed",
+    "#d809ed",
+    "#8c9351",
+    "#171919",
+  ];
   const [statistic, setStatistic] = useState([]);
   const [pieChartData, setPieChartData] = useState([]);
   useEffect(() => {
@@ -26,7 +37,7 @@ const Dashboard = () => {
       //Bar chart
       var categoryNameList = [];
       var requestsByCategoryName = [];
-      data.sumOfRequestByBookCategory?.map(x => {
+      data.sumOfRequestByBookCategory?.map((x) => {
         categoryNameList.push(x.categoryName);
         requestsByCategoryName.push(x.sumOfRequests);
       });
@@ -37,19 +48,18 @@ const Dashboard = () => {
       //Line chart
       var monthList = [];
       var requestsByMonth = [];
-      data.sumOfRequestByMonth?.map(x => {
-        monthList.push("Th-"+x.month);
+      data.sumOfRequestByMonth?.map((x) => {
+        monthList.push("Th-" + x.month);
         requestsByMonth.push(x.sumOfRequests);
       });
       lineChartDataTotalSpent[0].data = requestsByMonth;
       lineChartDataTotalSpent[0].name = "Số lượt mượn";
       lineChartOptionsTotalSpent.xaxis.categories = monthList;
-      
+
       //Pie chart
-      var defaulColors = ["#ff2d55", "#edb109", "#9aed09", "#09edda", "#0914ed", "#d809ed", "#d809ed", "#8c9351", "#171919"];
       var labels = [];
       var pieChartDataArray = [];
-      data.booksRateByCategory?.map(x => {
+      data.booksRateByCategory?.map((x) => {
         labels.push(x.categoryName);
         pieChartDataArray.push(x.sumOfBooks);
       });
@@ -91,7 +101,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="h-[300px] w-full pt-10 pb-0">
+          <div className="h-[300px] w-full pb-0 pt-10">
             <BarChart
               chartData={barChartDataDailyTraffic}
               chartOptions={barChartOptionsDailyTraffic}
@@ -110,7 +120,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="h-[300px] w-full pt-10 pb-0">
+          <div className="h-[300px] w-full pb-0 pt-10">
             <LineChart
               options={lineChartOptionsTotalSpent}
               series={lineChartDataTotalSpent}

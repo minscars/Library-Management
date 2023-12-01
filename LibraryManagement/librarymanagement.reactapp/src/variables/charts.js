@@ -103,8 +103,8 @@ export const barChartOptionsDailyTraffic = {
 };
 
 export const pieChartOptions = {
-  labels: [],
-  colors: [],
+  labels: [""],
+  colors: [""],
   chart: {
     width: "50px",
   },
@@ -133,7 +133,7 @@ export const pieChartOptions = {
     },
   },
   fill: {
-    colors: [],
+    colors: [""],
   },
   tooltip: {
     enabled: true,
