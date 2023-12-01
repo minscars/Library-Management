@@ -50,6 +50,11 @@ const History = () => {
                       status
                     </p>
                   </th>
+                  <th className="border-b border-gray-200 pb-[10px] pr-28 text-start dark:!border-navy-700">
+                    <p className="text-xs uppercase tracking-wide text-gray-600">
+                      note
+                    </p>
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -67,13 +72,20 @@ const History = () => {
                     </td>
                     <td className="pb-[18px] pt-[14px] sm:text-[15px]">
                       <div className="w-[240px]">
-                        {row.dueDate != null ? moment(row.dueDate).format("DD/MM/YYYY HH:mm A") : "..."}
+                        {row.dueDate != null ? moment(row.dueDate).format("DD/MM/YYYY") : "..."}
                       </div>
                     </td>
                     <td className="pb-[18px] pt-[14px] sm:text-[15px]">
                       <div className="w-[40px]">
                         <p className="text-sm font-bold text-navy-700 dark:text-white">
                           {row.status}
+                        </p>
+                      </div>
+                    </td>
+                    <td className="pb-[18px] pt-[14px] sm:text-[15px]">
+                      <div className="w-[40px]">
+                        <p className="text-sm font-bold text-red-500 dark:text-white">
+                          {moment().isAfter(moment(row.dueDate, 'YYYY-MM-DDTHH:mm:ss.SSSZ')) && (row.status == "Approve" || row.status == "Borrowing") && ("Expired")}
                         </p>
                       </div>
                     </td>

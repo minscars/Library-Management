@@ -60,6 +60,10 @@ function Detail() {
               <span className="font-bold text-blue-700 ml-2">
                 REQ-{borrowBilList.id}{" "}
               </span>
+              {moment().isAfter(moment(borrowBilList.dueDate, 'YYYY-MM-DDTHH:mm:ss.SSSZ')) && (borrowBilList.status == "Approve" || borrowBilList.status == "Borrowing") && 
+              (
+                <span className="text-red-500 ml-2">(Expired)</span>
+              )}
             </h4>
             <div className="float-right">
               {borrowBilList.status == "Pending" && (

@@ -20,8 +20,15 @@ function Detail() {
       <div className="col-span-1 h-full w-full rounded-xl 2xl:col-span-2">
         <Card extra={"w-full p-4 h-full"}>
           <div className="nt-3 flex h-fit w-full items-center justify-between rounded-t-2xl bg-white px-4 pb-[20px] pt-4 shadow-2xl shadow-gray-100 dark:!bg-navy-700 dark:shadow-none">
-            <h4 className="text-lg font-bold text-navy-700 dark:text-white">
-              Borrow Bill #{borrowBilList.id}
+            <h4 className=" text-lg font-bold text-navy-700 dark:text-white">
+              Request ID:
+              <span className="font-bold text-blue-700 ml-2">
+                REQ-{borrowBilList.id}{" "}
+              </span>
+              {moment().isAfter(moment(borrowBilList.dueDate, 'YYYY-MM-DDTHH:mm:ss.SSSZ')) && (borrowBilList.status == "Approve" || borrowBilList.status == "Borrowing") && 
+              (
+                <span className="text-red-500 ml-2">(Expired)</span>
+              )}
             </h4>
             <p className="mr-20 font-bold text-navy-700 dark:text-white">
               Status:{" "}
