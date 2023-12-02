@@ -14,6 +14,8 @@ namespace LibraryManagement.DTO.BorrowBill
         public Guid UserId { get; set; }
         public string? UserName { get; set; }
         public string? UserAvatar { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
         public DateTime? CreateDate { get; set; }
         public DateTime? RejectedDate { get; set; }
         public DateTime? ApprovalDate { get; set; }

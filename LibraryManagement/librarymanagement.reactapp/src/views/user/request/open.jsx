@@ -2,7 +2,7 @@ import jwt from "jwt-decode";
 import requestAPI from "../../../api/requestApi";
 import { useEffect, useState } from "react";
 import Card from "components/card";
-import Checkbox from "components/checkbox";
+import { useNavigate } from "react-router-dom";
 import banner from "assets/img/profile/banner.png";
 import userAPI from "api/userApi";
 import borrowApi from "api/borrowApi";
@@ -14,6 +14,7 @@ const Index = () => {
   var token = window.localStorage.getItem("token");
   const userLogin = jwt(token);
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getUser = async () => {
@@ -48,6 +49,7 @@ const Index = () => {
             Alert.showSuccessAlert(
               "Your request have been opened sucessfully!"
             );
+            navigate(`/user/history/detail/${res.data}`);
           } else {
             Alert.showErrorAlert("Something went worong!");
           }
@@ -91,9 +93,7 @@ const Index = () => {
                 {requestList?.map((row, key) => {
                   return (
                     <tr>
-                      <td className="pb-[18px] pt-[14px]">
-                        <Checkbox />
-                      </td>
+                      <td className="pb-[18px] pt-[14px]"></td>
                       <td className="pb-[18px] pt-[14px] sm:text-[14px]">
                         <p className="ml-2 text-sm font-bold text-navy-700 dark:text-white">
                           {row.bookName}

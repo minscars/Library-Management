@@ -137,11 +137,14 @@ namespace LibraryManagement.Application.Services
                     UserId = b.UserId,
                     UserName = b.User.Name,
                     UserAvatar  = b.User.Avatar,
+                    Email = b.User.Email,
+                    PhoneNumber = b.User.PhoneNumber,
                     CreateDate = b.CreateDate,
                     RejectedDate = b.RejectedDate,
                     ApprovalDate = b.ApprovalDate,
                     BorrowDate = b.BorrowDate,
                     DueDate = b.DueDate,
+                    ReturnedDate = b.ReturnedDate,
                     BorrowedBooks = listBorrowedBooks,
                     ReceivedDate = b.ReceivedDate,
                     Status = StatusEnums.GetDisplayName((Status)b.Status),
@@ -240,7 +243,16 @@ namespace LibraryManagement.Application.Services
                         IdUser = check.UserId
                     };
                     await _notificationService.AddNewMessageAsync(requestAprrove);
-                    break;
+                    foreach (var item in bookBorrowDetail)
+                    {
+                        var bookindetail = await _context.Books
+                            .Where(b => b.Id == item.BookId)
+                            .FirstOrDefaultAsync();
+                        bookindetail.Quantity_Export = bookindetail.Quantity_Export + item.Amount;
+                        bookindetail.Quantity_On_Hand = bookindetail.Quantity_Import - bookindetail.Quantity_Export;
+                    }
+                break;
+
                 case Status.Borrowing:
                     check.Status = (int)Status.Borrowing; //borrow
                     check.ReceivedDate = DateTime.Now;
@@ -255,15 +267,8 @@ namespace LibraryManagement.Application.Services
                         IdUser = check.UserId
                     };
                     await _notificationService.AddNewMessageAsync(requestBorrowing);
-                    foreach (var item in bookBorrowDetail)
-                    {
-                        var bookindetail = await _context.Books
-                            .Where(b => b.Id == item.BookId)
-                            .FirstOrDefaultAsync();
-                        bookindetail.Quantity_Export = bookindetail.Quantity_Export + item.Amount;
-                        bookindetail.Quantity_On_Hand = bookindetail.Quantity_Import - bookindetail.Quantity_Export;
-                    }
-                    break;
+                break;
+
                 case Status.Returned:
                     check.Status = (int)Status.Returned; //return
                     check.ReturnedDate = DateTime.Now;
@@ -284,7 +289,8 @@ namespace LibraryManagement.Application.Services
                         bookindetail.Quantity_Borrowed += item.Amount;
                         bookindetail.Quantity_On_Hand += item.Amount;
                     }
-                    break;
+                break;
+
                 case Status.Rejected:
                     check.Status = (int)Status.Rejected;
                     check.RejectedDate = DateTime.Now;
@@ -297,7 +303,29 @@ namespace LibraryManagement.Application.Services
                         IdUser = check.UserId
                     };
                     await _notificationService.AddNewMessageAsync(requestRejected);
-                    break;
+                break;
+
+                case Status.Cancel:
+                    check.Status = (int)Status.Cancel;
+                    check.CancelDate = DateTime.Now;
+
+                    var requestCancel = new CreateNotificationDTO()
+                    {
+                        IdBill = check.Id,
+                        Message = SystemConstant.CANCEE_MESSAGE,
+                        IdUser = check.UserId
+                    };
+                    await _notificationService.AddNewMessageAsync(requestCancel);
+                    foreach (var item in bookBorrowDetail)
+                    {
+                        var bookindetail = await _context.Books
+                            .Where(b => b.Id == item.BookId)
+                            .FirstOrDefaultAsync();
+                        bookindetail.Quantity_Borrowed += item.Amount;
+                        bookindetail.Quantity_On_Hand += item.Amount;
+                    }
+                break;
+    
             }
 
             await _context.SaveChangesAsync();  

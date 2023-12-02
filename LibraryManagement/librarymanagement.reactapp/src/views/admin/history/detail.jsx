@@ -24,7 +24,7 @@ function Detail() {
     //console.log(request);
     Swal.fire({
       title: "Are you sure?",
-      input : "text",
+      input: "text",
       text: "You should recheck the information before update status!",
       icon: "warning",
       showCancelButton: true,
@@ -57,13 +57,17 @@ function Detail() {
           <div className="flex h-fit w-full items-center justify-between rounded-t-2xl bg-white px-4 pb-[20px] pt-4 shadow-2xl shadow-gray-100 dark:!bg-navy-700 dark:shadow-none">
             <h4 className=" text-lg font-bold text-navy-700 dark:text-white">
               Request ID:
-              <span className="font-bold text-blue-700 ml-2">
+              <span className="ml-2 font-bold text-blue-700">
                 REQ-{borrowBilList.id}{" "}
               </span>
-              {moment().isAfter(moment(borrowBilList.dueDate, 'YYYY-MM-DDTHH:mm:ss.SSSZ')) && (borrowBilList.status == "Approve" || borrowBilList.status == "Borrowing") && 
-              (
-                <span className="text-red-500 ml-2">(Expired)</span>
-              )}
+              {moment().isAfter(
+                moment(borrowBilList.dueDate, "YYYY-MM-DDTHH:mm:ss.SSSZ")
+              ) &&
+                (borrowBilList.status == "Approve" ||
+                  borrowBilList.status == "Borrowing" ||
+                  borrowBilList.status == "Cancel") && (
+                  <span className="ml-2 text-red-500">(Expired)</span>
+                )}
             </h4>
             <div className="float-right">
               {borrowBilList.status == "Pending" && (
@@ -83,12 +87,20 @@ function Detail() {
                 </button>
               )}
               {borrowBilList.status == "Approve" && (
-                <button
-                  onClick={() => handleUpdateStatus(3)}
-                  class="linear ml-2 rounded-[20px] bg-lightPrimary px-4 py-2 text-sm font-medium text-brand-500 transition duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20"
-                >
-                  Received
-                </button>
+                <div>
+                  <button
+                    onClick={() => handleUpdateStatus(3)}
+                    class="linear ml-2 rounded-[20px] bg-lightPrimary px-4 py-2 text-sm font-medium text-brand-500 transition duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20"
+                  >
+                    Received
+                  </button>
+                  <button
+                    onClick={() => handleUpdateStatus(6)}
+                    class="linear ml-2 rounded-[20px] bg-lightPrimary px-4 py-2 text-sm font-medium text-red-600 transition duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20"
+                  >
+                    Cancel
+                  </button>
+                </div>
               )}
               {(borrowBilList.status == "Received" ||
                 borrowBilList.status == "Borrowing") && (
@@ -132,8 +144,8 @@ function Detail() {
           ))}
         </Card>
         <p className="mb-1 mt-3 font-medium text-blue-700 dark:text-white">
-            <b>*Note:</b> {borrowBilList.comment}
-          </p>
+          <b>*Note:</b> {borrowBilList.comment}
+        </p>
       </div>
       <div className="col-span-1 w-full rounded-xl 2xl:col-span-1">
         <Card extra={"w-full p-4"}>
@@ -160,14 +172,27 @@ function Detail() {
           </div>
 
           {/* Post followers */}
-          <div className="mr-4 flex items-end justify-center text-red-600 dark:text-white"></div>
+          <div className="mr-4 mt-4 text-gray-600 dark:text-white">
+            Email:{" "}
+            <span className="mr-2 text-base font-normal text-gray-800 dark:text-white">
+              {borrowBilList?.email} <br />
+            </span>
+            Phone number:{" "}
+            <span className="mr-2 mt-2 text-base font-normal text-gray-800 dark:text-white">
+              {borrowBilList?.phoneNumber}
+            </span>
+          </div>
         </Card>
         <div>
           <div className="ml-4 mt-4 flex items-center justify-between">
             <p className="font-bold text-navy-700 dark:text-white">
               Create date:{" "}
               <span className="font-bold text-blue-700">
-                {borrowBilList.createDate != null ? moment(borrowBilList.createDate).format("DD/MM/YYYY HH:mm A") : "..."}
+                {borrowBilList.createDate != null
+                  ? moment(borrowBilList.createDate).format(
+                      "DD/MM/YYYY HH:mm A"
+                    )
+                  : "..."}
               </span>
             </p>
           </div>
@@ -224,6 +249,16 @@ function Detail() {
               Due date:{" "}
               <span className="font-bold text-blue-700">
                 {borrowBilList.dueDate != null
+                  ? moment(borrowBilList.dueDate).format("DD/MM/YYYY")
+                  : "..."}
+              </span>
+            </p>
+          </div>
+          <div className="ml-4 mt-4">
+            <p className="font-bold text-navy-700 dark:text-white">
+              Returned date:{" "}
+              <span className="font-bold text-blue-700">
+                {borrowBilList.returnedDate != null
                   ? moment(borrowBilList.dueDate).format("DD/MM/YYYY")
                   : "..."}
               </span>

@@ -14,6 +14,8 @@ import {
 import userAPI from "api/userApi";
 import jwt from "jwt-decode";
 import notificaionApi from "api/notificationApi";
+import Alert from "components/alert";
+import Swal from "sweetalert2";
 
 const Navbar = (props) => {
   const navigate = useNavigate();
@@ -62,6 +64,23 @@ const Navbar = (props) => {
   const handleReCallApiNotification = async () => {
     const notifi = await notificaionApi.GetByUser(userLogin.id);
     setNotifi(notifi);
+  };
+  const handleLogout = async () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "Do you want to log-out?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, I want it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        window.localStorage.removeItem("token");
+        Alert.showSuccessAlert("You have been log-outed sucessfully!");
+        navigate(`/auth/sign-in`);
+      }
+    });
   };
 
   return (
@@ -259,9 +278,10 @@ const Navbar = (props) => {
                 >
                   Newsletter Settings
                 </a>
+
                 <a
-                  href=" "
-                  className="mt-3 text-sm font-medium text-red-500 hover:text-red-500"
+                  onClick={() => handleLogout()}
+                  className="mt-3 cursor-pointer text-sm font-medium text-red-500 hover:text-red-500"
                 >
                   Log Out
                 </a>

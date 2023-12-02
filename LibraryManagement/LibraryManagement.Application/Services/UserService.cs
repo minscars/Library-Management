@@ -112,6 +112,8 @@ namespace LibraryManagement.Application.Services
                     Id = u.Id,
                     Name = u.Name,
                     Avatar = u.Avatar,
+                    Email = u.Email,
+                    PhoneNumber = u.PhoneNumber,
                 }).FirstOrDefaultAsync();
             if (user == null)
             {

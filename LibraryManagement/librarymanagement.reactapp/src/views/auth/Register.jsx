@@ -118,14 +118,14 @@ export default function SignIn() {
           </button>
           <div className="mt-4 flex items-center justify-center">
             <span className=" text-sm font-medium text-navy-700 dark:text-gray-600">
-              Not registered yet?
+              Had an account?
             </span>
-            <a
-              href=" "
+            <Link
+              to={"/auth/sign-in"}
               className="ml-1 text-sm font-medium text-brand-500 hover:text-brand-600 dark:text-white"
             >
-              Create an account
-            </a>
+              Log-in now!
+            </Link>
           </div>
         </form>
       </div>

@@ -18,6 +18,7 @@ namespace LibraryManagement.Data.Models
         public DateTime? ReceivedDate { get; set; }
         public DateTime? DueDate { get; set; }
         public DateTime? ReturnedDate { get; set; }
+        public DateTime? CancelDate { get; set; }
         public User User { get; set; }
         public int Status { get; set; }
         public bool IsDeleted { get; set; }

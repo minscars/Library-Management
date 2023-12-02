@@ -23,6 +23,8 @@ namespace LibraryManagement.Data.Enums
             Returned = 4,
             [Display(Name = "Rejected")]
             Rejected = 5,
+            [Display(Name = "Cancel")]
+            Cancel = 6,
         }
         public static string GetDisplayName(Enum enumValue)
         {

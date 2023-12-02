@@ -21,59 +21,67 @@ const History = () => {
     <div>
       <div className="mb-4 mt-5 flex flex-col justify-between px-4 md:flex-row md:items-center">
         <ul className="mt-4 flex items-center justify-between md:mt-0 md:justify-center md:!gap-5 2xl:!gap-12">
-            <li>
-              <Link
-                to="/admin/history"
-                className="text-base font-medium text-brand-500 hover:text-brand-500 dark:text-white"
-                >
-                    Tất cả
-                </Link>
-            </li>
-          
-            <li>
-              <Link
-                to="/admin/history/status/1"
-                className="text-base font-medium text-brand-500 hover:text-brand-500 dark:text-white"
-              >
-                Pending
-              </Link>
-            </li>
+          <li>
+            <Link
+              to="/admin/history"
+              className="text-base font-medium text-brand-500 hover:text-brand-500 dark:text-white"
+            >
+              Tất cả
+            </Link>
+          </li>
 
-            <li>
-              <Link
-                to="/admin/history/status/2"
-                className="text-base font-medium text-brand-500 hover:text-brand-500 dark:text-white"
-              >
-                Approved
-              </Link>
-            </li>
+          <li>
+            <Link
+              to="/admin/history/status/1"
+              className="text-base font-medium text-brand-500 hover:text-brand-500 dark:text-white"
+            >
+              Pending
+            </Link>
+          </li>
 
-            <li>
-              <Link
-                to="/admin/history/status/3"
-                className="text-base font-medium text-brand-500 hover:text-brand-500 dark:text-white"
-              >
-                Borrowing
-              </Link>
-            </li>
+          <li>
+            <Link
+              to="/admin/history/status/2"
+              className="text-base font-medium text-brand-500 hover:text-brand-500 dark:text-white"
+            >
+              Approved
+            </Link>
+          </li>
 
-            <li>
-              <Link
-                to="/admin/history/status/4"
-                className="text-base font-medium text-brand-500 hover:text-brand-500 dark:text-white"
-              >
-                Returned
-              </Link>
-            </li>
+          <li>
+            <Link
+              to="/admin/history/status/3"
+              className="text-base font-medium text-brand-500 hover:text-brand-500 dark:text-white"
+            >
+              Borrowing
+            </Link>
+          </li>
 
-            <li>
-              <Link
-                to="/admin/history/status/5"
-                className="text-base font-medium text-brand-500 hover:text-brand-500 dark:text-white"
-              >
-                Rejected
-              </Link>
-            </li>
+          <li>
+            <Link
+              to="/admin/history/status/4"
+              className="text-base font-medium text-brand-500 hover:text-brand-500 dark:text-white"
+            >
+              Returned
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              to="/admin/history/status/5"
+              className="text-base font-medium text-brand-500 hover:text-brand-500 dark:text-white"
+            >
+              Rejected
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/admin/history/status/6"
+              className="text-base font-medium text-brand-500 hover:text-brand-500 dark:text-white"
+            >
+              Canceled
+            </Link>
+          </li>
         </ul>
       </div>
       <div className="gap-5 xl:grid-cols-2">
@@ -124,9 +132,7 @@ const History = () => {
                   <tr key={row.id}>
                     <td className="flex items-center pb-[18px] pt-[14px] sm:text-[15px]">
                       <p className="ml-4 text-sm font-bold text-navy-700 dark:text-white">
-                        <Link to={`./detail/${row.id}`}>
-                          {"REQ-" + row.id}
-                        </Link>
+                        <Link to={`./detail/${row.id}`}>{"REQ-" + row.id}</Link>
                       </p>
                     </td>
                     <td className=" items-center pb-[18px] pt-[14px] sm:text-[15px]">
@@ -156,7 +162,13 @@ const History = () => {
                     <td className="pb-[18px] pt-[14px] sm:text-[15px]">
                       <div className="w-[40px]">
                         <p className="text-sm font-bold text-red-500 dark:text-white">
-                          {moment().isAfter(moment(row.dueDate, 'YYYY-MM-DDTHH:mm:ss.SSSZ')) && (row.status == "Approve" || row.status == "Borrowing") && ("Expired")}
+                          {moment().isAfter(
+                            moment(row.dueDate, "YYYY-MM-DDTHH:mm:ss.SSSZ")
+                          ) &&
+                            (row.status == "Approve" ||
+                              row.status == "Borrowing" ||
+                              row.status == "Cancel") &&
+                            "Expired"}
                         </p>
                       </div>
                     </td>

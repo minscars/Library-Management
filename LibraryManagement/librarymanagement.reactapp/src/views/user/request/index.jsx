@@ -1,4 +1,8 @@
-import { MdBackspace, MdOutlineAddCircle, MdOutlineMenuBook } from "react-icons/md";
+import {
+  MdBackspace,
+  MdOutlineAddCircle,
+  MdOutlineMenuBook,
+} from "react-icons/md";
 import Card from "components/card";
 import bookApi from "../../../api/bookAPI";
 import requestApi from "../../../api/requestApi";
@@ -15,6 +19,7 @@ import Swal from "sweetalert2";
 function Request() {
   const [booksList, setBooks] = useState([]);
   const [requestList, setRequests] = useState([]);
+  const [topFiveList, setTopFive] = useState([]);
   var token = window.localStorage.getItem("token");
   const userLogin = jwt(token);
 
@@ -30,6 +35,12 @@ function Request() {
       setRequests(data);
     };
     getSavedRequest();
+
+    const getTopFive = async () => {
+      const data = await bookApi.GetTopFive();
+      setTopFive(data);
+    };
+    getTopFive();
   }, []);
 
   const handleClick = async (id) => {
@@ -95,16 +106,18 @@ function Request() {
 
           {requestList == null && (
             <div className="flex flex-col items-center justify-center">
-              <p className="mt-48 text-xl text-gray-700">Your request is empty!</p>
-              <p className="mt-5 mb-48 font-medium text-gray-700">Please choose your favourite books to open new request</p>
+              <p className="mt-48 text-xl text-gray-700">
+                Your request is empty!
+              </p>
+              <p className="mb-48 mt-5 font-medium text-gray-700">
+                Please choose your favourite books to open new request
+              </p>
             </div>
           )}
           {requestList?.map((row, key) => (
             <div className="mt-3 flex w-full items-center justify-between rounded-2xl bg-white p-3 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
               <div className="flex items-center">
-                <div className="mr-[15px]">
-                  <Checkbox onChange={(e) => handleCheckbox(e)} />
-                </div>
+                <div className="mr-[15px]"></div>
                 <div>
                   <img
                     className="h-[83px] w-full rounded-lg"
@@ -136,7 +149,7 @@ function Request() {
           <h4 className="text-lg font-bold text-navy-700 dark:text-white">
             Recommend
           </h4>
-          {booksList?.map((row, key) => (
+          {topFiveList?.map((row, key) => (
             <div className="mt-3 flex w-full items-center justify-between rounded-2xl bg-white p-3 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
               <div className="flex items-center">
                 <div className="">

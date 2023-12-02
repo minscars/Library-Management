@@ -84,7 +84,7 @@ export default function Admin(props) {
                   {getRoutes(routes)}
                   <Route
                     path="/"
-                    element={<Navigate to="/admin/home" replace />}
+                    element={<Navigate to="/admin/history" replace />}
                   />
                 </Routes>
               </div>
