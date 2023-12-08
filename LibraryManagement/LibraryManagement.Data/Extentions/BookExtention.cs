@@ -21,7 +21,7 @@ namespace LibraryManagement.Data.Extentions
                 Image = "1.png",
                 CategoryId = 2,
                 IsDeleted = false,
-                Desctription = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống..."
+                Description = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống..."
             },
             new Book()
             {
@@ -30,7 +30,7 @@ namespace LibraryManagement.Data.Extentions
                 Image = "2.png",
                 CategoryId = 1,
                 IsDeleted = false,
-                Desctription = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống..."
+                Description = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống..."
 
             },
             new Book()
@@ -40,7 +40,7 @@ namespace LibraryManagement.Data.Extentions
                 Image = "3.png",
                 CategoryId = 2,
                 IsDeleted = false,
-                Desctription = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống..."
+                Description = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống..."
 
             },
             new Book()
@@ -50,7 +50,7 @@ namespace LibraryManagement.Data.Extentions
                 Image = "4.png",
                 CategoryId = 1,
                 IsDeleted = false,
-                Desctription = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống..."
+                Description = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống..."
             },
             new Book()
             {
@@ -59,7 +59,7 @@ namespace LibraryManagement.Data.Extentions
                 Image = "5.png",
                 CategoryId = 3,
                 IsDeleted = false,
-                Desctription = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống..."
+                Description = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống..."
             },
             new Book()
             {
@@ -68,7 +68,7 @@ namespace LibraryManagement.Data.Extentions
                 Image = "6.png",
                 CategoryId = 4,
                 IsDeleted = false,
-                Desctription = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống..."
+                Description = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống..."
             },
             new Book(){
                 Id = 7,
@@ -76,7 +76,7 @@ namespace LibraryManagement.Data.Extentions
                 Image = "7.png",
                 CategoryId = 4,
                 IsDeleted = false,
-                Desctription = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống..."
+                Description = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống..."
             },
             new Book()
             {
@@ -85,7 +85,7 @@ namespace LibraryManagement.Data.Extentions
                 Image = "8.png",
                 CategoryId = 5,
                 IsDeleted = false,
-                Desctription = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống..."
+                Description = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống..."
             },
             new Book()
             {
@@ -94,7 +94,7 @@ namespace LibraryManagement.Data.Extentions
                 Image = "9.png",
                 CategoryId = 3,
                 IsDeleted = false,
-                Desctription = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống..."
+                Description = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống..."
             },
             new Book()
             {
@@ -103,7 +103,7 @@ namespace LibraryManagement.Data.Extentions
                 Image = "10.png",
                 CategoryId = 3,
                 IsDeleted = false,
-                Desctription = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống..."
+                Description = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống..."
             }
             );
         }

@@ -111,7 +111,10 @@ namespace LibraryManagement.Application.Services
                 Name = request.Name,
                 Image = imageName,
                 CategoryId = request.CategoryId,
-                CreatedTime = DateTime.Now
+                CreatedTime = DateTime.Now,
+                Quantity_Import = request.Quantity_Import,
+                Description = request.Description,
+                
             };
             await _context.Books.AddAsync(book);
             await _context.SaveChangesAsync();

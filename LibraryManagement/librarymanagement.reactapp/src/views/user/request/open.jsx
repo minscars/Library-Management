@@ -145,6 +145,16 @@ const Index = () => {
             </h4>
             <p className="text-base font-normal text-gray-600">Reader</p>
           </div>
+          <div className="mr-4 mt-4 text-gray-600 dark:text-white">
+            Email:{" "}
+            <span className="mr-2 text-base font-normal text-gray-800 dark:text-white">
+              {user?.email} <br />
+            </span>
+            Phone number:{" "}
+            <span className="mr-2 mt-2 text-base font-normal text-gray-800 dark:text-white">
+              {user?.phoneNumber}
+            </span>
+          </div>
 
           <div className="mt-8 flex items-end justify-center text-red-600 dark:text-white">
             <button

@@ -67,12 +67,16 @@ const History = () => {
                     </td>
                     <td className=" items-center pb-[18px] pt-[14px] sm:text-[15px]">
                       <div className=" w-[240px]">
-                        {row.createDate != null ? moment(row.createDate).format("DD/MM/YYYY HH:mm A") : "..."}
+                        {row.createDate != null
+                          ? moment(row.createDate).format("DD/MM/YYYY HH:mm A")
+                          : "..."}
                       </div>
                     </td>
                     <td className="pb-[18px] pt-[14px] sm:text-[15px]">
                       <div className="w-[240px]">
-                        {row.dueDate != null ? moment(row.dueDate).format("DD/MM/YYYY") : "..."}
+                        {row.dueDate != null
+                          ? moment(row.dueDate).format("DD/MM/YYYY")
+                          : "..."}
                       </div>
                     </td>
                     <td className="pb-[18px] pt-[14px] sm:text-[15px]">
@@ -85,7 +89,13 @@ const History = () => {
                     <td className="pb-[18px] pt-[14px] sm:text-[15px]">
                       <div className="w-[40px]">
                         <p className="text-sm font-bold text-red-500 dark:text-white">
-                          {moment().isAfter(moment(row.dueDate, 'YYYY-MM-DDTHH:mm:ss.SSSZ')) && (row.status == "Approve" || row.status == "Borrowing") && ("Expired")}
+                          {moment().isAfter(
+                            moment(row.dueDate, "YYYY-MM-DDTHH:mm:ss.SSSZ")
+                          ) &&
+                            (row.status == "Approve" ||
+                              row.status == "Borrowing" ||
+                              row.status == "Cancel") &&
+                            "Expired"}
                         </p>
                       </div>
                     </td>
