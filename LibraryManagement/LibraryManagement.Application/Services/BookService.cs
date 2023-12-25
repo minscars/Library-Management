@@ -237,5 +237,27 @@ namespace LibraryManagement.Application.Services
             };
         }
 
+        public async Task<ApiResult<List<BookDTO>>> GetNewAsync()
+        {
+            var newBooks = await _context.Books
+                .Include(b => b.Category)
+                .Where(b => b.IsDeleted == false)
+                .OrderBy(b => b.CreatedTime).Take(3).Select(b => _mapper.Map<BookDTO>(b)).ToListAsync();
+
+            if (newBooks.Count < 1)
+            {
+                return new ApiResult<List<BookDTO>>(null)
+                {
+                    Message = "Something went wrong!",
+                    StatusCode = 400
+                };
+            }
+            return new ApiResult<List<BookDTO>>(newBooks)
+            {
+                Message = "",
+                StatusCode = 200
+            };
+        }
+
     }
 }

@@ -92,7 +92,7 @@ namespace LibraryManagement.API.Controllers
             {
                 return BadRequest(result.Message);
             }
-            return Ok(result.Message);
+            return Ok(result);
         }
 
         [HttpGet("Search/{Key}")]
@@ -113,6 +113,19 @@ namespace LibraryManagement.API.Controllers
         public async Task<IActionResult> TopFiveBook()
         {
             var result = await _bookService.GetTopFiveAsync();
+            if (result.StatusCode == 200)
+            {
+                result.Data.ForEach(s => s.Image = setImageName(s.Image));
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        }
+
+        [HttpGet("NewBooks")]
+        [AllowAnonymous]
+        public async Task<IActionResult> NewBook()
+        {
+            var result = await _bookService.GetNewAsync();
             if (result.StatusCode == 200)
             {
                 result.Data.ForEach(s => s.Image = setImageName(s.Image));

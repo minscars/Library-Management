@@ -4,7 +4,7 @@ import BookCard from "components/card/BookCard";
 import { useEffect, useState } from "react";
 import bookApi from "../../../api/bookAPI";
 import Card from "components/card";
-
+import Carousel from "components/carousel/index";
 const Marketplace = () => {
   const [booksList, setBooks] = useState([]);
   const [topFiveList, setTopFive] = useState([]);
@@ -25,16 +25,9 @@ const Marketplace = () => {
   return (
     <div className="mt-3 grid h-full grid-cols-1 gap-5 xl:grid-cols-2 2xl:grid-cols-3">
       <div className="col-span-1 h-fit w-full xl:col-span-1 2xl:col-span-2">
-        {/* NFt Banner */}
-        <Banner />
-
-        {/* NFt Header */}
-        <div className="mb-4 mt-5 flex flex-col justify-between px-4 md:flex-row md:items-center">
-          <h4 className="ml-1 text-2xl font-bold text-navy-700 dark:text-white"></h4>
-        </div>
-
+        <Carousel></Carousel>
         {/* NFTs trending card */}
-        <div className="z-20 grid grid-cols-1 gap-5 md:grid-cols-3">
+        <div className="z-20 mt-5 grid grid-cols-1 gap-5 md:grid-cols-3">
           {booksList?.map((row, key) => (
             <Link to={`/user/books/detail/${row.id}`}>
               <BookCard
