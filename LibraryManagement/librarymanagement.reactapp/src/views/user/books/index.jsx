@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import bookApi from "../../../api/bookAPI";
 import cateApi from "../../../api/categoryAPI";
 import { Link } from "react-router-dom";
-
+import Star from "components/starrating/index";
 const Marketplace = () => {
   const [booksList, setBooks] = useState([]);
   const [catesList, setCate] = useState([]);
@@ -32,7 +32,7 @@ const Marketplace = () => {
         <ul className="mt-4 flex items-center justify-between md:mt-0 md:justify-center md:!gap-5 2xl:!gap-12">
           <Link
             to={`/user/books`}
-            className="text-base font-medium text-brand-500 hover:text-brand-500 dark:text-white"
+            className="text-base font-medium text-brand-700 hover:text-brand-500 dark:text-white"
           >
             Tất cả
           </Link>
@@ -40,7 +40,7 @@ const Marketplace = () => {
             <li>
               <Link
                 to={`/user/books/bookbycate/${row.id}`}
-                className="text-base font-medium text-brand-500 hover:text-brand-500 dark:text-white"
+                className="text-base font-medium text-brand-500 hover:text-brand-800 dark:text-white"
               >
                 {row.name}
               </Link>
@@ -58,6 +58,7 @@ const Marketplace = () => {
               image={row.image}
               id={row.id}
             />
+            <Star></Star>
           </Link>
         ))}
       </div>

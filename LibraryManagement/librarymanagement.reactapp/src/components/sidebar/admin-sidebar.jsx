@@ -27,7 +27,7 @@ const AdminSidebar = ({ open, onClose }) => {
       <div class="mb-7 mt-[58px] h-px bg-gray-300 dark:bg-white/30" />
       {/* Nav item */}
 
-      <ul className="mb-auto pt-1">
+      <ul className="mb-auto pt-1 ">
         <Links routes={routes} />
       </ul>
 

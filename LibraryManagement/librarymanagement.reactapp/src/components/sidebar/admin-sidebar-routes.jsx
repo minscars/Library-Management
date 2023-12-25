@@ -11,27 +11,23 @@ import DashBoard from "views/admin/default";
 import History from "views/admin/history";
 import Statistic from "views/admin/statistic";
 
-// Auth Imports
-import SignIn from "views/auth/SignIn";
-
 // Icon Imports
 import {
   MdHome,
-  MdBarChart,
   MdPerson,
-  MdLock,
+  MdBarChart,
   MdOutlineMenuBook,
   MdHistory,
 } from "react-icons/md";
 
 const routes = [
-  // {
-  //   name: "Home Page",
-  //   layout: "/admin",
-  //   path: "home",
-  //   icon: <MdHome className="h-6 w-6" />,
-  //   component: <Home />,
-  // },
+  {
+    name: "Home Page",
+    layout: "/admin",
+    path: "home",
+    icon: <MdHome className="h-6 w-6" />,
+    component: <Home />,
+  },
   {
     name: "Category Management",
     layout: "/admin",
@@ -46,6 +42,7 @@ const routes = [
     icon: <MdOutlineMenuBook className="h-6 w-6" />,
     component: <Books />,
   },
+
   // {
   //   name: "Borrowing - Returning",
   //   layout: "/admin",
@@ -60,13 +57,13 @@ const routes = [
   //   path: "data-tables",
   //   component: <DataTables />,
   // },
-  // {
-  //   name: "Profile",
-  //   layout: "/admin",
-  //   path: "profile",
-  //   icon: <MdPerson className="h-6 w-6" />,
-  //   component: <Profile />,
-  // },
+  {
+    name: "Profile",
+    layout: "/admin",
+    path: "profile",
+    icon: <MdPerson className="h-6 w-6" />,
+    component: <Profile />,
+  },
   // {
   //   name: "Dashboard",
   //   layout: "/admin",
@@ -74,6 +71,7 @@ const routes = [
   //   icon: <MdPerson className="h-6 w-6" />,
   //   component: <DashBoard />,
   // },
+
   {
     name: "Request Management",
     layout: "/admin",

@@ -79,7 +79,7 @@ export default function Admin(props) {
                 {...rest}
               />
 
-              <div className="pt-5s mx-auto mb-auto h-full min-h-[84vh] p-2 md:pr-2">
+              <div className="pt-5s mx-auto p-2 md:pr-2">
                 <Routes>
                   {getRoutes(routes)}
                   <Route
@@ -88,7 +88,7 @@ export default function Admin(props) {
                   />
                 </Routes>
               </div>
-              <div className="p-3">
+              <div className="">
                 <Footer />
               </div>
             </div>

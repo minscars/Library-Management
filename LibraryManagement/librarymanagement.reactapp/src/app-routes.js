@@ -37,6 +37,8 @@ import UserOpenRequest from "views/user/request/open";
 import UserHistory from "views/user/history/index";
 import UserHistoryDetail from "views/user/history/detail";
 
+import UserForum from "views/user/forum"
+
 const routes = [
   { layout: "/admin", path: "home", component: <AdminHome />},
   
@@ -75,6 +77,8 @@ const routes = [
   { layout: "/user", path: "request/open", component: <UserOpenRequest />},
   { layout: "/user", path: "history", component: <UserHistory />},
   { layout: "/user", path: "history/detail/:id", component: <UserHistoryDetail />},
+  { layout: "/user", path: "forum", component: <UserForum />},
+
 ];
 
 export default routes;

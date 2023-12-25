@@ -5,8 +5,17 @@ import Home from "views/user/home";
 import Request from "views/user/request";
 import Books from "views/user/books";
 import History from "views/user/history";
+import Forum from "views/user/forum";
 // Icon Imports
-import { MdHome, MdPerson, MdOutlineMenuBook, MdHistory } from "react-icons/md";
+import {
+  MdHome,
+  MdPerson,
+  MdOutlineMenuBook,
+  MdHistory,
+  MdForum,
+  MdOutlineLanguage,
+  MdDiversity3,
+} from "react-icons/md";
 
 const routes = [
   {
@@ -36,6 +45,13 @@ const routes = [
     path: "history",
     icon: <MdHistory className="h-6 w-6" />,
     component: <History />,
+  },
+  {
+    name: "Forum",
+    layout: "/user",
+    path: "forum",
+    icon: <MdDiversity3 className="h-6 w-6" />,
+    component: <Forum />,
   },
 ];
 

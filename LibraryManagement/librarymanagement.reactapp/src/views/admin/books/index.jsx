@@ -6,6 +6,7 @@ import bookApi from "../../../api/bookAPI";
 
 const Index = () => {
   const [booksList, setBooks] = useState([]);
+
   useEffect(() => {
     const getall = async () => {
       const data = await bookApi.GetAll();
@@ -16,21 +17,21 @@ const Index = () => {
 
   return (
     <div>
-      <div className="mt-5 gap-5 xl:grid-cols-2">
-        <Link to="/admin/books/create">
-          <button class="linear float-right mb-4 rounded-[20px] bg-cyan-700 px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-cyan-800 active:bg-cyan-700 dark:bg-brand-400 dark:hover:bg-brand-300 dark:active:opacity-90">
-            + New book
-          </button>
-        </Link>
-        <Card extra={"w-full h-full px-6 pb-6 sm:overflow-x-auto"}>
-          <div class="relative flex items-center justify-between pt-4">
-            <div class="text-xl font-bold text-navy-700 dark:text-white">
-              <p className="text-customcolor-500"></p>Books List
+      <div className="gap-5 xl:grid-cols-2">
+        <Card extra={"w-full px-6 pb-6  "}>
+          <div class="relative  pt-4">
+            <div class="flex items-center justify-between text-xl font-bold text-navy-700 dark:text-white">
+              <p className="left-0 top-0">Books List</p>
+              <Link to="/admin/books/create">
+                <button class="linear right-0 rounded-[20px] bg-cyan-700 px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-cyan-800 active:bg-cyan-700 dark:bg-brand-400 dark:hover:bg-brand-300 dark:active:opacity-90">
+                  + New book
+                </button>
+              </Link>
             </div>
           </div>
-          <div class="mt-8 overflow-x-scroll xl:overflow-hidden">
+          <div className="table-wrp mt-2 block h-[500px] overflow-x-scroll">
             <table className="w-full">
-              <thead>
+              <thead className="sticky top-0 bg-white">
                 <tr>
                   <th className="border-b border-gray-200 pb-[10px] pr-28 text-start dark:!border-navy-700">
                     <p className="ml-12 items-center text-xs tracking-wide text-gray-600">
@@ -67,9 +68,9 @@ const Index = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className=" overflow-y-auto">
                 {booksList?.map((row, key) => (
-                  <tr>
+                  <tr className="hover:bg-gray-100">
                     <td className="flex items-center justify-center pb-[18px] pt-[14px] sm:text-[15px]">
                       <p className="mr-10 text-sm font-bold text-navy-700 dark:text-white">
                         {key + 1}
@@ -77,7 +78,7 @@ const Index = () => {
                       <img
                         src={row.image}
                         alt=""
-                        className=" h-16 w-16 rounded-xl"
+                        className=" h-16 w-16 rounded-[10px]"
                       />
                     </td>
                     <td className="ml-10 items-center pb-[18px] pt-[14px] sm:text-[15px]">
@@ -112,6 +113,7 @@ const Index = () => {
                       <Link to={`./edit/${row.id}`}>
                         <MdModeEditOutline className="rounded-full text-xl" />
                       </Link>
+
                       <Link to={`./delete/${row.id}`}>
                         <MdCancel className="ml-4 rounded-full text-xl text-red-500" />
                       </Link>

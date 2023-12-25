@@ -4,6 +4,15 @@ import { useEffect, useState } from "react";
 import jwt from "jwt-decode";
 import moment from "moment";
 import { Link } from "react-router-dom";
+
+//Import scrollContainer
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/scrollbar";
+import "./components/scrollContainer/stylesScroll.css";
+import { FreeMode, Scrollbar, Mousewheel } from "swiper/modules";
+
 const History = () => {
   var token = window.localStorage.getItem("token");
   const userLogin = jwt(token);
@@ -91,13 +100,13 @@ const History = () => {
               Requests List
             </div>
           </div>
-          <div class="mt-8 overflow-x-scroll xl:overflow-hidden">
+          <div className="table-wrp mt-2 block h-[460px] overflow-x-scroll">
             <table className="w-full">
-              <thead>
+              <thead className="sticky top-0 bg-white">
                 <tr>
                   <th className="border-b border-gray-200 pb-[10px] pr-28 text-start dark:!border-navy-700">
                     <p className="items-center text-xs uppercase tracking-wide text-gray-600">
-                      # request id
+                      #id
                     </p>
                   </th>
                   <th className="border-b border-gray-200 pb-[10px] pr-28 text-start dark:!border-navy-700">
@@ -127,7 +136,7 @@ const History = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className=" overflow-y-auto">
                 {borrowList?.map((row, key) => (
                   <tr key={row.id}>
                     <td className="flex items-center pb-[18px] pt-[14px] sm:text-[15px]">

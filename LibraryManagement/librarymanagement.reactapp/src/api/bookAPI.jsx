@@ -25,6 +25,9 @@ const bookAPI = {
   GetTopFive: () => {
     return API.get("/Books/TopFive");
   },
+  GetNewBook: () => {
+    return API.get("/Books/NewBooks");
+  },
 };
 
 export default bookAPI;
