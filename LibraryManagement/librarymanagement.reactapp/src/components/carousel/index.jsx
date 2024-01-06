@@ -33,7 +33,7 @@ export default function App() {
           delay: 2000,
           disableOnInteraction: false,
         }}
-        className="mySwiper rounded-[20px] text-white"
+        className="mySwiper !h-[360px] rounded-[20px] text-white"
       >
         {newBooks?.map((row) => (
           <SwiperSlide>

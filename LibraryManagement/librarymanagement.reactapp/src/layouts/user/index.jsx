@@ -14,7 +14,7 @@ export default function User(props) {
   const [open, setOpen] = React.useState(true);
   const [currentRoute, setCurrentRoute] = React.useState("Main Dashboard");
   const userLogin = jwt(window.localStorage.getItem("token"));
-  console.log(userLogin.roles)
+  console.log(userLogin.roles);
 
   React.useEffect(() => {
     window.addEventListener("resize", () =>
@@ -42,7 +42,9 @@ export default function User(props) {
     let activeNavbar = false;
     for (let i = 0; i < SidebarRoutes.length; i++) {
       if (
-        window.location.href.indexOf(SidebarRoutes[i].layout + SidebarRoutes[i].path) !== -1
+        window.location.href.indexOf(
+          SidebarRoutes[i].layout + SidebarRoutes[i].path
+        ) !== -1
       ) {
         return SidebarRoutes[i].secondary;
       }
@@ -62,14 +64,15 @@ export default function User(props) {
   };
 
   document.documentElement.dir = "ltr";
-  if(userLogin.roles === "User")
+  if (userLogin.roles === "User")
     return (
       <div className="flex h-full w-full">
         <Sidebar open={open} onClose={() => setOpen(false)} />
         <div className="h-full w-full bg-lightPrimary dark:!bg-navy-900">
-          <main className={`mx-[12px] h-full flex-none transition-all md:pr-2 xl:ml-[313px]`}>
+          <main
+            className={`mx-[10px] h-full flex-none transition-all md:pr-2 xl:ml-[290px]`}
+          >
             <div className="h-full">
-              
               <Navbar
                 onOpenSidenav={() => setOpen(true)}
                 logoText={"Horizon UI Tailwind React"}
@@ -81,20 +84,20 @@ export default function User(props) {
               <div className="pt-5s mx-auto mb-auto h-full min-h-[84vh] p-2 md:pr-2">
                 <Routes>
                   {getRoutes(routes)}
-                  <Route path="/" element={<Navigate to="/user/home" replace />}/>
+                  <Route
+                    path="/"
+                    element={<Navigate to="/user/home" replace />}
+                  />
                 </Routes>
               </div>
 
               <div className="p-3">
                 <Footer />
               </div>
-
             </div>
           </main>
         </div>
       </div>
     );
-  else return (
-    <Auth />
-  );
+  else return <Auth />;
 }

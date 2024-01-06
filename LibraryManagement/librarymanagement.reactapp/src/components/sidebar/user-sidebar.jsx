@@ -5,6 +5,7 @@ import Links from "./components/Links";
 
 import Logo from "assets/img/logo/LibraryManagementLogo.png";
 import routes from "./user-sidebar-routes";
+import SidebarCard from "components/sidebar/components/SidebarCard";
 
 const UserSidebar = ({ open, onClose }) => {
   return (
@@ -20,12 +21,10 @@ const UserSidebar = ({ open, onClose }) => {
         <HiX />
       </span>
 
-      <div className={`mx-[56px] mb-[30px] ml-8 mt-[30px] flex items-center`}>
-        <div className="mb-5 mt-1 h-2.5 text-[26px] font-bold dark:text-white">
-          <img className="h-[70px] w-full" src={Logo} alt="" />
-        </div>
+      <div className={`mx-[56px] mb-[20px] ml-8 mt-[20px] flex items-center`}>
+        <img className="h-[65px] w-full" src={Logo} alt="" />
       </div>
-      <div class="mb-7 mt-[58px] h-px bg-gray-300 dark:bg-white/30" />
+      <div class="mb-7 h-px bg-gray-300 dark:bg-white/30" />
       {/* Nav item */}
 
       <ul className="mb-auto pt-1">

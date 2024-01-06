@@ -26,7 +26,7 @@ export function SidebarLinks(props) {
           <Link key={index} to={route.layout + "/" + route.path}>
             <div className="relative mb-3 flex hover:cursor-pointer">
               <li
-                className="my-[3px] flex cursor-pointer items-center px-8"
+                className="my-[5px] flex cursor-pointer items-center px-8 "
                 key={index}
               >
                 <span
@@ -39,7 +39,7 @@ export function SidebarLinks(props) {
                   {route.icon ? route.icon : <DashIcon />}{" "}
                 </span>
                 <p
-                  className={`leading-1 ml-4 flex ${
+                  className={`leading-1 ml-4 flex hover:font-bold hover:text-customcolor-500 ${
                     activeRoute(route.path) === true
                       ? "font-bold text-customcolor-500 dark:text-white"
                       : "font-medium text-gray-600"
