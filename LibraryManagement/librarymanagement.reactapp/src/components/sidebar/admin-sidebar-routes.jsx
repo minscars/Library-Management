@@ -21,13 +21,13 @@ import {
 } from "react-icons/md";
 
 const routes = [
-  {
-    name: "Home Page",
-    layout: "/admin",
-    path: "home",
-    icon: <MdHome className="h-6 w-6" />,
-    component: <Home />,
-  },
+  // {
+  //   name: "Home Page",
+  //   layout: "/admin",
+  //   path: "home",
+  //   icon: <MdHome className="h-6 w-6" />,
+  //   component: <Home />,
+  // },
   {
     name: "Category Management",
     layout: "/admin",

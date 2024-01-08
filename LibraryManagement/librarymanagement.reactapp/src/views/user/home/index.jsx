@@ -54,7 +54,7 @@ const Marketplace = () => {
                 <div className="flex items-center">
                   <div className="">
                     <img
-                      className="h-[83px] w-full rounded-lg"
+                      className="h-[83px] w-full rounded-lg border-2"
                       src={row.image}
                       alt=""
                     />

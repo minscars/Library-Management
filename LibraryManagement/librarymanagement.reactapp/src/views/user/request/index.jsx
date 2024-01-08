@@ -120,7 +120,7 @@ function Request() {
                 <div className="mr-[15px]"></div>
                 <div>
                   <img
-                    className="h-[83px] w-full rounded-lg"
+                    className="h-[83px] w-full rounded-lg border-2"
                     src={row.bookImage}
                     alt=""
                   />

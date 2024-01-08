@@ -107,7 +107,7 @@ const Navbar = (props) => {
         <p className="shrink text-[33px] capitalize text-navy-700 dark:text-white">
           <Link
             to="#"
-            className="font-bold capitalize hover:text-navy-700 dark:hover:text-white"
+            className="font-bold capitalize text-customcolor-500 hover:text-navy-700 dark:hover:text-white"
           >
             {brandText}
           </Link>
