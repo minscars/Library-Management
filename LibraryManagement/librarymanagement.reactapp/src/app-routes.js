@@ -38,6 +38,7 @@ import UserHistory from "views/user/history/index";
 import UserHistoryDetail from "views/user/history/detail";
 
 import UserForum from "views/user/forum"
+import UserForumDetail from "views/user/forum/detail"
 
 const routes = [
   { layout: "/admin", path: "home", component: <AdminHome />},
@@ -78,6 +79,7 @@ const routes = [
   { layout: "/user", path: "history", component: <UserHistory />},
   { layout: "/user", path: "history/detail/:id", component: <UserHistoryDetail />},
   { layout: "/user", path: "forum", component: <UserForum />},
+  { layout: "/user", path: "forum/detail/:id", component: <UserForumDetail />},
 
 ];
 

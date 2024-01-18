@@ -7,5 +7,7 @@ namespace LibraryManagement.Data.Models
         public string? Name { get; set; }
         public string? Avatar {  get; set; }
         //public string Password { get; set; }
+        public virtual List<Comment> Comments { get; set; }
+        public virtual List<Post> Posts { get; set; }
     }
 }

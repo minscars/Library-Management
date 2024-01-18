@@ -38,7 +38,7 @@ export function Detail() {
   };
 
   return (
-    <div className="mt-6 gap-5 xl:grid-cols-2">
+    <div className="gap-5 xl:grid-cols-2">
       <Card extra={"w-full h-full px-6 pb-6 sm:overflow-x-auto"}>
         <div className="relative flex items-center justify-between pt-4">
           <div className="text-xl font-bold text-navy-700 dark:text-white">
@@ -48,7 +48,7 @@ export function Detail() {
           </div>
           <div className=" flex">
             <Link to={`/admin/books/edit/${book.id}`}>
-              <MdModeEditOutline className="ml-6 rounded-full text-[30px]" />
+              <MdModeEditOutline className="rounded-full text-[30px]" />
             </Link>
             <MdCancel
               onClick={() => handleClick(book.id)}
@@ -56,12 +56,12 @@ export function Detail() {
             />
           </div>
         </div>
-        <div className="mb-10 flex h-full w-full overflow-x-scroll xl:overflow-hidden">
+        <div className="mb-10 ml-10 flex h-full w-auto items-center">
           <img
             src={book.image}
-            className="mr-6 mt-5 flex h-[420px] w-auto rounded-xl"
+            className="mr-6 flex h-[360px] w-auto rounded-xl border-2"
           />
-          <div className="mt-6">
+          <div>
             <p className="text-[24px] font-bold  text-indigo-700">
               {book.name}
             </p>
@@ -69,54 +69,69 @@ export function Detail() {
               {" "}
               {book.categoryName}
             </p>
-            <p className="mt-8 text-xl ">
+            <p className="mt-1 text-xl ">
               {" "}
-              <span className="text-xl font-bold  text-navy-700">
+              <span className="mb-10 text-[18px] font-bold  text-navy-700">
                 Book ID:
               </span>{" "}
               {book.id}
             </p>
-            <p className="mt-2 text-xl ">
+            <p className="mt-1 text-xl ">
               {" "}
-              <span className="text-xl font-bold  text-navy-700">
+              <span className="mb-10 text-[18px] font-bold  text-navy-700">
                 Import:
               </span>{" "}
               {book.quantity_Import}
             </p>
-            <p className="mt-2 text-xl ">
+            <p className="mt-1 text-xl ">
               {" "}
-              <span className="text-xl font-bold text-navy-700">
+              <span className="mb-10 text-[18px] font-bold  text-navy-700">
                 Export:
               </span>{" "}
               {book.quantity_Export}
             </p>
-            <p className="mt-2 text-xl ">
+            <p className="mt-1 text-xl ">
               {" "}
-              <span className="text-xl font-bold  text-navy-700">
+              <span className="mb-10 text-[18px] font-bold  text-navy-700">
                 On hand:
               </span>{" "}
               {book.quantity_On_Hand}
             </p>
-            <p className="mt-2 text-xl ">
+            <p className="mt-1 text-xl ">
               {" "}
-              <span className="text-xl font-bold text-navy-700">
+              <span className="mb-10 text-[18px] font-bold  text-navy-700">
                 Borrowed:
               </span>{" "}
               {book.quantity_Borrowed}
             </p>
-            <p className="mt-2 text-xl ">
+            <p className="mt-1 text-xl ">
               {" "}
-              <span className="text-xl font-bold  text-navy-700">
+              <span className="mb-10 text-[18px] font-bold  text-navy-700">
                 Create time:
               </span>{" "}
               {moment(book.createdTime).format("MMMM Do YYYY, h:mm:ss a")}
             </p>
-            <p className="mt-2 text-xl ">
+            <p className="mt-1 text-xl ">
               {" "}
-              <span className="text-xl font-bold text-navy-700">
+              <span className="mb-10 text-[18px] font-bold  text-navy-700">
                 Update time:
               </span>{" "}
               {moment(book.updateTime).format("MMMM Do YYYY, h:mm:ss a")}
+            </p>
+            <p className="mr-4 mt-2 text-justify text-base text-gray-600">
+              <span className="mb-10 text-[18px] font-bold  text-navy-700">
+                Description:{"  "}
+              </span>
+              Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không
+              biết họ lớn lên trong môi trường phải làm bố mẹ của bố mẹ mình ra
+              sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học
+              giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của
+              cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống, có
+              thể chúng ta không biết từ bé đến lớn họ đã được "đút sẵn" đến nỗi
+              không còn biết mình là ai. Khi kêu ca một người trẻ thiếu nghị lực
+              muốn kết thúc cuộc sống, có thể chúng ta không biết họ đã oằn mình
+              mang gánh nặng mà gia đình ấn xuống quá lâu, khiến cánh giải thoát
+              duy nhất là cái chết…
             </p>
           </div>
         </div>

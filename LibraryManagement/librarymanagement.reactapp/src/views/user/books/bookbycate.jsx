@@ -37,8 +37,10 @@ const Marketplace = () => {
             <li>
               <Link
                 to={`/user/books/bookbycate/${row.id}`}
-                className={`text-base font-medium text-brand-500 hover:text-brand-800 dark:text-white ${
-                  id == row.id ? "text-brand-600" : "text-brand-500"
+                className={`linear rounded-[20px] px-4 py-2 text-base font-medium text-brand-500 hover:bg-gray-200 hover:text-brand-700 dark:text-white ${
+                  id == row.id
+                    ? "linear rounded-[20px] bg-gray-100 px-4 py-2 text-base font-medium text-brand-500 text-brand-600 transition duration-200 hover:bg-gray-200 active:bg-gray-300 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20"
+                    : "text-brand-500"
                 }`}
               >
                 {row.name}

@@ -26,7 +26,7 @@ export function SidebarLinks(props) {
           <Link key={index} to={route.layout + "/" + route.path}>
             <div className="relative mb-2 ml-2 mr-2 flex rounded-lg hover:cursor-pointer hover:bg-gray-100">
               <li
-                className="my-[12px] flex cursor-pointer items-center px-8 "
+                className="my-[10px] flex cursor-pointer items-center px-8 "
                 key={index}
               >
                 <span
@@ -49,7 +49,7 @@ export function SidebarLinks(props) {
                 </p>
               </li>
               {activeRoute(route.path) ? (
-                <div class="absolute right-0 top-px h-9 w-1 rounded-lg bg-customcolor-500 dark:bg-brand-400" />
+                <div class="absolute right-0 top-px h-[43px] w-1 items-center rounded-lg bg-customcolor-500 dark:bg-brand-400" />
               ) : null}
             </div>
           </Link>

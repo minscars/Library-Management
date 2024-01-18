@@ -4,6 +4,7 @@ using LibraryManagement.DTO.Book;
 using LibraryManagement.DTO.BorrowBill;
 using LibraryManagement.DTO.Category;
 using LibraryManagement.DTO.Notification;
+using LibraryManagement.DTO.Post;
 using LibraryManagement.DTO.Request;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,16 @@ namespace LibraryManagement.Application.Mapping
 
             //Notification Mapping
             CreateMap<Notification, NotificationDTO>().ReverseMap();
-                
+
+            //Post Mapping
+            CreateMap<Post, GetListPost>()
+                .ForMember(dto => dto.UserName, opt => opt.MapFrom(u => u.User.Name))
+                .ForMember(dto => dto.UserAvatar, opt => opt.MapFrom(u => u.User.Avatar));
+
+            CreateMap<Post, GetPost>()
+                .ForMember(dto => dto.UserName, opt => opt.MapFrom(u => u.User.Name))
+                .ForMember(dto => dto.UserAvatar, opt => opt.MapFrom(u => u.User.Avatar));
+
         }
     }
 }

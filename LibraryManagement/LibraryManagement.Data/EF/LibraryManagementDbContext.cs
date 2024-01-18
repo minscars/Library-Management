@@ -17,6 +17,9 @@ namespace LibraryManagement.Data.EF
         public DbSet<Request> Requests { set; get; }
         public DbSet<UserRole> UserRoles { set; get; }
         public DbSet<Notification> Notifications { set; get; }
+        public DbSet<Post> Posts {  set; get; }
+        public DbSet<Comment> Comments { set; get; }
+        public DbSet<FeedBack> FeedBacks { set; get; }
         public LibraryManagementDbContext(DbContextOptions<LibraryManagementDbContext> options) : base(options)
         {
 
@@ -30,7 +33,10 @@ namespace LibraryManagement.Data.EF
                         .ApplyConfiguration(new BorrowBillConfig())
                         .ApplyConfiguration(new BorrowBillDetailConfig())
                         .ApplyConfiguration(new RequestConfig())
-                        .ApplyConfiguration(new NotificationConfig());
+                        .ApplyConfiguration(new NotificationConfig())
+                        .ApplyConfiguration(new PostConfig())
+                        .ApplyConfiguration(new CommentConfig())
+                        .ApplyConfiguration(new FeedBackConfig());
 
             modelBuilder.FillDataBook();
             modelBuilder.FillDataCategory();
@@ -38,6 +44,9 @@ namespace LibraryManagement.Data.EF
             modelBuilder.FillDataBorrowBillDetail();
             modelBuilder.FillDataRequest();
             modelBuilder.FillDataUser();
+            modelBuilder.FillDataComment();
+            modelBuilder.FillDataFeedBack();
+            modelBuilder.FillDataPost();
             //modelBuilder.FillDataUser();
 
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())

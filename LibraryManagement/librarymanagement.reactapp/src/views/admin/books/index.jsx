@@ -19,7 +19,7 @@ const Index = () => {
     <div>
       <div className="gap-5 xl:grid-cols-2">
         <Card extra={"w-full px-6 pb-6  "}>
-          <div class="relative  pt-4">
+          <div class="relative  mb-2 pt-4">
             <div class="flex items-center justify-between text-xl font-bold text-navy-700 dark:text-white">
               <p className="left-0 top-0">Books List</p>
               <Link to="/admin/books/create">
@@ -31,36 +31,36 @@ const Index = () => {
           </div>
           <div className="table-wrp mt-2 block h-[500px] overflow-x-scroll">
             <table className="w-full">
-              <thead className="sticky top-0 bg-white">
+              <thead className="sticky top-0 mb-1 bg-white">
                 <tr>
-                  <th className="border-b border-gray-200 pb-[10px] pr-28 text-start dark:!border-navy-700">
-                    <p className="ml-12 items-center text-xs tracking-wide text-gray-600">
+                  <th className="border-b border-gray-200 pb-[10px] pr-[70px] text-start dark:!border-navy-700">
+                    <p className="ml-10 items-center text-xs tracking-wide text-gray-600">
                       #
                     </p>
                   </th>
-                  <th className="border-b border-gray-200 pb-[10px] pr-28 text-start dark:!border-navy-700">
+                  <th className="border-b border-gray-200 pb-[10px] pr-[100px] text-start dark:!border-navy-700">
                     <p className="ml-10 text-xs tracking-wide text-gray-600">
                       NAME
                     </p>
                   </th>
-                  <th className="border-b border-gray-200 pb-[10px] pr-28 text-start dark:!border-navy-700">
+                  <th className="border-b border-gray-200 pb-[10px] pr-[60px] text-start dark:!border-navy-700">
                     <p className="text-xs tracking-wide text-gray-600">
                       CATEGORY
                     </p>
                   </th>
-                  <th className="border-b border-gray-200 pb-[10px] pr-28 text-start dark:!border-navy-700">
+                  <th className="border-b border-gray-200 pb-[10px] pr-[40px] text-start dark:!border-navy-700">
                     <p className="text-xs tracking-wide text-gray-600">
                       ON HAND
                     </p>
                   </th>
-                  <th className="border-b border-gray-200 pb-[10px] pr-28 text-start dark:!border-navy-700">
+                  <th className="border-b border-gray-200 pb-[10px] pr-[40px] text-start dark:!border-navy-700">
                     <p className="text-xs tracking-wide text-gray-600">
                       BORROWED
                     </p>
                   </th>
                   <th
                     colSpa="3"
-                    className="border-b border-gray-200 pb-[10px] pr-28 text-start dark:!border-navy-700"
+                    className="border-b border-gray-200 pb-[10px] pr-[40px] text-start dark:!border-navy-700"
                   >
                     <p className="ml-2 text-xs tracking-wide text-gray-600">
                       ACTION
@@ -70,19 +70,19 @@ const Index = () => {
               </thead>
               <tbody className=" overflow-y-auto">
                 {booksList?.map((row, key) => (
-                  <tr className="hover:bg-gray-100">
-                    <td className="flex items-center justify-center pb-[18px] pt-[14px] sm:text-[15px]">
-                      <p className="mr-10 text-sm font-bold text-navy-700 dark:text-white">
+                  <tr className="border-b-2 hover:bg-gray-100">
+                    <td className="flex items-center justify-center pb-[9px] pt-[9px] sm:text-[15px]">
+                      <p className="mr-8 text-sm font-bold text-navy-700 dark:text-white">
                         {key + 1}
                       </p>
                       <img
                         src={row.image}
                         alt=""
-                        className=" h-16 w-16 rounded-[10px]"
+                        className="h-[90px] w-auto rounded-xl border-2 3xl:h-full 3xl:w-full"
                       />
                     </td>
                     <td className="ml-10 items-center pb-[18px] pt-[14px] sm:text-[15px]">
-                      <div className="ml-10 mr-[18px] w-[200px]">
+                      <div className="ml-10 mr-[18px] w-auto">
                         <Link to={`/admin/books/detail/${row.id}`}>
                           <p className="text-sm font-bold text-navy-700 dark:text-white">
                             {row.name}
@@ -91,21 +91,21 @@ const Index = () => {
                       </div>
                     </td>
                     <td className="pb-[18px] pt-[14px] sm:text-[15px]">
-                      <div className="w-[80px]">
-                        <p className=" text-sm font-bold text-navy-700 dark:text-white">
+                      <div className="w-auto">
+                        <p className=" text-justify text-sm font-bold text-navy-700 dark:text-white">
                           {row.categoryName}
                         </p>
                       </div>
                     </td>
                     <td className="pb-[18px] pt-[14px] sm:text-[15px]">
                       <div className="w-[40px]">
-                        <p className="text-sm font-bold text-navy-700 dark:text-white">
+                        <p className="ml-5 text-justify text-sm font-bold text-navy-700 dark:text-white">
                           {row.quantity_On_Hand}
                         </p>
                       </div>
                     </td>
                     <td className="pb-[18px] pt-[14px] sm:text-[15px]">
-                      <p className="ml-8 text-sm font-bold text-navy-700 dark:text-white">
+                      <p className="ml-8 text-justify text-sm font-bold text-navy-700 dark:text-white">
                         {row.quantity_Borrowed}
                       </p>
                     </td>
