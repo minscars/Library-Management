@@ -13,7 +13,6 @@ import moment from "moment";
 import RichTextEditor from "components/textEditor";
 import { useForm } from "react-hook-form";
 import Alert from "components/alert";
-import Swal from "sweetalert2";
 const Forum = () => {
   const [open, setOpen] = useState(false);
   const onOpenModal = () => setOpen(true);
@@ -25,11 +24,30 @@ const Forum = () => {
   const navigate = useNavigate();
 
   const { register, handleSubmit, reset } = useForm();
+
+  const [fileURL, setFileURL] = useState(null);
+  const [imageUploadFile, setImageUploadFile] = useState(null);
+  const hiddenFileInput = useRef(null);
+
+  const handleClick = (event) => {
+    hiddenFileInput.current.click();
+  };
+
+  const onFileChange = (event) => {
+    setImageUploadFile(event.target.files[0]);
+    const fileInput = event.target;
+
+    if (fileInput.files.length > 0) {
+      const selectedFile = fileInput.files[0];
+      const url = URL.createObjectURL(selectedFile);
+      setFileURL(url);
+    }
+  };
+
   useEffect(() => {
     const getall = async () => {
-      const data = await postApi.GetAll();
+      const data = await postApi.GetByStatusPost(3);
       setPosts(data);
-      navigate("/user/forum");
     };
     getall();
 
@@ -47,6 +65,7 @@ const Forum = () => {
     formData.append("Title", content.title);
     formData.append("Content", contentPost);
     formData.append("UserId", userLogin.id);
+    formData.append("Image", imageUploadFile);
     await postApi.PostNewPost(formData).then(async (res) => {
       if (res.statusCode === 200) {
         Alert.showSuccessAlert("Your post have been posted sucessfully!");
@@ -56,7 +75,7 @@ const Forum = () => {
         reset();
         setContent("");
         setOpen(false);
-        navigate("/user/forum");
+        setFileURL(null);
       }
     });
   };
@@ -95,76 +114,96 @@ const Forum = () => {
                 </span>
               </div>
               <div class="mb-[10px] mt-2 h-px bg-gray-300 dark:bg-white/30" />
-              <div>
-                <div className="flex items-center">
-                  <img
-                    src={user?.avatar}
-                    className="ml-3 mr-3 h-[42px] w-[42px] rounded-full"
-                    alt=""
-                  />
-                  <div className="ml-1 mr-[125px]">
-                    <p className="text-m  font-bold text-navy-700 dark:text-white">
-                      {user?.name}
-                    </p>
-                    <div className="border-1 linear flex w-full items-center rounded-[10px] bg-lightPrimary px-2 py-1  transition duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20">
-                      <MdHome />
-                      <p className="ml-1 text-[14px] font-medium text-navy-700 dark:text-white">
-                        Công khai
+              <form ref={formRef} onSubmit={handleSubmit(addNewPost)}>
+                <div>
+                  <div className="flex items-center">
+                    <img
+                      src={user?.avatar}
+                      className="ml-3 mr-3 h-[42px] w-[42px] rounded-full"
+                      alt=""
+                    />
+                    <div className="ml-1 mr-[125px]">
+                      <p className="text-m  font-bold text-navy-700 dark:text-white">
+                        {user?.name}
                       </p>
+                      <div className="border-1 linear flex w-full items-center rounded-[10px] bg-lightPrimary px-2 py-1  transition duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20">
+                        <MdHome />
+                        <p className="ml-1 text-[14px] font-medium text-navy-700 dark:text-white">
+                          Công khai
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="linear right-0 mb-2 mr-3 mt-2 flex cursor-pointer items-center rounded-[10px] bg-lightPrimary px-4 py-2 text-base font-medium text-brand-500 transition duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20">
-                    <span>Add into your post</span>
-                    <MdImage className="text-l ml-4" />
-                  </div>
-                </div>
-                <div className="mt-4">
-                  <form ref={formRef} onSubmit={handleSubmit(addNewPost)}>
-                    <div className="mb-2">
-                      <label class="text-m text-gray-600 dark:text-white">
-                        Title
-                      </label>
+                    {/* <InputFileImage /> */}
+                    <div className="linear right-0 mb-2 mr-3 mt-2 flex  items-center rounded-[10px] bg-lightPrimary px-4 py-2 text-base font-medium text-brand-500 transition duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20">
+                      <span>Add into your post</span>
+                      <MdImage
+                        onClick={handleClick}
+                        className="text-l ml-4 cursor-pointer"
+                      />
                       <input
-                        className={`mt-2 h-12 w-full justify-center border border-gray-400 bg-white/0 p-3 text-sm outline-none`}
-                        autoFocus
-                        {...register("title")}
-                        placeholder="Title is here!"
-                        type="text"
+                        //className={`mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none`}
+                        {...register("image")}
+                        onChange={onFileChange}
+                        label="Image"
+                        id="image"
+                        type="file"
+                        ref={hiddenFileInput}
+                        style={{ display: "none" }}
                       />
                     </div>
-                    <div>
-                      <label class="text-m text-gray-600 dark:text-white">
-                        Content
-                      </label>
-                      <RichTextEditor
-                        value={contentPost}
-                        onChange={(newContent) => {
-                          setContent(newContent);
-                        }}
+                  </div>
+                  <div className="flex w-full justify-center">
+                    {fileURL && (
+                      <img
+                        src={fileURL}
+                        alt="Preview Image"
+                        className="mb-3 mr-6 mt-5 h-[120px] w-auto rounded-xl border-2 3xl:h-full 3xl:w-full"
                       />
-                    </div>
-                    <button
-                      type="submit"
-                      className="linear mt-[60px] flex w-full items-center justify-center rounded-[10px] bg-brand-500 px-2 py-2 text-base font-medium text-white transition duration-200 hover:bg-brand-600 active:bg-brand-700 dark:bg-brand-400 dark:text-white dark:hover:bg-brand-300 dark:active:bg-brand-200"
-                    >
-                      Post
-                    </button>
-                  </form>
+                    )}
+                  </div>
+                  {/* <div className="mt-4"> */}
+                  <div className="mb-2">
+                    <label class="text-m text-gray-600 dark:text-white">
+                      Title
+                    </label>
+                    <input
+                      className={`mt-2 h-12 w-full justify-center border border-gray-400 bg-white/0 p-3 text-sm outline-none`}
+                      autoFocus
+                      {...register("title")}
+                      placeholder="Title is here!"
+                      type="text"
+                    />
+                  </div>
+                  <div>
+                    <label class="text-m text-gray-600 dark:text-white">
+                      Content
+                    </label>
+                    <RichTextEditor
+                      value={contentPost}
+                      onChange={(newContent) => {
+                        setContent(newContent);
+                      }}
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="linear mt-[60px] flex w-full items-center justify-center rounded-[10px] bg-brand-500 px-2 py-2 text-base font-medium text-white transition duration-200 hover:bg-brand-600 active:bg-brand-700 dark:bg-brand-400 dark:text-white dark:hover:bg-brand-300 dark:active:bg-brand-200"
+                  >
+                    Post
+                  </button>
+                  {/* </div> */}
                 </div>
-              </div>
+              </form>
             </div>
           </Modal>
 
-          <Card
-            extra={
-              "w-full p-4 table-wrp mt-2 block h-[550px] overflow-x-scroll"
-            }
-          >
+          <Card extra={"w-full p-3 mt-2 block h-[550px] overflow-y-scroll"}>
             {postList?.map((row, key) => (
               <Post
                 title={row.title}
                 avatar={row.userAvatar}
                 username={row.userName}
+                image={row.image}
                 comment="56"
                 createDate={moment(row.createdDate).format("DD/MM/YYYY")}
                 id={row.id}
@@ -202,11 +241,7 @@ const Forum = () => {
               </button>
             </div>
           </Card>
-          <Card
-            extra={
-              "w-full p-4 table-wrp mt-2 block h-[350px] overflow-x-scroll"
-            }
-          >
+          <Card extra={"w-full p-4  mt-2 block h-[350px] overflow-y-scroll"}>
             <div
               className={` mb-2 mt-2 flex w-full items-center justify-between rounded-2xl border-2 bg-white p-3 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none`}
             >

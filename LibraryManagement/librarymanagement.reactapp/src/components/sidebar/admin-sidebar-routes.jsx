@@ -10,6 +10,7 @@ import DataTables from "views/admin/tables";
 import DashBoard from "views/admin/default";
 import History from "views/admin/history";
 import Statistic from "views/admin/statistic";
+import Blog from "views/admin/blog";
 
 // Icon Imports
 import {
@@ -18,6 +19,7 @@ import {
   MdBarChart,
   MdOutlineMenuBook,
   MdHistory,
+  MdDiversity3,
 } from "react-icons/md";
 
 const routes = [
@@ -78,6 +80,13 @@ const routes = [
     path: "history",
     icon: <MdHistory className="h-6 w-6" />,
     component: <History />,
+  },
+  {
+    name: "Blog Management",
+    layout: "/admin",
+    path: "blog",
+    icon: <MdDiversity3 className="h-6 w-6" />,
+    component: <Blog />,
   },
   {
     name: "Statistic",

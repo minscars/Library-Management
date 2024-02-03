@@ -1,12 +1,16 @@
 import React from "react";
+import image1 from "assets/img/profile/image1.png";
 import { Link } from "react-router-dom";
 import { MdModeEditOutline, MdArrowForward } from "react-icons/md";
-const post = ({ title, avatar, username, createDate, comment, id }) => {
+const post = ({ title, avatar, username, createDate, comment, id, image }) => {
   return (
     <div
-      className={` mb-2 mt-2 flex w-full items-center justify-between rounded-2xl border-2 bg-white p-3 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none`}
+      className={` mb-1 mt-1 flex w-full items-center justify-between rounded-xl border-2 bg-white p-3 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none`}
     >
       <div className="flex items-center">
+        <div className="">
+          <img className="h-auto w-[83px] rounded-lg" src={image} alt="" />
+        </div>
         <div className="ml-4">
           <p className={`text-l font-bold text-navy-700 dark:text-white`}>
             {title}

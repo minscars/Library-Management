@@ -18,7 +18,7 @@ namespace LibraryManagement.Data.Configurations
             builder.Property(x => x.BookId).IsRequired();
             builder.Property(x => x.Quantity).HasDefaultValue(1);
             builder.Property(x => x.IsDeleted).HasDefaultValue(false);
-            builder.Property(x => x.IsSelected).HasDefaultValue(true);
+            
         }
     }
 }

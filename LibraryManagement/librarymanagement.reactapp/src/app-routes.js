@@ -22,6 +22,8 @@ import AdminBorrowAndReturn from "views/admin/borrowreturn";
 import AdminProfile from "views/admin/profile";
 import AdminDataTables from "views/admin/tables";
 import AdminDashBoard from "views/admin/default";
+import AdminBlog from "views/admin/blog"
+
 
 // Auth Imports
 import SignIn from "views/auth/SignIn";
@@ -64,6 +66,7 @@ const routes = [
   { layout: "/admin", path: "history/detail/:id", component: <AdminHistoryDetail />},
   { layout: "/admin", path: "history/status/:id", component: <AdminHistoryStatus />},
   { layout: "/admin", path: "statistic", component: <AdminStatistic />},
+  { layout: "/admin", path: "blog", component: <AdminBlog />},
 
   { layout: "/auth", path: "sign-in", component: <SignIn />},
   { layout: "/auth", path: "register", component: <Register />},
@@ -80,6 +83,7 @@ const routes = [
   { layout: "/user", path: "history/detail/:id", component: <UserHistoryDetail />},
   { layout: "/user", path: "forum", component: <UserForum />},
   { layout: "/user", path: "forum/detail/:id", component: <UserForumDetail />},
+  
 
 ];
 

@@ -64,9 +64,9 @@ const Index = () => {
               <tbody className=" overflow-y-auto">
                 {catesList.map((row, key) => {
                   return (
-                    <tr className="hover:bg-gray-100">
+                    <tr className="border-b-2 hover:bg-gray-100">
                       <td className="pb-[18px] pt-[14px] sm:text-[14px]">
-                        <p className="text-sm font-bold text-navy-700 dark:text-white">
+                        <p className="p-2 pl-3 text-sm font-bold text-navy-700 dark:text-white">
                           {key + 1}
                         </p>
                       </td>

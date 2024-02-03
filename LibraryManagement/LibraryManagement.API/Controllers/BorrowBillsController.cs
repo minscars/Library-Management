@@ -68,12 +68,12 @@ namespace LibraryManagement.API.Controllers
             return Ok(result);
         }
 
-        [HttpGet("Status/{borrowBillStatus}")]
-        [AllowAnonymous]
-        public async Task<IActionResult> GetBorrowBillsByStatusAsync([FromRoute] StatusEnums.Status borrowBillStatus)
-        {
-            var result = await _borrowBillService.GetBorrowBillsByStatusAsync(borrowBillStatus);
-            return Ok(result.Data);
-        }
+        //[HttpGet("Status/{borrowBillStatus}")]
+        //[AllowAnonymous]
+        //public async Task<IActionResult> GetBorrowBillsByStatusAsync([FromRoute] StatusEnums.Status borrowBillStatus)
+        //{
+        //    var result = await _borrowBillService.GetBorrowBillsByStatusAsync(borrowBillStatus);
+        //    return Ok(result.Data);
+        //}
     }
 }

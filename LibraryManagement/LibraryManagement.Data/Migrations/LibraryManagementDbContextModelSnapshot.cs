@@ -36,9 +36,9 @@ namespace LibraryManagement.Data.Migrations
                     b.Property<DateTime?>("CreatedTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 11, 11, 12, 55, 9, 914, DateTimeKind.Local).AddTicks(3165));
+                        .HasDefaultValue(new DateTime(2024, 1, 23, 21, 6, 13, 906, DateTimeKind.Local).AddTicks(4944));
 
-                    b.Property<string>("Desctription")
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -77,7 +77,7 @@ namespace LibraryManagement.Data.Migrations
                     b.Property<DateTime?>("UpdatedTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 11, 11, 12, 55, 9, 914, DateTimeKind.Local).AddTicks(3357));
+                        .HasDefaultValue(new DateTime(2024, 1, 23, 21, 6, 13, 906, DateTimeKind.Local).AddTicks(5215));
 
                     b.HasKey("Id");
 
@@ -90,7 +90,7 @@ namespace LibraryManagement.Data.Migrations
                         {
                             Id = 1,
                             CategoryId = 2,
-                            Desctription = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống...",
+                            Description = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống...",
                             Image = "1.png",
                             IsDeleted = false,
                             Name = "Tìm mình trong thế giới hậu tuổi thơ",
@@ -103,7 +103,7 @@ namespace LibraryManagement.Data.Migrations
                         {
                             Id = 2,
                             CategoryId = 1,
-                            Desctription = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống...",
+                            Description = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống...",
                             Image = "2.png",
                             IsDeleted = false,
                             Name = "Điều kỳ diệu của tiệm tạp hóa Namiya",
@@ -116,7 +116,7 @@ namespace LibraryManagement.Data.Migrations
                         {
                             Id = 3,
                             CategoryId = 2,
-                            Desctription = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống...",
+                            Description = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống...",
                             Image = "3.png",
                             IsDeleted = false,
                             Name = "Rồi một ngày cuộc sống hóa hư vô",
@@ -129,7 +129,7 @@ namespace LibraryManagement.Data.Migrations
                         {
                             Id = 4,
                             CategoryId = 1,
-                            Desctription = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống...",
+                            Description = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống...",
                             Image = "4.png",
                             IsDeleted = false,
                             Name = "Quán ăn nơi góc hẻm",
@@ -142,7 +142,7 @@ namespace LibraryManagement.Data.Migrations
                         {
                             Id = 5,
                             CategoryId = 3,
-                            Desctription = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống...",
+                            Description = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống...",
                             Image = "5.png",
                             IsDeleted = false,
                             Name = "Thần số học",
@@ -155,7 +155,7 @@ namespace LibraryManagement.Data.Migrations
                         {
                             Id = 6,
                             CategoryId = 4,
-                            Desctription = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống...",
+                            Description = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống...",
                             Image = "6.png",
                             IsDeleted = false,
                             Name = "Từ điển tiếng Việt",
@@ -168,7 +168,7 @@ namespace LibraryManagement.Data.Migrations
                         {
                             Id = 7,
                             CategoryId = 4,
-                            Desctription = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống...",
+                            Description = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống...",
                             Image = "7.png",
                             IsDeleted = false,
                             Name = "Từ điển Hán Việt",
@@ -181,7 +181,7 @@ namespace LibraryManagement.Data.Migrations
                         {
                             Id = 8,
                             CategoryId = 5,
-                            Desctription = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống...",
+                            Description = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống...",
                             Image = "8.png",
                             IsDeleted = false,
                             Name = "Đất rừng phương nam",
@@ -194,7 +194,7 @@ namespace LibraryManagement.Data.Migrations
                         {
                             Id = 9,
                             CategoryId = 3,
-                            Desctription = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống...",
+                            Description = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống...",
                             Image = "9.png",
                             IsDeleted = false,
                             Name = "Lược sử Trái Đất",
@@ -207,7 +207,7 @@ namespace LibraryManagement.Data.Migrations
                         {
                             Id = 10,
                             CategoryId = 3,
-                            Desctription = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống...",
+                            Description = "Khi ngợi khen một người trẻ độc lập mạnh mẽ, có thể chúng ta không sao, cô đơn khắc khoải thế nào. Khi ngưỡng một một người trẻ học giỏi, có thể chúng ta không biết họ đã bị ngạt thở bởi kỳ vọng của cha mẹ. Khi phán xét một người trẻ hời hợt thiếu động lực sống...",
                             Image = "10.png",
                             IsDeleted = false,
                             Name = "Sapien lược sử loài người",
@@ -231,6 +231,12 @@ namespace LibraryManagement.Data.Migrations
 
                     b.Property<DateTime?>("BorrowDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("CancelDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("CreateDate")
                         .HasColumnType("datetime2");
@@ -296,7 +302,7 @@ namespace LibraryManagement.Data.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 11, 11, 12, 55, 9, 914, DateTimeKind.Local).AddTicks(3723));
+                        .HasDefaultValue(new DateTime(2024, 1, 23, 21, 6, 13, 906, DateTimeKind.Local).AddTicks(5994));
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -311,7 +317,7 @@ namespace LibraryManagement.Data.Migrations
                     b.Property<DateTime?>("UpdatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 11, 11, 12, 55, 9, 914, DateTimeKind.Local).AddTicks(3884));
+                        .HasDefaultValue(new DateTime(2024, 1, 23, 21, 6, 13, 906, DateTimeKind.Local).AddTicks(6193));
 
                     b.HasKey("Id");
 
@@ -350,6 +356,202 @@ namespace LibraryManagement.Data.Migrations
                         });
                 });
 
+            modelBuilder.Entity("LibraryManagement.Data.Models.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2024, 1, 23, 21, 6, 13, 907, DateTimeKind.Local).AddTicks(2829));
+
+                    b.Property<bool?>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<int?>("PostId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ReplyCommentId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PostId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Comments");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Content = "Test",
+                            CreatedDate = new DateTime(2024, 1, 23, 21, 6, 13, 911, DateTimeKind.Local).AddTicks(7106),
+                            PostId = 1,
+                            UserId = new Guid("8a820adb-93d7-4c6f-9404-bdbfc14419f4")
+                        });
+                });
+
+            modelBuilder.Entity("LibraryManagement.Data.Models.FeedBack", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2024, 1, 23, 21, 6, 13, 907, DateTimeKind.Local).AddTicks(4252));
+
+                    b.Property<bool?>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<int?>("Rate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("FeedBacks");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BookId = 2,
+                            Content = "Test",
+                            CreatedDate = new DateTime(2024, 1, 23, 21, 6, 13, 911, DateTimeKind.Local).AddTicks(7130),
+                            Rate = 5,
+                            UserId = new Guid("8a820adb-93d7-4c6f-9404-bdbfc14419f4")
+                        });
+                });
+
+            modelBuilder.Entity("LibraryManagement.Data.Models.Notification", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BorrowBillId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsViewed")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BorrowBillId");
+
+                    b.ToTable("Notifications");
+                });
+
+            modelBuilder.Entity("LibraryManagement.Data.Models.Post", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2024, 1, 23, 21, 6, 13, 907, DateTimeKind.Local).AddTicks(2067));
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<int>("Status")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(1);
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2024, 1, 23, 21, 6, 13, 907, DateTimeKind.Local).AddTicks(2340));
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Posts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Content = "Test",
+                            Image = "Test",
+                            Status = 0,
+                            Title = "Test",
+                            UserId = new Guid("8a820adb-93d7-4c6f-9404-bdbfc14419f4")
+                        });
+                });
+
             modelBuilder.Entity("LibraryManagement.Data.Models.Request", b =>
                 {
                     b.Property<int>("BookId")
@@ -367,9 +569,7 @@ namespace LibraryManagement.Data.Migrations
                         .HasDefaultValue(false);
 
                     b.Property<bool>("IsSelected")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(true);
+                        .HasColumnType("bit");
 
                     b.Property<int>("Quantity")
                         .ValueGeneratedOnAdd()
@@ -404,8 +604,9 @@ namespace LibraryManagement.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Avatar")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(max)")
+                        .HasDefaultValue("avatar-default.png");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -425,7 +626,6 @@ namespace LibraryManagement.Data.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
@@ -473,14 +673,14 @@ namespace LibraryManagement.Data.Migrations
                             Id = new Guid("8a820adb-93d7-4c6f-9404-bdbfc14419f4"),
                             AccessFailedCount = 0,
                             Avatar = "kha.jpg",
-                            ConcurrencyStamp = "c833b660-db5e-4571-b80a-780859ba7ad5",
+                            ConcurrencyStamp = "276f5c4a-b60a-4087-a62f-24fa6478f6d9",
                             Email = "kha@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             Name = "Lê Minh Kha",
                             NormalizedEmail = "KHA@GMAIL.COM",
                             NormalizedUserName = "KHA@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJxLgoMEAaw/T1ioyAH9G68McmFl9vyLsrLXOvDEEs5Q04fSvD5t2PLbiwWW3aEAYA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFa5KuohgJYzlO0s6yLXlijXGdPip3w2qrKI+5gXmgkc1nBI5mYhf4LRG3W5FmphDw==",
                             PhoneNumber = "0398897634",
                             PhoneNumberConfirmed = false,
                             TwoFactorEnabled = false,
@@ -491,14 +691,14 @@ namespace LibraryManagement.Data.Migrations
                             Id = new Guid("372ea575-2536-4076-9bab-3e3138de495f"),
                             AccessFailedCount = 0,
                             Avatar = "admin.jpg",
-                            ConcurrencyStamp = "2831dd53-d550-488b-aa02-fb7824d7d37d",
+                            ConcurrencyStamp = "3aea5380-859d-4926-bff4-e02f8e9649a2",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             Name = "John",
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFYS0rMo18rEZyBlrNMd0Gfq/I8r7W7QBjnss+pgev4rRcnbYP+hAy1QCzbhrtt12g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOT3SOl8OfH1b0em3Xv1dtZ0Suvbu/nQktA5VFcxcZbmN2nCpF7JCxej6kxr1DmhWw==",
                             PhoneNumber = "0123456789",
                             PhoneNumberConfirmed = false,
                             TwoFactorEnabled = false,
@@ -509,14 +709,14 @@ namespace LibraryManagement.Data.Migrations
                             Id = new Guid("2a738bf3-a14b-488e-b04e-17f918e8d6a4"),
                             AccessFailedCount = 0,
                             Avatar = "lam.jpg",
-                            ConcurrencyStamp = "b454797b-352e-4b09-b6d1-15de1ca41127",
+                            ConcurrencyStamp = "965c38aa-bede-46be-a3bd-fe40d08f39dc",
                             Email = "lam@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             Name = "Nguyễn Tùng Lâm",
                             NormalizedEmail = "LAM@GMAIL.COM",
                             NormalizedUserName = "LAM@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAELdmQN2W4UU24WsNlWsVcUUxJ1Pd5I/NY46FEllxesJys7w8/9HdZTHhcSPMIUse7A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEP7mXZ7wDI0qnT6+wJKOlwIW2HjjSKFs5kVPJkpiwVw11nJRH23iUt4kx0fvjRaq+g==",
                             PhoneNumber = "0338307449",
                             PhoneNumberConfirmed = false,
                             TwoFactorEnabled = false,
@@ -555,14 +755,14 @@ namespace LibraryManagement.Data.Migrations
                         new
                         {
                             Id = new Guid("9e87b492-5343-4272-9a34-fa5de7cffb22"),
-                            ConcurrencyStamp = "46a307bc-52bd-4a42-9547-eaff4a74fc0a",
+                            ConcurrencyStamp = "9baf42f5-c043-41a7-890a-bb03ee624761",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = new Guid("8f7579ee-4af9-4b71-9ada-7f792f76dc31"),
-                            ConcurrencyStamp = "65598a52-bcf6-416d-81b5-8e165db00be5",
+                            ConcurrencyStamp = "2b75d5e1-0d18-43d7-b1c2-a57beb424892",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -794,6 +994,56 @@ namespace LibraryManagement.Data.Migrations
                     b.Navigation("BorrowBill");
                 });
 
+            modelBuilder.Entity("LibraryManagement.Data.Models.Comment", b =>
+                {
+                    b.HasOne("LibraryManagement.Data.Models.Post", "Post")
+                        .WithMany("Comments")
+                        .HasForeignKey("PostId");
+
+                    b.HasOne("LibraryManagement.Data.Models.User", "User")
+                        .WithMany("Comments")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Post");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("LibraryManagement.Data.Models.FeedBack", b =>
+                {
+                    b.HasOne("LibraryManagement.Data.Models.Book", "Book")
+                        .WithMany()
+                        .HasForeignKey("BookId");
+
+                    b.HasOne("LibraryManagement.Data.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Book");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("LibraryManagement.Data.Models.Notification", b =>
+                {
+                    b.HasOne("LibraryManagement.Data.Models.BorrowBill", "BorrowBill")
+                        .WithMany("Notifications")
+                        .HasForeignKey("BorrowBillId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("BorrowBill");
+                });
+
+            modelBuilder.Entity("LibraryManagement.Data.Models.Post", b =>
+                {
+                    b.HasOne("LibraryManagement.Data.Models.User", "User")
+                        .WithMany("Posts")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("LibraryManagement.Data.Models.Request", b =>
                 {
                     b.HasOne("LibraryManagement.Data.Models.Book", "Book")
@@ -872,11 +1122,25 @@ namespace LibraryManagement.Data.Migrations
             modelBuilder.Entity("LibraryManagement.Data.Models.BorrowBill", b =>
                 {
                     b.Navigation("BorrowBillDetail");
+
+                    b.Navigation("Notifications");
                 });
 
             modelBuilder.Entity("LibraryManagement.Data.Models.Category", b =>
                 {
                     b.Navigation("Books");
+                });
+
+            modelBuilder.Entity("LibraryManagement.Data.Models.Post", b =>
+                {
+                    b.Navigation("Comments");
+                });
+
+            modelBuilder.Entity("LibraryManagement.Data.Models.User", b =>
+                {
+                    b.Navigation("Comments");
+
+                    b.Navigation("Posts");
                 });
 #pragma warning restore 612, 618
         }

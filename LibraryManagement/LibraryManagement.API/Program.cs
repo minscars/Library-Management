@@ -70,6 +70,7 @@ builder.Services.AddTransient<IBorrowBillService, BorrowBillService>();
 builder.Services.AddTransient<INotificationService, NotificationService>();
 builder.Services.AddTransient<IStatisticService, StatisticService>();
 builder.Services.AddTransient<IPostService, PostService>();
+builder.Services.AddTransient<ICommentService, CommentService>();
 builder.Services.AddMvc()
                 .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 

@@ -3,6 +3,7 @@ using LibraryManagement.Data.Models;
 using LibraryManagement.DTO.Book;
 using LibraryManagement.DTO.BorrowBill;
 using LibraryManagement.DTO.Category;
+using LibraryManagement.DTO.Comment;
 using LibraryManagement.DTO.Notification;
 using LibraryManagement.DTO.Post;
 using LibraryManagement.DTO.Request;
@@ -46,6 +47,13 @@ namespace LibraryManagement.Application.Mapping
             CreateMap<Post, GetPost>()
                 .ForMember(dto => dto.UserName, opt => opt.MapFrom(u => u.User.Name))
                 .ForMember(dto => dto.UserAvatar, opt => opt.MapFrom(u => u.User.Avatar));
+
+
+            //Comment Mapping
+            CreateMap<Comment, GetCommentPostListResponse>()
+                .ForMember(dto => dto.UserName, opt => opt.MapFrom(u => u.User.Name))
+                .ForMember(dto => dto.UserAvatar, opt => opt.MapFrom(u => u.User.Avatar));
+
 
         }
     }

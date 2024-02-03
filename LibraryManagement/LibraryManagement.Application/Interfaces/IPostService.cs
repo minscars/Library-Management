@@ -1,4 +1,5 @@
-﻿using LibraryManagement.DTO.Book;
+﻿using LibraryManagement.Data.Enums;
+using LibraryManagement.DTO.Book;
 using LibraryManagement.DTO.Contants;
 using LibraryManagement.DTO.Post;
 using System;
@@ -13,6 +14,7 @@ namespace LibraryManagement.Application.Interfaces
     {
         public Task<ApiResult<List<GetListPost>>> GetAllAsync();
         public Task<ApiResult<List<GetListPost>>> GetByUserIdAsync(Guid idUser);
+        public Task<ApiResult<List<GetListPost>>> GetPostByStatusAsync(StatusPostEnums.StatusPost postStatus);
         public Task<ApiResult<GetPost>> GetByIdAsync(int id);
         public Task<ApiResult<bool>> CreateNewPostAsync(CreatePostRequest request);
     }

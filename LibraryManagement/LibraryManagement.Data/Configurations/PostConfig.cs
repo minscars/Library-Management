@@ -16,6 +16,7 @@ namespace LibraryManagement.Data.Configurations
             builder.Property(x => x.Id).IsRequired();
             builder.Property(x => x.Title).IsRequired();
             builder.Property(x => x.Content).IsRequired();
+            builder.Property(x => x.Status).HasDefaultValue(1);
             builder.Property(x => x.IsDeleted).HasDefaultValue(false);
             builder.Property(x => x.CreatedDate).HasDefaultValue(DateTime.Now);
             builder.Property(x => x.UpdatedDate).HasDefaultValue(DateTime.Now).IsRequired(false);

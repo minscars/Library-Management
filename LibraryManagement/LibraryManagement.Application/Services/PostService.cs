@@ -1,10 +1,13 @@
 ﻿using AutoMapper;
 using LibraryManagement.Application.Interfaces;
 using LibraryManagement.Data.EF;
+using LibraryManagement.Data.Enums;
 using LibraryManagement.Data.Models;
 using LibraryManagement.DTO.Book;
+using LibraryManagement.DTO.BorrowBill;
 using LibraryManagement.DTO.Contants;
 using LibraryManagement.DTO.Post;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,6 +15,7 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using static LibraryManagement.Data.Enums.StatusPostEnums;
 
 namespace LibraryManagement.Application.Services
 {
@@ -19,10 +23,14 @@ namespace LibraryManagement.Application.Services
     {
         private readonly LibraryManagementDbContext _context;
         private readonly IMapper _mapper;
-        public PostService(LibraryManagementDbContext context, IMapper mapper)
+        private readonly IFileSerivce _fileServivce;
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        public PostService(LibraryManagementDbContext context, IMapper mapper, IFileSerivce fileSerivce, IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
             _mapper = mapper;
+            _webHostEnvironment = webHostEnvironment;
+            _fileServivce = fileSerivce;
         }
 
         public async Task<ApiResult<List<GetListPost>>> GetAllAsync()
@@ -31,7 +39,20 @@ namespace LibraryManagement.Application.Services
                 .Include(p => p.User)
                 .Where(p => p.IsDeleted == false)
                 .OrderByDescending(p => p.CreatedDate)
-                .Select(p => _mapper.Map<GetListPost>(p)).ToListAsync();
+                .Select(p => new GetListPost()
+                {
+                    Id = p.Id,
+                    UserId = p.User.Id,
+                    UserAvatar = p.User.Avatar,
+                    UserName = p.User.Name,
+                    Title = p.Title,
+                    Image = p.Image,
+                    Content = p.Content,
+                    Status = StatusPostEnums.GetDisplayName((StatusPost)p.Status),
+                    CreatedDate = p.CreatedDate,
+                    IsDeleted = p.IsDeleted,
+                    UpdatedDate = p.UpdatedDate,
+                }).ToListAsync();
             if (postList.Count < 1)
             {
                 return new ApiResult<List<GetListPost>>(null)
@@ -103,13 +124,14 @@ namespace LibraryManagement.Application.Services
                     StatusCode = 400
                 };
             }
-
+            var imageName = await _fileServivce.UploadFileAsync(request.Image, SystemConstant.IMG_POSTS_FOLDER);
             var post = new Post()
             {
                 UserId = request.UserId,
                 Content = request.Content,
                 Title = request.Title,
                 CreatedDate = DateTime.Now,
+                Image = imageName,
             };
 
             await _context.Posts.AddAsync(post);
@@ -121,5 +143,43 @@ namespace LibraryManagement.Application.Services
                 StatusCode = 200
             };
         }
+
+        public async Task<ApiResult<List<GetListPost>>> GetPostByStatusAsync(StatusPostEnums.StatusPost postStatus)
+        {
+            var checkExit = await _context.Posts
+                .Include(p => p.User)
+                .Where(p => p.IsDeleted == false && p.Status == (int)postStatus)
+                .OrderByDescending(p => p.CreatedDate)
+                .Select(p => new GetListPost()
+                {
+                    Id = p.Id,
+                    UserId = p.User.Id,
+                    UserAvatar = p.User.Avatar,
+                    UserName = p.User.Name,
+                    Title = p.Title,
+                    Image = p.Image,
+                    Content = p.Content,
+                    Status = StatusPostEnums.GetDisplayName((StatusPost)p.Status),
+                    CreatedDate = p.CreatedDate,
+                    IsDeleted = p.IsDeleted,
+                    UpdatedDate = p.UpdatedDate,
+                }).ToListAsync();
+
+            if (checkExit == null)
+            {
+                return new ApiResult<List<GetListPost>>(null)
+                {
+                    Message = "Something went wrong!",
+                    StatusCode = 404
+                };
+            }
+
+            return new ApiResult<List<GetListPost>>(checkExit)
+            {
+                Message = "",
+                StatusCode = 200
+            };
+        }
+
     }
 }

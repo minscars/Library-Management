@@ -15,6 +15,7 @@ namespace LibraryManagement.DTO.Post
         public string? Title { get; set; }
         public string? Image { get; set; }
         public string? Content { get; set; }
+        public string? Status { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public Boolean? IsDeleted { get; set; }

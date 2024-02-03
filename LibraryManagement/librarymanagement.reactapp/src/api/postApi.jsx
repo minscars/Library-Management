@@ -8,7 +8,10 @@ const postApi = {
     return API.get(`/Posts/Detail/${id}`);
   },
   PostNewPost: (request) => {
-    return API.post("/Posts", request);
+    return APIFile.post("/Posts", request);
+  },
+  GetByStatusPost: (idStatus) => {
+    return API.get(`/Posts/Status/${idStatus}`);
   },
 };
 

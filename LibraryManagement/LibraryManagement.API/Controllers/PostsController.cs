@@ -1,5 +1,6 @@
 ﻿using LibraryManagement.Application.Interfaces;
 using LibraryManagement.Application.Services;
+using LibraryManagement.Data.Enums;
 using LibraryManagement.Data.Models;
 using LibraryManagement.DTO.Post;
 using Microsoft.AspNetCore.Authorization;
@@ -22,6 +23,11 @@ namespace LibraryManagement.API.Controllers
             return String.Format("{0}://{1}{2}/images/Users/{3}", Request.Scheme, Request.Host, Request.PathBase, currentName);
         }
 
+        private string setImagePost(string currentName)
+        {
+            return String.Format("{0}://{1}{2}/images/Posts/{3}", Request.Scheme, Request.Host, Request.PathBase, currentName);
+        }
+
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> GetAll()
@@ -30,6 +36,7 @@ namespace LibraryManagement.API.Controllers
             if (result.StatusCode == 200)
             {
                 result.Data.ForEach(p => p.UserAvatar =  setImageName(p.UserAvatar));
+                result.Data.ForEach(p => p.Image = setImagePost(p.Image));
                 return Ok(result.Data);
             }
             return Ok(result);
@@ -63,10 +70,18 @@ namespace LibraryManagement.API.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> CreateNewPost(CreatePostRequest request)
+        public async Task<IActionResult> CreateNewPost([FromForm] CreatePostRequest request)
         {
             var result = await _postService.CreateNewPostAsync(request);
             return Ok(result);
+        }
+
+        [HttpGet("Status/{postStatus}")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetPostByStatusAsync([FromRoute] StatusPostEnums.StatusPost postStatus)
+        {
+            var result = await _postService.GetPostByStatusAsync(postStatus);
+            return Ok(result.Data);
         }
 
     }
